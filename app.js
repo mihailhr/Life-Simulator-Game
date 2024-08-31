@@ -23,6 +23,12 @@ const genderSelectPage = `
 const nationalityPage = `
 <h1>You were born in <span id="nationality"></span>.</h1>
 `;
+const firstChildhoodChoicePage=`<div class="classroom">
+    <section>
+        <h1>It is your first day at school!</h1>
+        <h2>Your classmates invited you to play a multiplayer game together.</h2>
+    </section>
+</div>`
 
 const root = document.getElementById("content");
 let username;
@@ -32,6 +38,43 @@ let intelligence=40
 let athleticism=40
 let sociability=50
 let wealth=0
+let familyMembers
+function getFamilyMembers(){
+    const parentsRandomNum=Math.floor(Math.random()*10)
+    
+    if(parentsRandomNum<2){
+        familyMembers=["orphan"]
+    }else if(parentsRandomNum<5){
+        familyMembers=["mother","father"]
+    }else if(parentsRandomNum<6){
+        familyMembers=["mother","father","brother"]
+    }
+    else if(parentsRandomNum<7){
+        familyMembers=["mother","father","sister"]
+    }else if(parentsRandomNum<8){
+        familyMembers=["mother","father","sister","brother"]
+    }else if(parentsRandomNum<9){
+        familyMembers=["mother"]
+    }else{
+        familyMembers=["father"]
+    }
+    console.log(familyMembers)
+}
+getFamilyMembers()
+const healthField=document.getElementById("health")
+const intelligenceField=document.getElementById("intelligence")
+const athleticismField=document.getElementById("athleticism")
+const sociabilityField=document.getElementById("sociability")
+const wealthField=document.getElementById("wealth")
+
+function updateStats(){
+    healthField.textContent=health
+    intelligenceField.textContent=intelligence
+    athleticismField.textContent=athleticism
+    sociabilityField.textContent=sociability
+    wealthField.textContent=wealth
+}
+
 const allCountries = [
   // Africa
   "Nigeria",
@@ -72,7 +115,7 @@ const allCountries = [
 ];
 const countriesLength = allCountries.length;
 let nationality;
-
+updateStats()
 root.innerHTML = welcomePage;
 setTimeout(() => {
   root.innerHTML = chooseNamePage;
@@ -108,4 +151,12 @@ function getRandomNationality() {
   root.innerHTML = nationalityPage;
   const nationalitySpan = document.getElementById("nationality");
   nationalitySpan.textContent = nationality;
+  setTimeout(() => {
+    firstChildhoodChoice()  
+  }, 3000);
+  
+}
+
+function firstChildhoodChoice(){
+root.innerHTML=firstChildhoodChoicePage
 }
