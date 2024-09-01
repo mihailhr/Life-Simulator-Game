@@ -4,7 +4,11 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: "Jersey 10";
     
+}
+button:hover{
+    cursor: pointer;
 }
 
 body{
@@ -14,9 +18,7 @@ body{
     overflow-y: hidden;
 }
 
-#stats{
-    display: none;
-}
+
  /* welcome page */
 #welcome{
    
@@ -100,7 +102,12 @@ body{
 /* end of choose name page */
 
 /* choose gender page */
-
+#chooseGender{
+    background-image: url("/Life-Simulator-Game/Images/town.gif");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 #chooseGender img{
     width: 30vw;
     border-radius: 10vw;
@@ -128,8 +135,46 @@ body{
     color: antiquewhite;
     font-family: "Jersey 10";
     border: none;
+    
 }
+
 .selected{
     border: 8px solid green;
     border-radius: 10vw;
+    background-color: green;
 }
+/* end of choose gender page */
+
+/* nationality page */
+#nationalityPage{
+    background-image: url("/Life-Simulator-Game/Images/town.gif");
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#nationalityPage h1{
+text-align: center;
+color: antiquewhite;
+padding-top: 25vh;
+font-size: 5vw;
+}
+
+
+/* family page */
+#familyDiv{
+    background-image: url("/Life-Simulator-Game/Images/town.gif");
+    width: 90vw;
+    padding: 5vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: antiquewhite;
+    padding-top: 25vh;
+    font-size: 5vw;
+}
+
+
+
+

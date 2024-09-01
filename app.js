@@ -58,12 +58,51 @@ if(gender==="man"){
   manField.classList.remove("selected")
   womanField.classList.add("selected")
 }
-continueButton.addEventListener("click",renderFamilyPage)
+continueButton.addEventListener("click",renderNationalityPage)
 }
-function renderFamilyPage(){
-  console.log("Family page")
+function renderNationalityPage(){
+  stats.getNationality()
+  root.innerHTML=pages.nationalityPage
+  const nationalitySpan=document.getElementById("nationality")
+  nationalitySpan.textContent=stats.nationality
+  stats.getFamilyMembers()
+  setTimeout(() => {
+    renderFamilyPage()
+  }, 4000);
 }
 
+function renderFamilyPage(){
+  console.log(stats.familyMembers)
+  
+  if (stats.familyMembers.includes("orphan")) {
+    root.innerHTML=`<h1 id="familyDiv">Your parents abandoned you when you were a baby. Unfortunately you don't remember them.</h1>`
+  }else if(stats.familyMembers.length===1){
+    root.innerHTML=`<h1 id="familyDiv">Your family consist of you and your <span id="familyMember"></span>.</h1>`
+    document.getElementById("familyMember").textContent=stats.familyMembers[0]
+  }else if(stats.familyMembers.length===2){
+    root.innerHTML=`<h1 id="familyDiv">Your family consist of you, your <span id="member1"></span> and your <span id="member2"></span>.</h1>`
+    document.getElementById("member1").textContent=stats.familyMembers[0]
+    document.getElementById("member2").textContent=stats.familyMembers[1]
+
+  }else{
+    root.innerHTML=`<h1 id="familyDiv">Your family consist of you, your <span id="member1"></span>, your <span id="member2"></span> and your <span id="member3"></span>.</h1>`
+    document.getElementById("member1").textContent=stats.familyMembers[0]
+    document.getElementById("member2").textContent=stats.familyMembers[1]
+    document.getElementById("member3").textContent=stats.familyMembers[2]
+    
+  }
+  setTimeout(()=>{
+    renderFirstChoice()
+  },5000)
+}
+
+
+function renderFirstChoice(){
+  console.log("first choice")
+  
+  root.innerHTML=pages.choiceTemplate
+  stats.updateStats()
+}
 
 
 

@@ -21,9 +21,7 @@ const chooseNamePage = `
 
 const genderSelectPage = `
     <div id="chooseGender">
-    <video autoplay muted loop id="welcomeVideo">
-        <source src="/Life-Simulator-Game/Videos/856460-uhd_3840_2160_30fps.mp4" type="video/mp4">
-      </video>
+    
     <h1>Choose your gender</h1>
     <section>
         <div id="womanOption" >
@@ -40,14 +38,30 @@ const genderSelectPage = `
 
 `;
 const nationalityPage = `
-<h1>You were born in <span id="nationality"></span>.</h1>
+<div id="nationalityPage">
+<h1>You were born in <span id="nationality"></span> 6 years ago.</h1>
+
+</div>
 `;
-const firstChildhoodChoicePage=`<div class="classroom">
-    <section>
-        <h1>It is your first day at school!</h1>
-        <h2>Your classmates invited you to play a multiplayer game together.</h2>
+const choiceTemplate=`
+<div id="choice">
+    
+    <div id="currentChoice">
+
+    </div>
+
+    
+    <section id="stats">
+        <ul>
+            <li>Health: <span id="health"></span></li>
+            <li>Intelligence: <span id="intelligence"></span></li>
+            <li>Sociability: <span id="sociability"></span></li>
+            <li>Athleticism: <span id="athleticism"></span></li>
+            <li>Wealth: <span id="wealth"></span></li>
+        </ul>
     </section>
-</div>`
+</div>
+`
 
 
-export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,firstChildhoodChoicePage}
+export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,choiceTemplate}

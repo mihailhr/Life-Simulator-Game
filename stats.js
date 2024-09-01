@@ -40,13 +40,14 @@ function getFamilyMembers(){
     
 }
 
-const healthField=document.getElementById("health")
+
+
+function updateStats(){
+    const healthField=document.getElementById("health")
 const intelligenceField=document.getElementById("intelligence")
 const athleticismField=document.getElementById("athleticism")
 const sociabilityField=document.getElementById("sociability")
 const wealthField=document.getElementById("wealth")
-
-function updateStats(){
     healthField.textContent=health
     intelligenceField.textContent=intelligence
     athleticismField.textContent=athleticism
@@ -95,6 +96,9 @@ const allCountries = [
 
 const countriesLength = allCountries.length;
 let nationality;
-updateStats()
+function getNationality(){
+    const randomNum=Math.floor(Math.random()*countriesLength)
+    nationality=allCountries[randomNum]
+}
 
-export{username,gender,health,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,getFamilyMembers,updateStats,changeUsername,setGender}
+export{username,gender,health,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,getFamilyMembers,updateStats,changeUsername,setGender,getNationality}
