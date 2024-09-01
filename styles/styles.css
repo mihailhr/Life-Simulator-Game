@@ -1,12 +1,135 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
-
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
 *{
     padding: 0;
     margin: 0;
+    
 }
 
 body{
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#stats{
+    display: none;
+}
+ /* welcome page */
+#welcome{
+   
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+#welcome section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 40vh;
+  gap: 5vh;
+}
+#welcomeVideo{
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+}
+#welcome h1{
+    
+    font-family: "Jersey 10";
+    font-size: 5vw;
+}
+#welcome button{
+    
+    font-family: "Jersey 10";
+    background-color: transparent;
+    font-size: 3vw;
+    border: none;
+}
+
+/* end of welcome page */
+
+/* choose name page */
+#chooseName{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/Life-Simulator-Game/Videos/townNamePage.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30vh;
+    font-family: "Jersey 10";
+    text-align: center;
+}
+#chooseName h2{
+    font-size: 5vw;
+    color: antiquewhite;
+}
+#chooseName input{
+    border-radius: 1vw;
+    padding: 1vw;
+    width: 30vw;
+}
+#chooseName button{
+   margin-top: 2vh;
+   font-size: 3vw;
+   font-family: "Jersey 10";
+   padding: 2vw;
+   border: none;
+   background-color: transparent;
+   color: antiquewhite;
+   
+}
+
+/* end of choose name page */
+
+/* choose gender page */
+
+#chooseGender img{
+    width: 30vw;
+    border-radius: 10vw;
+    
+}
+#chooseGender h1{
+    text-align: center;
+    font-family: "Jersey 10";
+    font-size: 5vw;
+    color: antiquewhite;
+}
+#chooseGender section{
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    margin: 5vh auto;    
+}
+#chooseGender button{
+    
+    position: absolute;
+    left: 43%;
+    padding: 1vw;
+    font-size: 4vw;
+    background-color: transparent;
+    color: antiquewhite;
+    font-family: "Jersey 10";
+    border: none;
+}
+.selected{
+    border: 8px solid green;
+    border-radius: 10vw;
 }
