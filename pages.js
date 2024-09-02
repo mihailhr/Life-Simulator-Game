@@ -79,7 +79,7 @@ const deadPage=`
 const teenPage=`
 <div id="choice">
     <h1>Congrats, <span id="name"></span>, you are not a child anymore. You are slowly turning into a young <span id="gender"></span>. <br/> Be careful! Your next choices are going to have a major influence on your character.</h1>
-    
+    <h2>As of now, it is your <span id="quality"></span> that stands out the most to others.</h2>
 
     
 </div>`

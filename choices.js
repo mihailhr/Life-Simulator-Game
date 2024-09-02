@@ -127,7 +127,12 @@ const childhoodChoices= [
         <h1>You find some berries in the forest. They look tasty, but you're not sure if they're safe to eat. Do you eat the berries or leave them alone?</h1>
         <button onclick="handleChoice('-100 health')">Eat the berries</button>
         <button onclick="handleChoice('+10 intelligence')">Leave them alone</button>
-    </div>`
+    </div>`,`
+    <div id="choice">
+    <h1>You see a deep pond in the park, and there's a sign that says "No Swimming." Do you ignore the sign and jump in, or do you stay on the shore and play safely?</h1>
+    <button onclick="handleChoice('-100 health')">Jump in the pond</button>
+    <button onclick="handleChoice('+10 intelligence')">Stay on the shore</button>
+</div>`
 ];
 
 function getRandomChildhoodChoice(){

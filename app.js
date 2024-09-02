@@ -160,6 +160,7 @@ function renderNextChoiceChildhood(){
       choiceRoot.innerHTML=pages.teenPage
       document.getElementById("name").textContent=stats.username
       document.getElementById("gender").textContent=stats.gender
+      document.getElementById("quality").textContent=stats.outstandingQuality
     }
     break
   }

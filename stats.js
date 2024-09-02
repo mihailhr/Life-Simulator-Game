@@ -4,11 +4,11 @@ let health=100
 let intelligence=40
 let athleticism=40
 let sociability=50
-let wealth=0
+let wealth=50
 let familyMembers
 let age=6
 let dead=false
-
+let outstandingQuality
 
 function changeUsername(newUsername){
     username=newUsername
@@ -25,19 +25,30 @@ function getFamilyMembers(){
     
     if(parentsRandomNum<2){
         familyMembers=["orphan"]
+        wealth-=30
     }else if(parentsRandomNum<5){
         familyMembers=["mother","father"]
+        sociability-=10
     }else if(parentsRandomNum<6){
         familyMembers=["mother","father","brother"]
+        athleticism+=10
     }
     else if(parentsRandomNum<7){
         familyMembers=["mother","father","sister"]
+        sociability+=10
     }else if(parentsRandomNum<8){
         familyMembers=["mother","father","sister","brother"]
+        wealth-=10
+        sociability+=20
     }else if(parentsRandomNum<9){
         familyMembers=["mother"]
+        athleticism-=20
+        wealth-=20
+        
     }else{
         familyMembers=["father"]
+        wealth-=20
+        athleticism+=20
     }
     
 }
@@ -113,8 +124,10 @@ function changeStats(changesArray){
         }
       }
       age++
-      wealth+=50
+      
       updateStats()
+      outstandingQuality=[{name:"wealth",value:wealth},{name:"intelligence",value:intelligence},{name:"athleticism",value:athleticism},{name:"sociability",value:sociability}].sort((a,b)=>b.value-a.value)[0].name
+      console.log(outstandingQuality)
 }
 
 const allCountries = [
@@ -163,4 +176,4 @@ function getNationality(){
     nationality=allCountries[randomNum]
 }
 
-export{age,username,gender,dead,health,athleticism,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality}
+export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality}

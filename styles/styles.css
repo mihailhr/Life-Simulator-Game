@@ -240,7 +240,7 @@ font-size: 5vw;
     letter-spacing: 0.5vh;
    
 }
-#choice h1{
+#choice h1,#choice h2{
     text-indent: 3vw;
     color: antiquewhite;
 }
