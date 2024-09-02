@@ -50,6 +50,18 @@ const intelligenceField=document.getElementById("intelligence")
 const athleticismField=document.getElementById("athleticism")
 const sociabilityField=document.getElementById("sociability")
 const wealthField=document.getElementById("wealth")
+    if(health>100){
+        health=100
+    }
+    if(intelligence>100){
+        intelligence=100
+    }
+    if(athleticism>100){
+        athleticism=100
+    }
+    if(sociability>100){
+        sociability=100
+    }
     healthField.textContent=health
     intelligenceField.textContent=intelligence
     athleticismField.textContent=athleticism
@@ -96,6 +108,7 @@ function changeStats(changesArray){
         }
       }
       age+=2
+      wealth+=50
       updateStats()
 }
 

@@ -25,5 +25,36 @@ const childhoodChoices=[`<div id="choice">
     <button onclick="handleChoice('+10 health,+10 sociability,-10 wealth')">Go on the adventure</button>
     <button onclick="handleChoice('+10 wealth,+5 intelligence')">Stay home</button>
 </div>
+`,
+`<div id="choice">
+    <h1>Your favorite band is playing in town, but you have an important exam the next day. Do you attend the concert or stay home to study?</h1>
+    <button onclick="handleChoice('-10 health,+10 sociability,-10 intelligence,-20 wealth')">Attend the concert</button>
+    <button onclick="handleChoice('+20 intelligence,+10 health')">Stay home and study</button>
+</div>
+`,
+`<div id="choice">
+    <h1>A local charity is looking for volunteers. Do you spend your weekend helping out or use the time to relax?</h1>
+    <button onclick="handleChoice('-10 health,+15 sociability,+5 intelligence')">Volunteer at the charity</button>
+    <button onclick="handleChoice('+10 health')">Use the time to relax</button>
+</div>
+`,
+`<div id="choice">
+    <h1>The school’s track team is recruiting new members. Do you join the team to improve your fitness, or do you avoid it to focus on other interests?</h1>
+    <button onclick="handleChoice('+20 athleticism,+10 health')">Join the track team</button>
+    <button onclick="handleChoice('+10 intelligence')">Focus on other interests</button>
+</div>
 `
+
 ]
+
+function getRandomChildhoodChoice(){
+ const randomIndex=Math.floor(Math.random()*childhoodChoices.length)
+
+ const choice= childhoodChoices[randomIndex]
+ console.log(choice)
+ childhoodChoices.splice(randomIndex,1)
+ return choice
+}
+
+
+export{childhoodChoices,getRandomChildhoodChoice}

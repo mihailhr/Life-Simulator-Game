@@ -1,3 +1,4 @@
+import { getRandomChildhoodChoice } from "./choices.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
 
@@ -119,7 +120,7 @@ window.handleChoice=function handleChoice(choice){
   }
   stats.changeStats(changesArray)
   stats.updateStats()
-  renderNextChoice()
+  renderNextChoiceChildhood()
   
 }
 
@@ -133,21 +134,30 @@ function renderFirstChoice(){
   choiceRoot=document.getElementById("currentChoice")
  
   choiceRoot.innerHTML=`
-<div id="choice">
+  
+    <div id="choice">
     <h1>It is your first day in school. Your classmates invited you to play football after classes. Do you decide to have some fun with them or go home and read your favorite book instead?</h1>
     <button onclick="handleChoice('+10 athleticism,+10 sociability')">Play football</button>
     <button onclick="handleChoice('+10 intelligence,-10 sociability,-10 athleticism')">Read</button>
-</div>
+    </div>
+
 `
 }
 
 
-function renderNextChoice(){
-  console.log(stats.age)
-  choiceRoot.innerHTML="<h1>Next choice</h1>"
-  if(stats.age<18){
-    console.log("render child choice")
+function renderNextChoiceChildhood(){
+  while(stats.age<=18){
+    const template=getRandomChildhoodChoice()
+    console.log(template)
+    
+    choiceRoot.innerHTML=template
+    if(stats.age===18){
+      choiceRoot.innerHTML="To be continued"
+    }
+    break
   }
 }
+
+
 
 
