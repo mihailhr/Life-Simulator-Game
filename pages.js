@@ -55,7 +55,7 @@ const choiceTemplate=`
     <i class="fa-solid fa-info"></i>
     <section id="stats">
 
-        <h1>Stats:</h1>
+        
         <ul>
             <li>Age: <span id="age"></span></li>
             <li>Health: <span id="health"></span></li>

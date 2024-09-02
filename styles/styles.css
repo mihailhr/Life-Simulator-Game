@@ -174,12 +174,25 @@ font-size: 5vw;
     padding-top: 25vh;
     font-size: 5vw;
 }
+#github{
+    position: absolute;
+    bottom: 3vh;
+    left: 2vw;
+    
+}
+#github i{
+    font-size: 5vw;
+    color: orangered;
+    -webkit-text-stroke: 1px aliceblue;
 
+}
 #statsField{
     position: absolute;
     top: 3vh;
     right: 6vw;
     font-size: 2vw;
+    color: antiquewhite;
+    text-align: center;
 }
 #statsField:hover #stats{
     display: inline-block;
@@ -203,6 +216,35 @@ font-size: 5vw;
     list-style: none;
 }
 
+#currentChoice{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/Life-Simulator-Game/Images/town.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding-top: 30vh;
+    
+}
 
+#choice{
+    width: 60vw;
+    text-align: center;
+  
+    
+   
+}
+#choice h1{
+    text-indent: 3vw;
+    color: antiquewhite;
+}
 
-
+#choice button{
+    font-size: 2vw;
+    padding: 1vw;
+    margin: 2vh;
+    background-color: transparent;
+    color: antiquewhite;
+    border: none;
+}

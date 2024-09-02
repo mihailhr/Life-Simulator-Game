@@ -59,11 +59,15 @@ const wealthField=document.getElementById("wealth")
 }
 
 function changeStats(changesArray){
+    console.log(changesArray)
     for (let element of changesArray) {
-    
+        
         const sign=element[0]
+        console.log(sign)
         element=element.substring(1)
+        console.log(element)
         const value=Number(element.split(" ")[0])
+        console.log(element)
         element=element.split(" ")[1]
         console.log(element,value)
        
@@ -111,14 +115,14 @@ const allCountries = [
   "Thailand",
 
   // Europe
-  "United Kingdom",
+  "the United Kingdom",
   "Germany",
   "France",
   "Italy",
   "Spain",
 
   // North America
-  "United States",
+  "the United States",
   "Canada",
   "Mexico",
 

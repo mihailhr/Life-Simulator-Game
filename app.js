@@ -84,12 +84,18 @@ function renderFamilyPage(){
     document.getElementById("member1").textContent=stats.familyMembers[0]
     document.getElementById("member2").textContent=stats.familyMembers[1]
 
-  }else{
+  }else if(stats.familyMembers.length===3){
     root.innerHTML=`<h1 id="familyDiv">Your family consists of you, your <span id="member1"></span>, your <span id="member2"></span> and your <span id="member3"></span>.</h1>`
     document.getElementById("member1").textContent=stats.familyMembers[0]
     document.getElementById("member2").textContent=stats.familyMembers[1]
     document.getElementById("member3").textContent=stats.familyMembers[2]
+  }else{
     
+    root.innerHTML=`<h1 id="familyDiv">Your family consists of you, your <span id="member1"></span>, your <span id="member2"></span>, your <span id="member3"></span> and your <span id="member4"></span>.</h1>`
+    document.getElementById("member1").textContent=stats.familyMembers[0]
+    document.getElementById("member2").textContent=stats.familyMembers[1]
+    document.getElementById("member3").textContent=stats.familyMembers[2]
+    document.getElementById("member4").textContent=stats.familyMembers[3]
   }
   setTimeout(()=>{
     renderFirstChoice()
@@ -112,8 +118,9 @@ window.handleChoice=function handleChoice(choice){
     changesArray=[choice]
   }
   stats.changeStats(changesArray)
+  stats.updateStats()
   renderNextChoice()
- 
+  
 }
 
 
@@ -122,11 +129,15 @@ function renderFirstChoice(){
   console.log("first choice")
   console.log(window.handleChoice)
   root.innerHTML=pages.choiceTemplate
-  choiceRoot=document.getElementById("currentChoice")
   stats.updateStats()
-  choiceRoot.innerHTML=`<h1>It is your first day in school. Your classmates invited you to play football after classes. Do you decide to have some fun with them or go home and read your favorite book instead?</h1>
-<button onclick="handleChoice('+10 athleticism,+10 sociability')">Play football</button>
-<button onclick="handleChoice('+10 intelligence,-10 sociability,-10 athleticism')">Read</button>
+  choiceRoot=document.getElementById("currentChoice")
+ 
+  choiceRoot.innerHTML=`
+<div id="choice">
+    <h1>It is your first day in school. Your classmates invited you to play football after classes. Do you decide to have some fun with them or go home and read your favorite book instead?</h1>
+    <button onclick="handleChoice('+10 athleticism,+10 sociability')">Play football</button>
+    <button onclick="handleChoice('+10 intelligence,-10 sociability,-10 athleticism')">Read</button>
+</div>
 `
 }
 
