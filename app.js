@@ -77,15 +77,15 @@ function renderFamilyPage(){
   if (stats.familyMembers.includes("orphan")) {
     root.innerHTML=`<h1 id="familyDiv">Your parents abandoned you when you were a baby. Unfortunately you don't remember them.</h1>`
   }else if(stats.familyMembers.length===1){
-    root.innerHTML=`<h1 id="familyDiv">Your family consist of you and your <span id="familyMember"></span>.</h1>`
+    root.innerHTML=`<h1 id="familyDiv">Your family consists of you and your <span id="familyMember"></span>.</h1>`
     document.getElementById("familyMember").textContent=stats.familyMembers[0]
   }else if(stats.familyMembers.length===2){
-    root.innerHTML=`<h1 id="familyDiv">Your family consist of you, your <span id="member1"></span> and your <span id="member2"></span>.</h1>`
+    root.innerHTML=`<h1 id="familyDiv">Your family consists of you, your <span id="member1"></span> and your <span id="member2"></span>.</h1>`
     document.getElementById("member1").textContent=stats.familyMembers[0]
     document.getElementById("member2").textContent=stats.familyMembers[1]
 
   }else{
-    root.innerHTML=`<h1 id="familyDiv">Your family consist of you, your <span id="member1"></span>, your <span id="member2"></span> and your <span id="member3"></span>.</h1>`
+    root.innerHTML=`<h1 id="familyDiv">Your family consists of you, your <span id="member1"></span>, your <span id="member2"></span> and your <span id="member3"></span>.</h1>`
     document.getElementById("member1").textContent=stats.familyMembers[0]
     document.getElementById("member2").textContent=stats.familyMembers[1]
     document.getElementById("member3").textContent=stats.familyMembers[2]
@@ -96,13 +96,47 @@ function renderFamilyPage(){
   },5000)
 }
 
+// function handleChoice(choice){
+//   console.log(choice)
+// }
 
-function renderFirstChoice(){
-  console.log("first choice")
+
+
+window.handleChoice=function handleChoice(choice){
   
-  root.innerHTML=pages.choiceTemplate
-  stats.updateStats()
+  let changesArray
+  if(choice.includes(",")){
+    
+     changesArray=choice.split(",")
+  }else{
+    changesArray=[choice]
+  }
+  stats.changeStats(changesArray)
+  renderNextChoice()
+ 
 }
 
+
+let choiceRoot
+function renderFirstChoice(){
+  console.log("first choice")
+  console.log(window.handleChoice)
+  root.innerHTML=pages.choiceTemplate
+  choiceRoot=document.getElementById("currentChoice")
+  stats.updateStats()
+  choiceRoot.innerHTML=`<h1>It is your first day in school. Your classmates invited you to play football after classes. Do you decide to have some fun with them or go home and read your favorite book instead?</h1>
+<button onclick="handleChoice('+10 athleticism,+10 sociability')">Play football</button>
+<button onclick="handleChoice('+10 intelligence,-10 sociability,-10 athleticism')">Read</button>
+`
+}
+
+
+function renderNextChoice(){
+  console.log(stats.age)
+  choiceRoot.innerHTML="<h1>Next choice</h1>"
+  if(stats.age<18){
+    console.log("render child choice")
+  }
+}
 
 

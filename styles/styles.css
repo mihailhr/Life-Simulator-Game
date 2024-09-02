@@ -175,6 +175,34 @@ font-size: 5vw;
     font-size: 5vw;
 }
 
+#statsField{
+    position: absolute;
+    top: 3vh;
+    right: 6vw;
+    font-size: 2vw;
+}
+#statsField:hover #stats{
+    display: inline-block;
+}
+#statsField:hover i{
+    display: none;
+}
+#stats{
+    display: none;
+    /* position: absolute;
+    bottom: 5vw;
+    left: 5vw; */
+    text-align: center;
+    font-size: 2vw;
+}
+#stats h1{
+    text-align: center;
+}
+
+#stats ul{
+    list-style: none;
+}
+
 
 
 

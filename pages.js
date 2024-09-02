@@ -51,8 +51,13 @@ const choiceTemplate=`
     </div>
 
     
+   <article id="statsField">
+    <i class="fa-solid fa-info"></i>
     <section id="stats">
+
+        <h1>Stats:</h1>
         <ul>
+            <li>Age: <span id="age"></span></li>
             <li>Health: <span id="health"></span></li>
             <li>Intelligence: <span id="intelligence"></span></li>
             <li>Sociability: <span id="sociability"></span></li>
@@ -60,6 +65,7 @@ const choiceTemplate=`
             <li>Wealth: <span id="wealth"></span></li>
         </ul>
     </section>
+</article>
 </div>
 `
 
