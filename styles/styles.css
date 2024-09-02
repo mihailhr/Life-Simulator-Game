@@ -231,8 +231,13 @@ font-size: 5vw;
 #choice{
     width: 60vw;
     text-align: center;
-  
-    
+    text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
+        
+    letter-spacing: 0.5vh;
    
 }
 #choice h1{
@@ -247,4 +252,9 @@ font-size: 5vw;
     background-color: transparent;
     color: antiquewhite;
     border: none;
+    text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
 }

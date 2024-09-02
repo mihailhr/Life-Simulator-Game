@@ -68,6 +68,22 @@ const choiceTemplate=`
 </article>
 </div>
 `
+const deadPage=`
+<div id="choice">
+        <h1>Game over</h1>
+        <h1>You are dead.</h1>
+
+        
+    </div>`
+
+const teenPage=`
+<div id="choice">
+    <h1>Congrats, <span id="name"></span>, you are not a child anymore. You are slowly turning into a young <span id="gender"></span>. <br/> Be careful! Your next choices are going to have a major influence on your character.</h1>
+    
+
+    
+</div>`
 
 
-export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,choiceTemplate}
+
+export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,choiceTemplate,deadPage,teenPage}

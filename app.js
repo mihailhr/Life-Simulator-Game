@@ -151,8 +151,15 @@ function renderNextChoiceChildhood(){
     console.log(template)
     
     choiceRoot.innerHTML=template
+    
+    if(stats.dead===true){
+      choiceRoot.innerHTML=pages.deadPage
+      break
+    }
     if(stats.age===12){
-      choiceRoot.innerHTML="To be continued"
+      choiceRoot.innerHTML=pages.teenPage
+      document.getElementById("name").textContent=stats.username
+      document.getElementById("gender").textContent=stats.gender
     }
     break
   }

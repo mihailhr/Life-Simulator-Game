@@ -116,6 +116,17 @@ const childhoodChoices= [
         <h1>You find a pretty shell on the beach. Do you keep it as a souvenir or give it to a friend?</h1>
         <button onclick="handleChoice('+10 wealth,+5 intelligence')">Keep the shell</button>
         <button onclick="handleChoice('+10 sociability')">Give it to a friend</button>
+    </div>`,
+    `<div id="choice">
+        <h1>You see a bright, shiny object in the middle of the road. Do you run to pick it up or stay on the sidewalk where it’s safe?</h1>
+        <button onclick="handleChoice('-100 health')">Run to pick it up</button>
+        <button onclick="handleChoice('+10 intelligence')">Stay on the sidewalk</button>
+    </div>`,
+
+    `<div id="choice">
+        <h1>You find some berries in the forest. They look tasty, but you're not sure if they're safe to eat. Do you eat the berries or leave them alone?</h1>
+        <button onclick="handleChoice('-100 health')">Eat the berries</button>
+        <button onclick="handleChoice('+10 intelligence')">Leave them alone</button>
     </div>`
 ];
 

@@ -7,6 +7,7 @@ let sociability=50
 let wealth=0
 let familyMembers
 let age=6
+let dead=false
 
 
 function changeUsername(newUsername){
@@ -62,6 +63,10 @@ const wealthField=document.getElementById("wealth")
     if(sociability>100){
         sociability=100
     }
+    if(health<1){
+        dead=true
+    }
+
     healthField.textContent=health
     intelligenceField.textContent=intelligence
     athleticismField.textContent=athleticism
@@ -158,4 +163,4 @@ function getNationality(){
     nationality=allCountries[randomNum]
 }
 
-export{age,username,gender,health,athleticism,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality}
+export{age,username,gender,dead,health,athleticism,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality}
