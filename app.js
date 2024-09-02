@@ -146,12 +146,12 @@ function renderFirstChoice(){
 
 
 function renderNextChoiceChildhood(){
-  while(stats.age<=18){
+  while(stats.age<=12){
     const template=getRandomChildhoodChoice()
     console.log(template)
     
     choiceRoot.innerHTML=template
-    if(stats.age===18){
+    if(stats.age===12){
       choiceRoot.innerHTML="To be continued"
     }
     break

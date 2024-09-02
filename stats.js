@@ -107,7 +107,7 @@ function changeStats(changesArray){
           }
         }
       }
-      age+=2
+      age++
       wealth+=50
       updateStats()
 }
