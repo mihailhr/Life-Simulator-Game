@@ -6,6 +6,7 @@
     margin: 0;
     font-family: "Jersey 10";
     
+    
 }
 button:hover{
     cursor: pointer;
@@ -82,6 +83,13 @@ body{
 #chooseName h2{
     font-size: 5vw;
     color: antiquewhite;
+    text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
+        
+    letter-spacing: 0.5vh;
 }
 #chooseName input{
     border-radius: 1vw;
@@ -90,6 +98,13 @@ body{
 }
 #chooseName button{
    margin-top: 2vh;
+   text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
+        
+    letter-spacing: 0.5vh;
    font-size: 3vw;
    font-family: "Jersey 10";
    padding: 2vw;
@@ -106,7 +121,13 @@ body{
     background-image: url("/Life-Simulator-Game/Images/town.gif");
     height: 100vh;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;text-shadow: 
+    -2px -2px 0 #000, 
+    2px -2px 0 #000, 
+    -2px 2px 0 #000,
+    2px 2px 0 #000; 
+
+letter-spacing: 0.5vh;
 }
 #chooseGender img{
     width: 30vw;
@@ -134,7 +155,13 @@ body{
     background-color: transparent;
     color: antiquewhite;
     font-family: "Jersey 10";
-    border: none;
+    border: none;text-shadow: 
+    -2px -2px 0 #000, 
+    2px -2px 0 #000, 
+    -2px 2px 0 #000,
+    2px 2px 0 #000; 
+
+letter-spacing: 0.5vh;
     
 }
 
@@ -152,12 +179,22 @@ body{
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
+        
+    letter-spacing: 0.5vh;
 }
 #nationalityPage h1{
 text-align: center;
 color: antiquewhite;
 padding-top: 25vh;
 font-size: 5vw;
+
+        
+    letter-spacing: 0.5vh;
 }
 
 
@@ -173,6 +210,13 @@ font-size: 5vw;
     color: antiquewhite;
     padding-top: 25vh;
     font-size: 5vw;
+    text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
+        
+    letter-spacing: 0.5vh;
 }
 #github{
     position: absolute;

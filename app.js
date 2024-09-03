@@ -120,6 +120,8 @@ window.handleChoice=function handleChoice(choice){
     renderNextChoiceChildhood()
   }else if(stats.age<20){
     renderTeenChoices()
+  }else if(stats.age>19){
+    renderAdultChoices()
   }
  
   
@@ -176,7 +178,14 @@ function renderTeenChoices(){
 
   while(stats.age<=19){
     const teenChoice=getRandomTeenChoice(stats.gender)
+    
     choiceRoot.innerHTML=teenChoice
+    if(stats.gender==="woman"){
+      console.log("yes")
+      choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/girls room.gif")`
+      }else{
+        choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
+      }
     if(stats.dead===true){
       choiceRoot.innerHTML=pages.deadPage
       break
@@ -186,10 +195,33 @@ function renderTeenChoices(){
       document.getElementById("name").textContent=stats.username
       document.getElementById("gender").textContent=stats.gender
       document.getElementById("quality").textContent=stats.outstandingQuality
+      setTimeout(() => {
+        choiceRoot.innerHTML=pages.movingOutPage
+      }, 5000);
+      setTimeout(() => {
+        if(stats.intelligence>70){
+          choiceRoot.innerHTML=pages.applyToUniversityPage
+          console.log(stats.graduate)
+        }else{
+          choiceRoot.innerHTML=pages.cantApplyToUniversityPage
+          
+        }
+      }, 10000);
     }
     break
   }
 }
+
+
+function renderAdultChoices(){
+  choiceRoot.innerHTML=`<h1>To be continued.</h1>`
+}
+
+
+
+
+
+
 
 
 

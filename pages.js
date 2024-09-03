@@ -91,7 +91,22 @@ const adultPage=`
     
 </div>
 `
+const movingOutPage=`<div id="choice">
+    <h1>As an adult you have no choice but to move out and start working to support yourself.</h1>
+    
+</div>`
+
+const applyToUniversityPage=`<div id="choice">
+    <h1>Do you apply to university? It will take a few years of your life but it might be beneficial.</h1>
+   
+    <button onclick="handleChoice('+10 graduate')">Yes</button>
+    <button onclick="handleChoice('-10 graduate')">No</button>
+</div>`
+const cantApplyToUniversityPage=`<div id="choice">
+    <h1>As your intelligence was not surprisingly high, it was not possible for you to enroll in university</h1>
+    <button onclick="handleChoice('+10 wealth')">Continue</button>
+    
+</div>`
 
 
-
-export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,choiceTemplate,deadPage,teenPage,adultPage}
+export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}

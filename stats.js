@@ -1,3 +1,4 @@
+
 let username;
 let gender;
 let health=100
@@ -8,6 +9,7 @@ let wealth=50
 let familyMembers
 let age=6
 let dead=false
+let graduate=false
 let outstandingQuality
 
 function changeUsername(newUsername){
@@ -82,8 +84,12 @@ const wealthField=document.getElementById("wealth")
     intelligenceField.textContent=intelligence
     athleticismField.textContent=athleticism
     sociabilityField.textContent=sociability
-    wealthField.textContent=wealth
+    wealthField.textContent=wealth+"$"
     ageField.textContent=age
+
+
+   
+
 }
 
 function changeStats(changesArray){
@@ -106,6 +112,7 @@ function changeStats(changesArray){
             case "athleticism": athleticism+=value ;console.log("here");break;
             case "sociability": sociability+=value;break;
             case "intelligence": intelligence+=value;break;
+            case "graduate": graduate=true; age+=4; intelligence+=20;break;
           
             default:
               break;
@@ -117,17 +124,26 @@ function changeStats(changesArray){
             case "athleticism": athleticism-=value;break;
             case "sociability": sociability-=value;break;
             case "intelligence": intelligence-=value;break;
-          
+            case "graduate": graduate=false;intelligence-=10;break;
             default:
               break;
           }
         }
       }
       age++
-      
+      if(age>19){
+        if(graduate===true){
+            wealth+=3000
+        }else{
+            wealth+=1000
+        }
+      }else{
+        wealth+=100
+      }
       updateStats()
       outstandingQuality=[{name:"wealth",value:wealth},{name:"intelligence",value:intelligence},{name:"athleticism",value:athleticism},{name:"sociability",value:sociability}].sort((a,b)=>b.value-a.value)[0].name
       console.log(outstandingQuality)
+      
 }
 
 const allCountries = [
@@ -191,4 +207,4 @@ function getNationality(){
     nationality=allCountries[randomNum]
 }
 
-export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
+export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}

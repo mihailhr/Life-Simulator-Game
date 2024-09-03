@@ -23,7 +23,7 @@ const childhoodChoices= [
     `<div id="choice">
         <h1>At recess, your friends want to play tag, but you feel like drawing instead. Do you join the game or stick with drawing?</h1>
         <button onclick="handleChoice('+10 athleticism,+5 sociability')">Play tag</button>
-        <button onclick="handleChoice('+10 intelligence')">Draw instead</button>
+        <button onclick="handleChoice('+5 intelligence')">Draw instead</button>
     </div>`,
 
     `<div id="choice">
@@ -40,12 +40,12 @@ const childhoodChoices= [
 
     `<div id="choice">
         <h1>You find an extra cookie in your lunchbox. Do you eat it or share it with a friend?</h1>
-        <button onclick="handleChoice('+5 health,+10 wealth')">Eat the cookie</button>
+        <button onclick="handleChoice('+5 health,+5 wealth')">Eat the cookie</button>
         <button onclick="handleChoice('+10 sociability')">Share it with a friend</button>
     </div>`,
 
     `<div id="choice">
-        <h1>During free time, you can choose to build with blocks or read a picture book. Which do you choose?</h1>
+        <h1>During free time, you can choose to build with blocks and create a castle with your friends or read a picture book. Which do you choose?</h1>
         <button onclick="handleChoice('+10 intelligence')">Read the picture book</button>
         <button onclick="handleChoice('+5 intelligence,+5 sociability')">Build with blocks</button>
     </div>`,
@@ -91,17 +91,6 @@ const childhoodChoices= [
     <button onclick="handleChoice('+15 sociability')">Sit with them</button>
     <button onclick="handleChoice('+5 sociability,+5 intelligence')">Join your usual group</button>
 </div>`,
-`<div id="choice">
-        <h1>Your teacher asks for a helper to water the class plants. Do you volunteer or let someone else do it?</h1>
-        <button onclick="handleChoice('+10 health,+5 sociability')">Volunteer to water the plants</button>
-        <button onclick="handleChoice('+10 intelligence')">Let someone else do it</button>
-    </div>`,
-
-    `<div id="choice">
-        <h1>It's art time, and you can choose between painting a picture or making a clay sculpture. What do you choose?</h1>
-        <button onclick="handleChoice('+10 intelligence')">Paint a picture</button>
-        <button onclick="handleChoice('+10 intelligence,+5 sociability')">Make a clay sculpture</button>
-    </div>`,
 
     `<div id="choice">
         <h1>Your friend is having a hard time with a puzzle. Do you offer to help them or finish your own project first?</h1>
@@ -117,7 +106,7 @@ const childhoodChoices= [
 
     `<div id="choice">
         <h1>You find a pretty shell on the beach. Do you keep it as a souvenir or give it to a friend?</h1>
-        <button onclick="handleChoice('+10 wealth,+5 intelligence')">Keep the shell</button>
+        <button onclick="handleChoice('+5 wealth,+5 intelligence')">Keep the shell</button>
         <button onclick="handleChoice('+10 sociability')">Give it to a friend</button>
     </div>`,
     `<div id="choice">
@@ -223,7 +212,7 @@ const teenGirlChoices = [
 
     `<div id="choice">
         <h1>You discover a new online challenge that’s gone viral, but it involves dangerous stunts. Do you participate or skip it?</h1>
-        <button onclick="handleChoice('-100 health')">Participate in the challenge</button>
+        <button onclick="handleChoice('-50 health')">Participate in the challenge</button>
         <button onclick="handleChoice('+10 happiness')">Skip the challenge</button>
     </div>`
 ];
@@ -306,16 +295,19 @@ const teenBoyChoices= [
 
     `<div id="choice">
         <h1>You come across a bike left unattended on the edge of a cliff. Do you ride it for fun or avoid it entirely?</h1>
-        <button onclick="handleChoice('-100 health')">Ride the bike</button>
+        <button onclick="handleChoice('-60 health')">Ride the bike</button>
         <button onclick="handleChoice('+10 intelligence')">Avoid the bike</button>
     </div>`,
 
     `<div id="choice">
         <h1>You discover a new online challenge that’s gone viral, but it involves dangerous stunts. Do you participate or skip it?</h1>
-        <button onclick="handleChoice('-100 health')">Participate in the challenge</button>
+        <button onclick="handleChoice('-50 health')">Participate in the challenge</button>
         <button onclick="handleChoice('+10 happiness')">Skip the challenge</button>
     </div>`
 ];
+
+
+
 
 
 
