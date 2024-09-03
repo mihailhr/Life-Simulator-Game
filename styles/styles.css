@@ -193,6 +193,7 @@ font-size: 5vw;
     font-size: 2vw;
     color: antiquewhite;
     text-align: center;
+    
 }
 #statsField:hover #stats{
     display: inline-block;
@@ -219,7 +220,7 @@ font-size: 5vw;
 #currentChoice{
     width: 100vw;
     height: 100vh;
-    background-image: url("/Life-Simulator-Game/Images/town.gif");
+    /* background-image: url("/Life-Simulator-Game/Images/town.gif"); */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -257,4 +258,14 @@ font-size: 5vw;
                 2px -2px 0 #000, 
                 -2px 2px 0 #000,
                 2px 2px 0 #000; 
+}
+
+
+#choice #refresh{
+    position: absolute;
+    top: 3vh;
+    left: 6vw;
+    transform: translateX(-50%) translateY(-50%);
+    
+    
 }

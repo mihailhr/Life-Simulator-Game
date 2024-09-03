@@ -50,7 +50,7 @@ const choiceTemplate=`
 
     </div>
 
-    
+    <button id="refresh">Restart</button>
    <article id="statsField">
     <i class="fa-solid fa-info"></i>
     <section id="stats">
@@ -83,7 +83,15 @@ const teenPage=`
 
     
 </div>`
+const adultPage=`
+<div id="choice">
+    <h1><span id="name"></span>, you are now a young <span id="gender"></span>. Each quality that you lack can now destroy your life.</h1>
+    <h2>Your <span id="quality"></span> is outstanding.</h2>
+
+    
+</div>
+`
 
 
 
-export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,choiceTemplate,deadPage,teenPage}
+export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,choiceTemplate,deadPage,teenPage,adultPage}

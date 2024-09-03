@@ -169,6 +169,21 @@ const allCountries = [
   "Fiji",
 ];
 
+function statsChecker(){
+    let message
+    if(intelligence<1){
+        message=`<h1>Due to your lack of intelligence you took up gambling, alcohol and drugs. In the end you turned insane. <br/> Game over</h1>`
+    }else if(athleticism<1){
+        message=`<h1>You were in a hurry and decided to cross a busy street, ignoring your non-existing athleticism. You weren't quick enough and got hit by a oncoming truck. <br/> Game over </h1>`
+    }else if(wealth<1){
+        
+        message=`<h1>You never learned how to save money and got involved with some shady people and debts that you could never pay. <br/> Game over</h1>`
+    }else if(sociability<0){
+        message=`<h1>Your weak social skills turned you into a bitter and depressed person who decided to escape society by living in the woods. Your current location is unknown. <br/> Game over</h1>`
+    }
+    return message
+}
+
 const countriesLength = allCountries.length;
 let nationality;
 function getNationality(){
@@ -176,4 +191,4 @@ function getNationality(){
     nationality=allCountries[randomNum]
 }
 
-export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality}
+export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
