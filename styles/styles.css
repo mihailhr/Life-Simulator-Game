@@ -238,6 +238,7 @@ letter-spacing: 0.5vh;
     #chooseGender h1{
         font-size: 10vw;
         font-weight: 600;
+        padding-top: 20vh;
         
     }
     #chooseGender button{
@@ -247,7 +248,7 @@ letter-spacing: 0.5vh;
     #chooseGender section{width: 90vw;}
     #chooseGender img{
     
-height: 40vh;
+height: 35vh;
 width: 40vw;}
 }
 @media(max-width:770px) and (min-width:600px){
@@ -308,7 +309,7 @@ font-size: 5vw;
     letter-spacing: 0.5vh;
 }
 @media(max-width:600px){
-    #nationalityPage h1{
+    #nationalityPage h1,#familyDiv{
         font-size: 10vw;
         font-weight: 600;
         
@@ -316,13 +317,13 @@ font-size: 5vw;
     
 }
 @media(max-width:770px) and (min-width:600px){
-    #nationalityPage h1{
+    #nationalityPage h1,#familyDiv{
         font-size: 8vw;
     }
    
 }
 @media(max-width:1200px) and (min-width:770px){
-    #nationalityPage h1{
+    #nationalityPage h1,#familyDiv{
         font-size: 7vw;
     }
     
@@ -348,10 +349,34 @@ font-size: 5vw;
         
     letter-spacing: 0.5vh;
 }
+@media(max-width:600px){
+    #familyDiv{
+        font-size: 10vw;
+        font-weight: 600;
+        
+        
+    }
+    
+}
+@media(max-width:770px) and (min-width:600px){
+    #familyDiv{
+        font-size: 8vw;
+        
+    }
+   
+}
+@media(max-width:1200px) and (min-width:770px){
+    #familyDiv{
+        font-size: 7vw;
+        
+    }
+    
+}
 #github{
     position: absolute;
     bottom: 3vh;
     left: 2vw;
+    transform: translateX(50%);
     
 }
 #github i{
@@ -419,7 +444,7 @@ font-size: 5vw;
 }
 
 #choice{
-    width: 60vw;
+    width: 70vw;
     text-align: center;
     text-shadow: 
                 -2px -2px 0 #000, 
@@ -428,13 +453,12 @@ font-size: 5vw;
                 2px 2px 0 #000; 
         
     letter-spacing: 0.5vh;
-   
+    font-size: 1.5vw;
 }
 #choice h1,#choice h2{
     text-indent: 3vw;
     color: antiquewhite;
 }
-
 #choice button{
     font-size: 2vw;
     padding: 1vw;
@@ -450,11 +474,119 @@ font-size: 5vw;
 }
 
 
-#choice #refresh{
+ #refresh{
     position: absolute;
-    top: 3vh;
-    left: 6vw;
+    top: 6vh;
+    left: 10vw;
     transform: translateX(-50%) translateY(-50%);
+    font-size: 5vw;
+    background-color: transparent;
+    border: none;
+    color: antiquewhite;
     
+}
+
+@media(max-width:600px){
+    #choice{
+        width: 90vw;
+    }
+    #currentChoice #choice h1{
+        font-size: 7vw;
+        font-weight: 600;
+        margin-top: 5vh;
+        
+        
+    }
+    #choice button{
+        font-size: 6vw;
+    }
+     #refresh{
+        position: absolute;
+    top: 5vh;
+    color: antiquewhite;
+    background-color: transparent;
+    border:none;
+    left: 15vw;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 8vw;
+    }
+   
+     #statsField i{
+        font-size: 6vw;
+        display: none;
+    }
+    #stats{
+        display: block;
+    }
+    #stats li{
+        font-size: 4vw;
+    }
+    
+}
+@media(max-width:770px) and (min-width:600px){
+    #choice{width: 90vw;}
+    #currentChoice h1{
+        font-size: 7vw;
+        
+    }
+    #choice button{
+        font-size: 6vw;
+    }
+     #refresh{
+        position: absolute;
+    top: 5vh;
+    color: antiquewhite;
+    background-color: transparent;
+    border:none;
+    left: 15vw;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 8vw;
+    }
+   
+     #statsField i{
+        font-size: 6vw;
+        display: none;
+    }
+    #stats{
+        display: block;
+    }
+    #stats li{
+        font-size: 3vw;
+    }
+
+   
+}
+@media(max-width:1200px) and (min-width:770px){
+    #currentChoice h1{
+        font-size: 6vw;
+        
+    }
+    #choice{
+        width: 90vw;
+    }
+    #choice button{
+        font-size: 6vw;
+    }
+     #refresh{
+        position: absolute;
+    top: 5vh;
+    color: antiquewhite;
+    background-color: transparent;
+    border:none;
+    left: 15vw;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 8vw;
+    }
+   
+     #statsField i{
+        font-size: 6vw;
+        display: none;
+    }
+    #stats{
+        display: block;
+    }
+    #stats li{
+        font-size: 2vw;
+    }
     
 }

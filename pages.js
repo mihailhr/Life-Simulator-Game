@@ -44,7 +44,7 @@ const nationalityPage = `
 </div>
 `;
 const choiceTemplate=`
-<div id="choice">
+<div >
     
     <div id="currentChoice">
 
