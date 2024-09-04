@@ -140,7 +140,8 @@ function changeStats(changesArray){
             case "sociability": sociability+=value;break;
             case "intelligence": intelligence+=value;break;
             case "graduate": graduate=true; age+=4; intelligence+=20;break;
-          
+            case "happiness": happiness+=value;break;
+            case "stress":stress+=value;break;
             default:
               break;
           }
@@ -152,6 +153,8 @@ function changeStats(changesArray){
             case "sociability": sociability-=value;break;
             case "intelligence": intelligence-=value;break;
             case "graduate": graduate=false;intelligence-=10;break;
+            case "happiness": happiness-=value;break;
+            case "stress":stress-=value;break
             default:
               break;
           }
