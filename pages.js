@@ -63,6 +63,8 @@ const choiceTemplate=`
             <li>Sociability: <span id="sociability"></span></li>
             <li>Athleticism: <span id="athleticism"></span></li>
             <li>Wealth: <span id="wealth"></span></li>
+            <li>Stress: <span id="stress"></span></li>
+            <li>Happiness: <span id="happiness"></span></li>
         </ul>
     </section>
 </article>
@@ -109,4 +111,10 @@ const cantApplyToUniversityPage=`<div id="choice">
 </div>`
 
 
-export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
+const finishedUniPage=`
+<div id="choice">
+    <h1>A few years later you graduated successfully. As you are now highly educated, your income has tripled.</h1>
+</div>`
+
+
+export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,finishedUniPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}

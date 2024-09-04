@@ -120,6 +120,11 @@ window.handleChoice=function handleChoice(choice){
     renderNextChoiceChildhood()
   }else if(stats.age<20){
     renderTeenChoices()
+  }else if(stats.age===24 && stats.graduate===true){
+    choiceRoot.innerHTML=pages.finishedUniPage
+    setTimeout(()=>{
+      renderAdultChoices()
+    },5000)
   }else if(stats.age>19){
     renderAdultChoices()
   }
@@ -184,7 +189,7 @@ function renderTeenChoices(){
       console.log("yes")
       choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/girls room.gif")`
       }else{
-        choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
+        choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boysRoom.gif")`
       }
     if(stats.dead===true){
       choiceRoot.innerHTML=pages.deadPage

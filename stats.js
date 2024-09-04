@@ -6,6 +6,8 @@ let intelligence=40
 let athleticism=40
 let sociability=50
 let wealth=50
+let stress=10
+let happiness=50
 let familyMembers
 let age=6
 let dead=false
@@ -64,8 +66,13 @@ const intelligenceField=document.getElementById("intelligence")
 const athleticismField=document.getElementById("athleticism")
 const sociabilityField=document.getElementById("sociability")
 const wealthField=document.getElementById("wealth")
+const stressField=document.getElementById("stress")
+const happinessField=document.getElementById("happiness")
     if(health>100){
         health=100
+    }
+    if(happiness>100){
+        happiness=100
     }
     if(intelligence>100){
         intelligence=100
@@ -78,14 +85,34 @@ const wealthField=document.getElementById("wealth")
     }
     if(health<1){
         dead=true
+        health=0
+    }if(stress>100){
+        stress=100
+    }
+    
+    if(intelligence<0){
+        intelligence=0
+    }
+    if(happiness<0){
+        happiness=0
+    }
+    if(athleticism<0){
+        athleticism=0
+    }
+    if(sociability<0){
+        sociability=0
+    }if(stress<0){
+        stress=0
     }
 
+    stressField.textContent=stress
     healthField.textContent=health
     intelligenceField.textContent=intelligence
     athleticismField.textContent=athleticism
     sociabilityField.textContent=sociability
     wealthField.textContent=wealth+"$"
     ageField.textContent=age
+    happinessField.textContent=happiness
 
 
    
@@ -140,8 +167,15 @@ function changeStats(changesArray){
       }else{
         wealth+=100
       }
+      if(age>19){
+      if(graduate===true){
+        stress+=10
+      }else{
+        stress+=5
+      }
+    }
       updateStats()
-      outstandingQuality=[{name:"wealth",value:wealth},{name:"intelligence",value:intelligence},{name:"athleticism",value:athleticism},{name:"sociability",value:sociability}].sort((a,b)=>b.value-a.value)[0].name
+      outstandingQuality=[{name:"intelligence",value:intelligence},{name:"athleticism",value:athleticism},{name:"sociability",value:sociability}].sort((a,b)=>b.value-a.value)[0].name
       console.log(outstandingQuality)
       
 }
@@ -188,7 +222,7 @@ const allCountries = [
 function statsChecker(){
     let message
     if(intelligence<1){
-        message=`<h1>Due to your lack of intelligence you took up gambling, alcohol and drugs. In the end you turned insane. <br/> Game over</h1>`
+        message=`<h1>Due to your lack of intelligence you took up gambling, alcohol and drugs. In the end you turned homeless and insane. <br/> Game over</h1>`
     }else if(athleticism<1){
         message=`<h1>You were in a hurry and decided to cross a busy street, ignoring your non-existing athleticism. You weren't quick enough and got hit by a oncoming truck. <br/> Game over </h1>`
     }else if(wealth<1){
@@ -196,6 +230,10 @@ function statsChecker(){
         message=`<h1>You never learned how to save money and got involved with some shady people and debts that you could never pay. <br/> Game over</h1>`
     }else if(sociability<0){
         message=`<h1>Your weak social skills turned you into a bitter and depressed person who decided to escape society by living in the woods. Your current location is unknown. <br/> Game over</h1>`
+    }else if(stress>100){
+        message=`<h1> High levels of stress took a toll on you. You received an unexpected and fatal heart attack. <br/> Game over</h1>`
+    }else if(happiness<0){
+        message=`<h1> Your low satisfaction of life forced you to move to Nepal and live as a monk. Your current location is unknown.<br/> Game over</h1>`
     }
     return message
 }
