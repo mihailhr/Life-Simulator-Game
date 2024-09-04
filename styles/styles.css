@@ -22,7 +22,9 @@ body{
 
  /* welcome page */
 #welcome{
-   
+   background-image: url("/Life-Simulator-Game/Images/owl.gif");
+   background-repeat: no-repeat;
+   background-size: cover;
     width: 100vw;
     height: 100vh;
     overflow: hidden;

@@ -1,8 +1,6 @@
 const welcomePage = `
     <div id="welcome">
-    <video autoplay muted loop id="welcomeVideo">
-  <source src="/Life-Simulator-Game/Videos/aesthetic-landscape-with-train.3840x2160.mp4" type="video/mp4">
-</video>
+    
     <section> <h1>Welcome to Life Simulator</h1>
         <button >Start!</button></section>
    

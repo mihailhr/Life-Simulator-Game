@@ -6,6 +6,7 @@ import * as stats from "./stats.js"
 
 const root = document.getElementById("content");
 root.innerHTML =pages.welcomePage;
+// document.getElementById("welcome").style.backgroundImage=`url("/Life-Simulator-Game/Images/owl.gif")`
 const startButton=document.getElementsByTagName("button")[0]
 
 startButton.addEventListener("click",renderChooseNamePage)
