@@ -231,11 +231,11 @@ function statsChecker(){
     }else if(wealth<1){
         
         message=`<h1>You never learned how to save money and got involved with some shady people and debts that you could never pay. <br/> Game over</h1>`
-    }else if(sociability<0){
+    }else if(sociability<1){
         message=`<h1>Your weak social skills turned you into a bitter and depressed person who decided to escape society by living in the woods. Your current location is unknown. <br/> Game over</h1>`
-    }else if(stress>100){
+    }else if(stress>99){
         message=`<h1> High levels of stress took a toll on you. You received an unexpected and fatal heart attack. <br/> Game over</h1>`
-    }else if(happiness<0){
+    }else if(happiness<1){
         message=`<h1> Your low satisfaction of life forced you to move to Nepal and live as a monk. Your current location is unknown.<br/> Game over</h1>`
     }
     return message

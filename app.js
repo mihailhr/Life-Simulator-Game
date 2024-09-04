@@ -1,4 +1,4 @@
-import { getRandomChildhoodChoice, getRandomTeenChoice } from "./choices.js";
+import { getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice } from "./choices.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
 
@@ -219,7 +219,20 @@ function renderTeenChoices(){
 
 
 function renderAdultChoices(){
-  choiceRoot.innerHTML=`<h1>To be continued.</h1>`
+  const statsCheck=stats.statsChecker()
+  if(statsCheck){
+    choiceRoot.innerHTML=`<div id="gameOver">
+    ${statsCheck}
+    </div>`
+  }else{
+    while(stats.age<33){
+      const choice=getRandomYoungAdultChoice()
+    choiceRoot.innerHTML=choice
+    break
+    }
+    
+  }
+  
 }
 
 
