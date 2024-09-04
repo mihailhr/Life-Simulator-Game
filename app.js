@@ -225,9 +225,13 @@ function renderAdultChoices(){
     ${statsCheck}
     </div>`
   }else{
-    while(stats.age<33){
+    while(stats.age<=33){
       const choice=getRandomYoungAdultChoice()
     choiceRoot.innerHTML=choice
+    choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/owl.gif")`
+    if(stats.age===33){
+      choiceRoot.innerHTML=`<h1>To be continued</h1>`
+    }
     break
     }
     

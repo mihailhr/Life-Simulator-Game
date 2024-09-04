@@ -430,6 +430,13 @@ font-size: 5vw;
 #stats ul{
     list-style: none;
 }
+#stats li{
+    text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
+}
 
 #currentChoice{
     width: 100vw;
@@ -483,6 +490,11 @@ font-size: 5vw;
     background-color: transparent;
     border: none;
     color: antiquewhite;
+    text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
     
 }
 
@@ -594,6 +606,9 @@ font-size: 5vw;
     color: antiquewhite;
     text-align: center;
     font-size: 2vw;
+    margin-top: 8vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
     text-shadow: 
                 -2px -2px 0 #000, 
                 2px -2px 0 #000, 

@@ -87,7 +87,7 @@ const teenPage=`
 </div>`
 const adultPage=`
 <div id="choice">
-    <h1><span id="name"></span>, you are now a young <span id="gender"></span>. Each quality that you lack can now destroy your life.</h1>
+    <h1><span id="name"></span>, you are now a young <span id="gender"></span>. Every single decision can change your life.</h1>
     <h2>Your <span id="quality"></span> is outstanding.</h2>
 
     
