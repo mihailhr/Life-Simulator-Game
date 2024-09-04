@@ -237,6 +237,8 @@ function statsChecker(){
         message=`<h1> High levels of stress took a toll on you. You received an unexpected and fatal heart attack. <br/> Game over</h1>`
     }else if(happiness<1){
         message=`<h1> Your low satisfaction of life forced you to move to Nepal and live as a monk. Your current location is unknown.<br/> Game over</h1>`
+    }else if(dead===true){
+        message=`<h1> Throughout your life, you acted immortal. Unsurprisingly this wasn't the case.<br/> Game over</h1>`
     }
     return message
 }
