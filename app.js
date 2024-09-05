@@ -140,14 +140,21 @@ window.handleChoice=function handleChoice(choice){
   }else if(stats.age<=37){
     renderAdultChoices()
   }else if (stats.age===38){
-    if(stats.child){
+    if(stats.child===true){
       choiceRoot.innerHTML=`<h1>You have a baby</h1>`
       setTimeout(() => {
         renderAdultChoices()
       }, 4000);
     }else{
-      renderAdultChoices()
+      choiceRoot.innerHTML=`<h1>You decided not to adopt a kid.</h1>`
+      setTimeout(() => {
+        renderAdultChoices()
+      }, 4000);
     }
+  }else if(stats.age<46){
+    renderAdultChoices()
+  }else{
+    choiceRoot.innerHTML="<h1>To be continued</h1>"
   }
  
   
@@ -281,6 +288,7 @@ function renderAdultChoices(){
       if(stats.age===46){
         choiceRoot.innerHTML=`<h1>To be continued</h1>`
       }
+      break
     }
   }
     

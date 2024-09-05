@@ -160,6 +160,7 @@ function changeStats(changesArray){
             case "happiness": happiness-=value;break;
             case "stress":stress-=value;break;
             case "married":married=false;break;
+            case "child":child=false;break;
             default:
               break;
           }

@@ -438,13 +438,19 @@ const marriageChoice=`
 
 
 
-const childrenChoice=`<h1>You and your partner are considering starting a family. Do you decide to have children now, or wait and focus on other aspects of your lives?</h1>
+const childrenChoice=`
+<div id="choice">
+<h1>You and your partner are considering starting a family. Do you decide to have children now, or wait and focus on other aspects of your lives?</h1>
 <button onclick="handleChoice('+30 happiness,-2000 wealth,+10 stress,+1 child')">Have children now</button>
 <button onclick="handleChoice('-10 happiness,-10 stress)">Wait and focus on your lives</button>
+</div>
 `
-const adoptChoice=`<h1>You are considering adopting a child. Do you do that?</h1>
+const adoptChoice=`
+<div id="choice">
+<h1>You are considering adopting a child. Do you do that?</h1>
 <button onclick="handleChoice('+30 happiness,-2000 wealth,+10 stress,+1 child')">Yes</button>
-<button onclick="handleChoice('-10 happiness,-10 stress)">No</button>
+<button onclick="handleChoice('-10 happiness,-10 stress,-1 child')">No</button>
+</div>
 `
 
 
