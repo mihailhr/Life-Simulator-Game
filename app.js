@@ -1,4 +1,4 @@
-import { getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice } from "./choices.js";
+import { getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
 
@@ -126,8 +126,21 @@ window.handleChoice=function handleChoice(choice){
     setTimeout(()=>{
       renderAdultChoices()
     },5000)
-  }else if(stats.age>19){
+  }else if(stats.age>19 && stats.age<34){
     renderAdultChoices()
+  }else if(stats.age===34){
+    if(stats.married){
+      choiceRoot.innerHTML=pages.marriedPage
+      setTimeout(()=>{
+        renderAdultChoices()
+      },4000)
+    }else{
+      renderAdultChoices()
+    }
+  }else if(stats.age<37){
+    renderAdultChoices()
+  }else if (stats.age===37){
+
   }
  
   
@@ -226,19 +239,41 @@ function renderAdultChoices(){
     ${statsCheck}
     </div>`
   }else{
+    if(stats.age<=33){
     while(stats.age<=33){
       const choice=getRandomYoungAdultChoice()
     choiceRoot.innerHTML=choice
     choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/owl.gif")`
     if(stats.age===33){
-      choiceRoot.innerHTML=`<h1>To be continued</h1>`
+      if(stats.sociability>60){
+        choiceRoot.innerHTML=marriageChoice
+      }else{
+        choiceRoot.innerHTML=pages.cantMarryPage
+      }
     }
     break
+    }}else if(stats.age<37){
+    while(stats.age>33 && stats.age<=36){
+      const choice=getGrownAdultChoice()
+      choiceRoot.innerHTML=choice
+      if(stats.age===37){
+        choiceRoot.innerHTML=`<h1>Age reached</h1>`
+      }
+      break
     }
+  }else if(stats.age===37){
+    choiceRoot.innerHTML="<h1>Baby</h1>"
+  }
     
   }
   
 }
+
+
+  
+
+
+
 
 
 

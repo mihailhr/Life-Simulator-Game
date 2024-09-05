@@ -12,6 +12,7 @@ let familyMembers
 let age=6
 let dead=false
 let graduate=false
+let married=false
 let outstandingQuality
 
 function changeUsername(newUsername){
@@ -20,7 +21,7 @@ function changeUsername(newUsername){
 
 function setGender(newGender){
     gender=newGender
-    console.log(newGender)
+    
 }
 
 
@@ -142,6 +143,7 @@ function changeStats(changesArray){
             case "graduate": graduate=true; age+=4; intelligence+=20;break;
             case "happiness": happiness+=value;break;
             case "stress":stress+=value;break;
+            case "married":married=true;break;
             default:
               break;
           }
@@ -154,7 +156,8 @@ function changeStats(changesArray){
             case "intelligence": intelligence-=value;break;
             case "graduate": graduate=false;intelligence-=10;break;
             case "happiness": happiness-=value;break;
-            case "stress":stress-=value;break
+            case "stress":stress-=value;break;
+            case "married":married=false;break;
             default:
               break;
           }
@@ -172,14 +175,14 @@ function changeStats(changesArray){
       }
       if(age>19){
       if(graduate===true){
-        stress+=10
-      }else{
         stress+=5
+      }else{
+        stress+=2
       }
     }
       updateStats()
       outstandingQuality=[{name:"intelligence",value:intelligence},{name:"athleticism",value:athleticism},{name:"sociability",value:sociability}].sort((a,b)=>b.value-a.value)[0].name
-      console.log(outstandingQuality)
+      
       
 }
 
@@ -250,4 +253,4 @@ function getNationality(){
     nationality=allCountries[randomNum]
 }
 
-export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
+export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}

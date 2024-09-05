@@ -114,5 +114,16 @@ const finishedUniPage=`
     <h1>A few years later you graduated successfully. As you are now highly educated, your income has tripled.</h1>
 </div>`
 
+const marriedPage=
+`<div id="choice">
+    <h1>Your wedding was great.</h1>
+    <h2><span id="familyMembers"></span></h1>
+</div>`
+const cantMarryPage=`
+<div id="choice">
+    <h1>As you were never a extroverted social person throughout your life, you couldn't find a partner suitable for a long-term relationship.</h1>
+    <button onclick="handleChoice('-20 happiness')">Continue</button>
+</div>`
 
-export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,finishedUniPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
+
+export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
