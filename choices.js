@@ -439,129 +439,127 @@ const marriageChoice=`
 
 
 const childrenChoice=`<h1>You and your partner are considering starting a family. Do you decide to have children now, or wait and focus on other aspects of your lives?</h1>
-<button onclick="handleChoice('+30 happiness,-2000 wealth,+10 stress')">Have children now</button>
+<button onclick="handleChoice('+30 happiness,-2000 wealth,+10 stress,+1 child')">Have children now</button>
 <button onclick="handleChoice('-10 happiness,-10 stress)">Wait and focus on your lives</button>
+`
+const adoptChoice=`<h1>You are considering adopting a child. Do you do that?</h1>
+<button onclick="handleChoice('+30 happiness,-2000 wealth,+10 stress,+1 child')">Yes</button>
+<button onclick="handleChoice('-10 happiness,-10 stress)">No</button>
 `
 
 
 const grownAdultChoices=[
   `<div id="choice">
       <h1>Your best friend asks you to help them move on a very busy weekend. Do you agree to help or politely decline to focus on your own plans?</h1>
-      <button onclick="handleChoice('+10 sociability, -10 health')">Agree to help</button>
-      <button onclick="handleChoice('+10 happiness, -10 sociability')">Politely decline</button>
+      <button onclick="handleChoice('+10 sociability,-10 health')">Agree to help</button>
+      <button onclick="handleChoice('+10 happiness,-10 sociability,-5 stress')">Politely decline</button>
   </div>`,
 
   `<div id="choice">
       <h1>Your doctor recommends taking up yoga to reduce stress. Do you start practicing or continue with your usual routine?</h1>
-      <button onclick="handleChoice('+10 health, -10 wealth')">Start practicing yoga</button>
-      <button onclick="handleChoice('+10 happiness, +10 wealth')">Stick to your routine</button>
+      <button onclick="handleChoice('+10 health,-10 wealth')">Start practicing yoga</button>
+      <button onclick="handleChoice('+10 happiness,+10 wealth')">Stick to your routine</button>
   </div>`,
 
   `<div id="choice">
       <h1>A friend offers to lend you money to start your own business. Do you accept the loan and pursue your dream or keep your current job?</h1>
-      <button onclick="handleChoice('+20 wealth, +20 stress, -10 happiness')">Accept the loan and start the business</button>
-      <button onclick="handleChoice('+10 happiness, +10 sociability')">Keep your current job</button>
+      <button onclick="handleChoice('+20000 wealth,+20 stress,+10 happiness')">Accept the loan and start the business</button>
+      <button onclick="handleChoice('+10 happiness,-10 stress')">Keep your current job</button>
   </div>`,
 
   `<div id="choice">
       <h1>You have the opportunity to relocate to a new city for a better job. Do you move or stay close to family and friends?</h1>
-      <button onclick="handleChoice('+30 wealth, -20 sociability, +10 stress')">Move for the new job</button>
-      <button onclick="handleChoice('+10 happiness, +20 sociability')">Stay close to family</button>
+      <button onclick="handleChoice('+30 wealth,+10 stress')">Move for the new job</button>
+      <button onclick="handleChoice('+10 happiness,+20 sociability,-10 stress')">Stay close to family</button>
   </div>`,
 
   `<div id="choice">
       <h1>Your car breaks down and you can either buy a new one or use public transportation for a while. Do you buy a car or take the bus?</h1>
-      <button onclick="handleChoice('-30 wealth, +10 happiness')">Buy a new car</button>
-      <button onclick="handleChoice('+10 wealth, -10 happiness')">Take public transportation</button>
+      <button onclick="handleChoice('-20000 wealth,+10 happiness')">Buy a new car</button>
+      <button onclick="handleChoice('-10 stress,+300 wealth,-10 happiness')">Take public transportation</button>
   </div>`,
 
   `<div id="choice">
       <h1>You’re feeling stressed, and your partner suggests taking a vacation. Do you take time off or focus on work instead?</h1>
-      <button onclick="handleChoice('+20 happiness, -10 wealth, -10 stress')">Take the vacation</button>
-      <button onclick="handleChoice('+10 wealth, +10 stress')">Focus on work</button>
+      <button onclick="handleChoice('+20 happiness,-10 wealth,-20 stress')">Take the vacation</button>
+      <button onclick="handleChoice('+1000 wealth,+10 stress')">Focus on work</button>
   </div>`,
 
   `<div id="choice">
       <h1>You’ve been working out for months and are offered the chance to run a marathon. Do you accept the challenge or focus on maintaining your current fitness level?</h1>
-      <button onclick="handleChoice('+30 athleticism, +10 stress, -10 happiness')">Run the marathon</button>
-      <button onclick="handleChoice('+10 happiness')">Maintain current fitness</button>
+      <button onclick="handleChoice('+30 athleticism,-10 stress,+10 happiness')">Run the marathon</button>
+      <button onclick="handleChoice('+10 happiness,-10 stress')">Maintain current fitness</button>
   </div>`,
 
   `<div id="choice">
       <h1>You’re invited to a reunion with old friends, but it’s on the same weekend as a work deadline. Do you go to the reunion or stay home to finish your work?</h1>
-      <button onclick="handleChoice('+20 sociability, +10 happiness, -10 wealth')">Go to the reunion</button>
-      <button onclick="handleChoice('+10 wealth, -10 sociability')">Stay home to finish work</button>
+      <button onclick="handleChoice('+20 sociability,+10 happiness,-300 wealth,-10 stress')">Go to the reunion</button>
+      <button onclick="handleChoice('+100 wealth,-10 sociability')">Stay home to finish work</button>
   </div>`,
 
   `<div id="choice">
       <h1>A co-worker offers you an easy way to make money, but it’s slightly unethical. Do you take the opportunity or turn it down?</h1>
-      <button onclick="handleChoice('+30 wealth, -20 happiness, +10 stress')">Take the opportunity</button>
+      <button onclick="handleChoice('+30 wealth,-20 happiness,+10 stress')">Take the opportunity</button>
       <button onclick="handleChoice('+20 happiness')">Turn it down</button>
   </div>`,
 
   `<div id="choice">
-      <h1>Your partner suggests adopting a pet, but it will require time and money. Do you agree to adopt or pass for now?</h1>
-      <button onclick="handleChoice('+20 happiness, -10 wealth, +10 sociability')">Agree to adopt a pet</button>
-      <button onclick="handleChoice('+10 wealth, -10 happiness')">Pass for now</button>
+      <h1>Your think of adopting a pet, but it will require time and money. You decide to</h1>
+      <button onclick="handleChoice('+20 happiness,-700 wealth,+10 sociability,-5 stress')">Adopt a pet</button>
+      <button onclick="handleChoice('-10 happiness,-5 stress')">Pass for now</button>
   </div>`,
 
   `<div id="choice">
       <h1>You’re offered a leadership position at work, but it will increase your stress levels. Do you accept the promotion or stay in your current role?</h1>
-      <button onclick="handleChoice('+20 wealth, +20 stress, +10 sociability')">Accept the promotion</button>
-      <button onclick="handleChoice('+10 happiness, -10 stress')">Stay in your current role</button>
+      <button onclick="handleChoice('+20000 wealth,+10 stress,+10 sociability')">Accept the promotion</button>
+      <button onclick="handleChoice('-5 happiness,-10 stress')">Stay in your current role</button>
   </div>`,
 
   `<div id="choice">
       <h1>A close friend asks for financial help. Do you lend them money or explain that you can’t afford to right now?</h1>
-      <button onclick="handleChoice('-20 wealth, +10 sociability')">Lend them money</button>
-      <button onclick="handleChoice('+10 wealth, -10 sociability')">Explain you can’t afford it</button>
+      <button onclick="handleChoice('-200 wealth,+10 sociability')">Lend them money</button>
+      <button onclick="handleChoice('-10 sociability')">Explain you can’t afford it</button>
   </div>`,
 
   `<div id="choice">
       <h1>Your neighborhood is hosting a charity run, and you’re invited to participate. Do you join in or donate instead?</h1>
-      <button onclick="handleChoice('+20 athleticism, +10 sociability, -10 wealth')">Join the charity run</button>
-      <button onclick="handleChoice('+10 wealth, +10 happiness')">Donate instead</button>
+      <button onclick="handleChoice('+20 athleticism,+10 sociability,-20 wealth,-5 stress')">Join the charity run</button>
+      <button onclick="handleChoice('+20 wealth,+10 happiness')">Just donate instead</button>
   </div>`,
 
   `<div id="choice">
       <h1>You’ve been offered a chance to speak at a major conference, but public speaking makes you nervous. Do you accept the invitation or pass?</h1>
-      <button onclick="handleChoice('+20 intelligence, +20 sociability, +10 stress')">Accept the invitation</button>
-      <button onclick="handleChoice('+10 happiness')">Pass on the opportunity</button>
+      <button onclick="handleChoice('+20 intelligence,+20 sociability,+3 stress,+200 wealth')">Accept the invitation</button>
+      <button onclick="handleChoice('+10 happiness,-3 stress')">Pass on the opportunity</button>
   </div>`,
 
   `<div id="choice">
       <h1>You have the option to take a night class to learn a new skill, but it will take time away from your personal life. Do you enroll or focus on your personal time?</h1>
-      <button onclick="handleChoice('+20 intelligence, -10 happiness, +10 stress')">Enroll in the class</button>
+      <button onclick="handleChoice('+20 intelligence,+10 happiness,+10 stress,-500 wealth')">Enroll in the class</button>
       <button onclick="handleChoice('+10 happiness')">Focus on personal time</button>
   </div>`,
 
   `<div id="choice">
       <h1>You’ve been working on a big project for months, and now it’s crunch time. Do you push through long hours to finish on time or ask for an extension?</h1>
-      <button onclick="handleChoice('+20 wealth, +20 stress, -10 health')">Push through the long hours</button>
-      <button onclick="handleChoice('+10 health, -10 wealth')">Ask for an extension</button>
+      <button onclick="handleChoice('+2000 wealth,+10 stress,-10 health')">Push through the long hours</button>
+      <button onclick="handleChoice('+5 health,+500 wealth')">Ask for an extension</button>
   </div>`,
 
   `<div id="choice">
       <h1>You’ve been saving up for a big vacation, but your home needs some expensive repairs. Do you go on the vacation or use the money to fix your home?</h1>
-      <button onclick="handleChoice('+30 happiness, -30 wealth')">Go on the vacation</button>
-      <button onclick="handleChoice('+10 wealth, -10 happiness')">Use the money for home repairs</button>
+      <button onclick="handleChoice('+30 happiness,-3000 wealth')">Go on the vacation</button>
+      <button onclick="handleChoice('-10 happiness')">Use the money for home repairs</button>
   </div>`,
 
   `<div id="choice">
-      <h1>Your partner suggests attending couples therapy to improve your relationship. Do you agree or suggest working through issues on your own?</h1>
-      <button onclick="handleChoice('+20 sociability, -10 wealth')">Agree to attend therapy</button>
-      <button onclick="handleChoice('+10 happiness')">Work through issues on your own</button>
-  </div>`,
-
-  `<div id="choice">
-      <h1>Your company offers to pay for a wellness retreat to reduce your stress levels, but it conflicts with a family event. Do you go on the retreat or attend the family event?</h1>
-      <button onclick="handleChoice('+20 health, -10 sociability')">Go on the wellness retreat</button>
-      <button onclick="handleChoice('+10 sociability, +10 happiness')">Attend the family event</button>
+      <h1>Your company offers to pay for a wellness retreat to reduce your stress levels, but it conflicts with some plans with a friend . Do you go on the retreat or attend the family event?</h1>
+      <button onclick="handleChoice('+20 health,-10 sociability,-10 stress')">Go on the wellness retreat</button>
+      <button onclick="handleChoice('+10 sociability,+10 happiness')">Attend the family event</button>
   </div>`,
 
   `<div id="choice">
       <h1>You’ve been offered a side gig that pays well, but it will take up most of your free time. Do you take the gig or keep your free time for relaxation?</h1>
-      <button onclick="handleChoice('+30 wealth, +10 stress, -10 happiness')">Take the side gig</button>
+      <button onclick="handleChoice('+30 wealth,+15 stress,-10 happiness,+3000 wealth')">Take the side gig</button>
       <button onclick="handleChoice('+20 happiness')">Keep your free time</button>
   </div>`
 ];
@@ -609,4 +607,4 @@ function getGrownAdultChoice(){
     return choice
 }
 
-export { childhoodChoices, getRandomChildhoodChoice, getRandomTeenChoice,getRandomYoungAdultChoice,getGrownAdultChoice,marriageChoice };
+export { childhoodChoices, getRandomChildhoodChoice, getRandomTeenChoice,getRandomYoungAdultChoice,getGrownAdultChoice,marriageChoice,childrenChoice,adoptChoice };

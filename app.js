@@ -1,4 +1,4 @@
-import { getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
+import { adoptChoice, childrenChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
 
@@ -137,10 +137,17 @@ window.handleChoice=function handleChoice(choice){
     }else{
       renderAdultChoices()
     }
-  }else if(stats.age<37){
+  }else if(stats.age<=37){
     renderAdultChoices()
-  }else if (stats.age===37){
-
+  }else if (stats.age===38){
+    if(stats.child){
+      choiceRoot.innerHTML=`<h1>You have a baby</h1>`
+      setTimeout(() => {
+        renderAdultChoices()
+      }, 4000);
+    }else{
+      renderAdultChoices()
+    }
   }
  
   
@@ -262,7 +269,19 @@ function renderAdultChoices(){
       break
     }
   }else if(stats.age===37){
-    choiceRoot.innerHTML="<h1>Baby</h1>"
+    if(stats.married){
+      choiceRoot.innerHTML=childrenChoice
+    }else{
+      choiceRoot.innerHTML=adoptChoice
+    }
+  }else if(stats.age<47){
+    while(stats.age<47){
+      const choice=getGrownAdultChoice()
+      choiceRoot.innerHTML=choice
+      if(stats.age===46){
+        choiceRoot.innerHTML=`<h1>To be continued</h1>`
+      }
+    }
   }
     
   }

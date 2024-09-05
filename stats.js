@@ -13,6 +13,7 @@ let age=6
 let dead=false
 let graduate=false
 let married=false
+let child=false
 let outstandingQuality
 
 function changeUsername(newUsername){
@@ -144,6 +145,7 @@ function changeStats(changesArray){
             case "happiness": happiness+=value;break;
             case "stress":stress+=value;break;
             case "married":married=true;break;
+            case "child":child=true;break;
             default:
               break;
           }
@@ -253,4 +255,4 @@ function getNationality(){
     nationality=allCountries[randomNum]
 }
 
-export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
+export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,child,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
