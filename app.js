@@ -13,6 +13,7 @@ startButton.addEventListener("click",renderChooseNamePage)
 
 function renderChooseNamePage(){
   root.innerHTML=pages.chooseNamePage
+
   const buttonNameChosen=document.getElementsByTagName("button")[0]
   buttonNameChosen.addEventListener("click",setUsername)
   if(stats.username){
@@ -146,12 +147,12 @@ window.handleChoice=function handleChoice(choice){
         renderAdultChoices()
       }, 4000);
     }else{
-      choiceRoot.innerHTML=`<h1>You decided not to adopt a kid.</h1>`
+      choiceRoot.innerHTML=`<h1>You decided not to have a child.</h1>`
       setTimeout(() => {
         renderAdultChoices()
       }, 4000);
     }
-  }else if(stats.age<46){
+  }else if(stats.age<=47){
     renderAdultChoices()
   }else{
     choiceRoot.innerHTML="<h1>To be continued</h1>"
@@ -286,7 +287,19 @@ function renderAdultChoices(){
       const choice=getGrownAdultChoice()
       choiceRoot.innerHTML=choice
       if(stats.age===46){
-        choiceRoot.innerHTML=`<h1>To be continued</h1>`
+        const inheritance=pages.getRandomInheritance()
+        choiceRoot.innerHTML=pages.inheritancePage
+        const familyMemberSpan=document.getElementById("familyMember")
+        if(stats.familyMembers.includes("orphan")){
+          familyMemberSpan.textContent="old friend from the orphanage"
+        }else{
+          familyMemberSpan.textContent=stats.familyMembers[0]
+        }
+        const continueButton=document.getElementById("continue")
+        const inheritanceSpan=document.getElementById("inheritanceNum")
+        inheritanceSpan.textContent=inheritance
+        continueButton.addEventListener("click",handleChoice(`+${inheritance} wealth`))
+
       }
       break
     }

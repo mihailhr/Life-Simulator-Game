@@ -86,7 +86,7 @@ const teenPage=`
 const adultPage=`
 <div id="choice">
     <h1><span id="name"></span>, you are now a young <span id="gender"></span>. Every single decision can change your life.</h1>
-    <h2>Your <span id="quality"></span> is outstanding.</h2>
+    <h2>As of now, <span id="quality"></span> is your sharpest tool.</h2>
 
     
 </div>
@@ -125,5 +125,16 @@ const cantMarryPage=`
     <button onclick="handleChoice('-20 happiness')">Continue</button>
 </div>`
 
+const inheritancePage=`<div id="choice">
+    <h1>Sadly, your beloved <span id='familyMember'></span> has passed away. You attended the funeral and were informed that you have inherited $<span id="inheritanceNum"></span>.</h1>
 
-export{welcomePage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
+    <button id="continue">Continue</button>
+</div>
+`
+
+function getRandomInheritance(){
+    console.log(Math.round(Math.random()*1000000))
+}
+
+
+export{welcomePage,getRandomInheritance,inheritancePage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}

@@ -24,7 +24,7 @@ const childhoodChoices = [
     </div>`,
 
   `<div id="choice">
-        <h1>You’re invited to a birthday party, but you have a big project due. Do you go to the party or finish your project?</h1>
+        <h1>You’re invited to a birthday party at your friend's house, but you have a big project due. Do you go to the party or finish your project?</h1>
         <button onclick="handleChoice('-10 intelligence,-10 happiness')">Go to the party</button>
         <button onclick="handleChoice('+20 intelligence,-5 happiness')">Finish your project</button>
     </div>`,
@@ -121,8 +121,8 @@ const childhoodChoices = [
 
   `<div id="choice">
         <h1>You decide to skip a few meals to save time. Do you skip meals or stick to your regular eating schedule?</h1>
-        <button onclick="handleChoice('-20 health,-10 stress')">Skip meals</button>
-        <button onclick="handleChoice('+10 health,+10 stress')">Stick to your regular eating schedule</button>
+        <button onclick="handleChoice('-20 health')">Skip meals</button>
+        <button onclick="handleChoice('+10 health')">Stick to your regular eating schedule</button>
     </div>`,
   `<div id="choice">
         <h1>You decide to skateboard down a really steep hill without a helmet. Do you keep going or turn around?</h1>
@@ -442,7 +442,7 @@ const childrenChoice=`
 <div id="choice">
 <h1>You and your partner are considering starting a family. Do you decide to have children now, or wait and focus on other aspects of your lives?</h1>
 <button onclick="handleChoice('+30 happiness,-2000 wealth,+10 stress,+1 child')">Have children now</button>
-<button onclick="handleChoice('-10 happiness,-10 stress)">Wait and focus on your lives</button>
+<button onclick="handleChoice('-10 happiness,-10 stress,-1 child')">Wait and focus on your lives</button>
 </div>
 `
 const adoptChoice=`
