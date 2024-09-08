@@ -167,22 +167,33 @@ function changeStats(changesArray){
         }
       }
       age++
-      if(age>19){
+      if(age>19 && age <35){
         if(graduate===true){
             wealth+=3000
         }else{
             wealth+=1000
         }
-      }else{
+      }else if(age<19){
         wealth+=100
+      }else{
+        if(graduate===true){
+            wealth+=7000
+        }else{
+            wealth+=3000
+        }
       }
-      if(age>19){
+      if(age>19 && age<45){
       if(graduate===true){
-        stress+=5
+        stress+=3
       }else{
         stress+=2
       }
-    }
+    }else if(age>44){
+        if(graduate===true){
+            stress+=2
+          }else{
+            stress+=1
+    }}
       updateStats()
       outstandingQuality=[{name:"intelligence",value:intelligence},{name:"athleticism",value:athleticism},{name:"sociability",value:sociability}].sort((a,b)=>b.value-a.value)[0].name
       

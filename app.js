@@ -1,4 +1,4 @@
-import { adoptChoice, childrenChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
+import { adoptChoice, childrenChoice, geRandomMatureAdultChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
 
@@ -132,6 +132,19 @@ window.handleChoice=function handleChoice(choice){
   }else if(stats.age===34){
     if(stats.married){
       choiceRoot.innerHTML=pages.marriedPage
+      const familyMembersSpan=document.getElementById("familyMembers")
+      let message
+      if(stats.familyMembers.includes("orphan")){
+        message="A few old friends from the orphanage attended the ceremony and celebrated with you."
+      }else if(stats.familyMembers.length===1){
+        message=`Your ${stats.familyMembers[0]} attended the ceremony and congratulated you.`
+      }else if(stats.familyMembers.length===2){
+        message=`Your ${stats.familyMembers[0]} and ${stats.familyMembers[1]} attended the ceremony and congratulated you.`
+      }else{
+        message="All your family members were happy to be there"
+      }
+      familyMembersSpan.textContent=message
+
       setTimeout(()=>{
         renderAdultChoices()
       },4000)
@@ -142,21 +155,33 @@ window.handleChoice=function handleChoice(choice){
     renderAdultChoices()
   }else if (stats.age===38){
     if(stats.child===true){
-      choiceRoot.innerHTML=`<h1>You have a baby</h1>`
+      choiceRoot.innerHTML=`<div id="choice">
+    <h1>You now have a baby.</h1>
+</div>
+`
       setTimeout(() => {
         renderAdultChoices()
       }, 4000);
     }else{
-      choiceRoot.innerHTML=`<h1>You decided not to have a child.</h1>`
+      choiceRoot.innerHTML=`<div id="choice">
+    <h1>You decided not to have a baby.</h1>
+</div>
+`
       setTimeout(() => {
         renderAdultChoices()
       }, 4000);
     }
-  }else if(stats.age<=47){
+  }else if(stats.age<=70){
     renderAdultChoices()
-  }else{
-    choiceRoot.innerHTML="<h1>To be continued</h1>"
+    
+    if(stats.age===70){
+      choiceRoot.innerHTML="Game ended."
+    }
+
   }
+  
+  
+  
  
   
 }
@@ -271,9 +296,7 @@ function renderAdultChoices(){
     while(stats.age>33 && stats.age<=36){
       const choice=getGrownAdultChoice()
       choiceRoot.innerHTML=choice
-      if(stats.age===37){
-        choiceRoot.innerHTML=`<h1>Age reached</h1>`
-      }
+      
       break
     }
   }else if(stats.age===37){
@@ -289,6 +312,7 @@ function renderAdultChoices(){
       if(stats.age===46){
         const inheritance=pages.getRandomInheritance()
         choiceRoot.innerHTML=pages.inheritancePage
+        choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
         const familyMemberSpan=document.getElementById("familyMember")
         if(stats.familyMembers.includes("orphan")){
           familyMemberSpan.textContent="old friend from the orphanage"
@@ -303,6 +327,16 @@ function renderAdultChoices(){
       }
       break
     }
+  }else if(stats.age>46){
+    while(stats.age<71){
+    const choice=geRandomMatureAdultChoice()
+    choiceRoot.innerHTML=choice
+      if(stats.age===70){
+        choiceRoot.innerHTML="Final age reached"
+      }
+     break
+    }
+
   }
     
   }

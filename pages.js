@@ -133,7 +133,7 @@ const inheritancePage=`<div id="choice">
 `
 
 function getRandomInheritance(){
-    console.log(Math.round(Math.random()*1000000))
+    return Math.round(Math.random()*1000000)
 }
 
 
