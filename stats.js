@@ -14,7 +14,13 @@ let dead=false
 let graduate=false
 let married=false
 let child=false
+let nationality
 let outstandingQuality
+function getOlder(yearsToAdd){
+    age+=yearsToAdd
+    }
+
+
 
 function changeUsername(newUsername){
     username=newUsername
@@ -261,10 +267,10 @@ function statsChecker(){
 }
 
 const countriesLength = allCountries.length;
-let nationality;
+
 function getNationality(){
     const randomNum=Math.floor(Math.random()*countriesLength)
     nationality=allCountries[randomNum]
 }
 
-export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,child,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
+export{age,username,gender,dead,health,athleticism,getOlder,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,child,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
