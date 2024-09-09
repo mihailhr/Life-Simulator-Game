@@ -119,7 +119,7 @@ function renderNextChoice(){
   if(stats.age>=6 && stats.age<13){
     const choice=getRandomChildhoodChoice()
     choiceRoot.innerHTML=choice
-    root.style.backgroundImage=`url("/Life-Simulator-Game/Images/kid room.jpg")`
+    choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/kid room.jpg")`
   }else if(stats.age===13){
     choiceRoot.innerHTML=pages.teenPage
     document.getElementById("name").textContent=stats.username
@@ -178,12 +178,66 @@ function renderNextChoice(){
   }else if(stats.age===28){
     if(stats.sociability>=70){
       choiceRoot.innerHTML=pages.marryPage
+      choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/marriageChoice.jpg")`
     }else{
       choiceRoot.innerHTML=pages.cantMarryPage
     }
     
+  }else if(stats.age===29){
+    if(stats.married===true){
+      choiceRoot.innerHTML=pages.marriedPage
+      const familyMembersSpan=document.getElementById("familyMembers")
+      let message
+      if(stats.familyMembers.includes("orphan")){
+        message="A few old friends from the orphanage attended the ceremony and celebrated with you."
+      }else if(stats.familyMembers.length===1){
+        message=`Your ${stats.familyMembers[0]} attended the ceremony and congratulated you.`
+      }else if(stats.familyMembers.length===2){
+        message=`Your ${stats.familyMembers[0]} and ${stats.familyMembers[1]} attended the ceremony and congratulated you.`
+      }else{
+        message="All your family members were happy to be there"
+      }
+      familyMembersSpan.textContent=message
+      choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/peakpx (3).jpg")`
+    }else{
+
+      const choice=getGrownAdultChoice()
+      choiceRoot.innerHTML=choice
+      setRandomBackground(choiceRoot)
+    }
+  }else if(stats.age<35){
+    const choice=getGrownAdultChoice()
+      choiceRoot.innerHTML=choice
+      setRandomBackground(choiceRoot)
+
+  }else if(stats.age===35) {
+    if(stats.sociability>65){
+      choiceRoot.innerHTML=childrenChoice
+    }else{
+      choiceRoot.innerHTML=adoptChoice
+    }
+  }else if(stats.age===36){
+    if(stats.child){
+      choiceRoot.innerHTML=`<div id="choice">
+      <h1>You now have a baby.</h1>
+      </div>
+      `
+    }else{
+       choiceRoot.innerHTML=`<div id="choice">
+      <h1>You decided not to have a baby.</h1>
+      </div>`
+    }
+    setTimeout(()=>{
+      const choice=getGrownAdultChoice()
+       choiceRoot.innerHTML=choice
+       setRandomBackground(choiceRoot)
+    },4000)
+  }else if(stats.age<46){
+    const choice=getGrownAdultChoice()
+       choiceRoot.innerHTML=choice
+       setRandomBackground(choiceRoot)
   }else{
-    choiceRoot.innerHTML=`<h1>To be continued</h1>`
+    choiceRoot.innerHTML="<h1>Finished</h1>"
   }
 }
 

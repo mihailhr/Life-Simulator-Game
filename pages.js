@@ -121,6 +121,7 @@ const marriedPage=
 `<div id="choice">
     <h1>Your wedding was great.</h1>
     <h2><span id="familyMembers"></span></h1>
+    <button onclick="handleChoice('+10 happiness')">Continue</button>
 </div>`
 const cantMarryPage=`
 <div id="choice">

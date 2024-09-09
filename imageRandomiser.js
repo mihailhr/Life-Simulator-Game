@@ -2,4 +2,6 @@ const allImages=["Life-Simulator-Game/Images/background def.gif","Life-Simulator
 export default function setRandomBackground(root){
     const randomIndex=Math.floor(Math.random()*allImages.length)
     root.style.backgroundImage=`url(/${allImages[randomIndex]})` 
+    root.style.setProperty('background-repeat', 'no-repeat', 'important');
+root.style.setProperty('background-size', 'cover', 'important');
 }
