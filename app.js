@@ -104,6 +104,7 @@ function renderFamilyPage(){
     root.innerHTML=pages.choiceTemplate
     choiceRoot=document.getElementById("currentChoice")
     stats.updateStats()
+    document.getElementById("refresh").addEventListener("click",()=>window.location.reload())
     renderNextChoice()
   }, 5000);
 }
@@ -143,6 +144,46 @@ function renderNextChoice(){
     document.getElementById("name").textContent=stats.username
     document.getElementById("gender").textContent=stats.gender
     document.getElementById("quality").textContent=stats.outstandingQuality
+    setTimeout(()=>{
+      choiceRoot.innerHTML=pages.movingOutPage
+    },5000)
+    setTimeout(()=>{
+     if(stats.intelligence<70){
+      choiceRoot.innerHTML=pages.cantApplyToUniversityPage
+     }else{
+      choiceRoot.innerHTML=pages.applyToUniversityPage
+     } 
+    },10000)
+  }else if(stats.age===21){
+    if(stats.graduate===true){
+      stats.getOlder(4)
+      choiceRoot.innerHTML=pages.finishedUniPage
+      stats.updateStats()
+      setTimeout(()=>{
+        const choice=getRandomYoungAdultChoice();
+        
+      choiceRoot.innerHTML=choice
+      },5000)
+    }else{
+      stats.getOlder(1)
+      stats.updateStats()
+      const choice=getRandomYoungAdultChoice()
+      choiceRoot.innerHTML=choice
+    }
+    setRandomBackground(choiceRoot)
+  }else if(stats.age>21 && stats.age<28){
+    setRandomBackground(choiceRoot)
+    const choice=getRandomYoungAdultChoice()
+      choiceRoot.innerHTML=choice
+  }else if(stats.age===28){
+    if(stats.sociability>=70){
+      choiceRoot.innerHTML=pages.marryPage
+    }else{
+      choiceRoot.innerHTML=pages.cantMarryPage
+    }
+    
+  }else{
+    choiceRoot.innerHTML=`<h1>To be continued</h1>`
   }
 }
 

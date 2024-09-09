@@ -147,7 +147,7 @@ function changeStats(changesArray){
             case "athleticism": athleticism+=value ;console.log("here");break;
             case "sociability": sociability+=value;break;
             case "intelligence": intelligence+=value;break;
-            case "graduate": graduate=true; age+=4; intelligence+=20;break;
+            case "graduate": graduate=true;intelligence+=20;break;
             case "happiness": happiness+=value;break;
             case "stress":stress+=value;break;
             case "married":married=true;break;

@@ -102,7 +102,7 @@ const applyToUniversityPage=`<div id="choice">
 </div>`
 const cantApplyToUniversityPage=`<div id="choice">
     <h1>As your intelligence was not surprisingly high, it was not possible for you to enroll in university</h1>
-    <button onclick="handleChoice('+10 wealth')">Continue</button>
+    <button onclick="handleChoice('+10 nothing')">Continue</button>
     
 </div>`
 
@@ -111,7 +111,12 @@ const finishedUniPage=`
 <div id="choice">
     <h1>A few years later you graduated successfully. As you are now highly educated, your income has tripled.</h1>
 </div>`
-
+const marryPage=`
+<div id="choice">
+    <h1>You and your partner are contemplating marriage. Do you want a spectacular ceremony or prefer not to get involved with formalities?</h1>
+     <button onclick="handleChoice('+1 married')">Start planning your wedding</button>
+    <button onclick="handleChoice('-1 married')">Stay unmarried</button>
+</div>`
 const marriedPage=
 `<div id="choice">
     <h1>Your wedding was great.</h1>
@@ -135,4 +140,4 @@ function getRandomInheritance(){
 }
 
 
-export{welcomePage,getRandomInheritance,inheritancePage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
+export{welcomePage,getRandomInheritance,inheritancePage,marryPage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
