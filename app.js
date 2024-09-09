@@ -8,7 +8,7 @@ function printAge(){
 }
 
 const root = document.getElementById("content");
-
+let choiceRoot
 
 
 
@@ -76,7 +76,6 @@ function renderNationalityPage(){
 
 function renderFamilyPage(){
   stats.getFamilyMembers()
-  console.log(stats.familyMembers)
   if (stats.familyMembers.includes("orphan")) {
     root.innerHTML=`<h1 id="familyDiv">Your parents abandoned you when you were a baby. Unfortunately you don't remember them.</h1>`
   }else if(stats.familyMembers.length===1){
@@ -102,18 +101,72 @@ function renderFamilyPage(){
   }
 
   setTimeout(() => {
-    root.innerHTML="Account set"
+    root.innerHTML=pages.choiceTemplate
+    choiceRoot=document.getElementById("currentChoice")
+    stats.updateStats()
+    renderNextChoice()
   }, 5000);
 }
 
+function renderNextChoice(){
+  if(stats.dead){
+    choiceRoot.innerHTML=pages.deadPage
+    return
+  }
+
+
+  if(stats.age>=6 && stats.age<13){
+    const choice=getRandomChildhoodChoice()
+    choiceRoot.innerHTML=choice
+    root.style.backgroundImage=`url("/Life-Simulator-Game/Images/kid room.jpg")`
+  }else if(stats.age===13){
+    choiceRoot.innerHTML=pages.teenPage
+    document.getElementById("name").textContent=stats.username
+    document.getElementById("gender").textContent=stats.gender
+    document.getElementById("quality").textContent=stats.outstandingQuality
+    setTimeout(()=>{
+      handleChoice("+nothing")
+    },6000)
+  }else if(stats.age>13 && stats.age<20){
+    const choice=getRandomTeenChoice(stats.gender)
+    let backgroundImage
+    if(stats.gender==="man"){
+      backgroundImage="/Life-Simulator-Game/Images/boysRoom.gif"
+    }else{
+      backgroundImage="/Life-Simulator-Game/Images/girls room.gif"
+    }
+    choiceRoot.innerHTML=choice
+    choiceRoot.style.backgroundImage=`url("${backgroundImage}")`
+    
+  }else if(stats.age===20){
+    choiceRoot.innerHTML=pages.adultPage
+    document.getElementById("name").textContent=stats.username
+    document.getElementById("gender").textContent=stats.gender
+    document.getElementById("quality").textContent=stats.outstandingQuality
+  }
+}
 
 
 if(stats.age===6){
   renderWelcomePage()
 }
 
-// const continueButton=document.getElementById("continue")
-// continueButton.addEventListener("click",()=>console.log("Clicked"))
+
+
+window.handleChoice=function handleChoice(choice){
+  let changesArray
+  if(choice.includes(",")){
+    
+     changesArray=choice.split(",")
+  }else{
+    changesArray=[choice]
+  }
+  stats.changeStats(changesArray)
+  stats.updateStats()
+  renderNextChoice()
+}
+
+
 
 
 
