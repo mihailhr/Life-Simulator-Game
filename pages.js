@@ -131,14 +131,18 @@ const cantMarryPage=`
 
 const inheritancePage=`<div id="choice">
     <h1>Sadly, your beloved <span id='familyMember'></span> has passed away. You attended the funeral and were informed that you have inherited $<span id="inheritanceNum"></span>.</h1>
-
+    <button onclick="handleChoice('-15 happiness')">Continue</button>
+   
+</div>
+`
+const kidBirthday=`<div id="choice">
+    <h1>It's your kid's 18th birthday today! You wished them all the best</h1>
+    <button onclick="handleChoice('+5 happiness,-5 stress')">Continue</button>
    
 </div>
 `
 
-function getRandomInheritance(){
-    return Math.round(Math.random()*1000000)
-}
 
 
-export{welcomePage,getRandomInheritance,inheritancePage,marryPage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
+
+export{welcomePage,inheritancePage,kidBirthday,marryPage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}

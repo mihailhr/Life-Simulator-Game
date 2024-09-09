@@ -273,5 +273,11 @@ function getNationality(){
     const randomNum=Math.floor(Math.random()*countriesLength)
     nationality=allCountries[randomNum]
 }
+function getRandomInheritance(){
+    const inheritanceNum=Math.round(Math.random()*1000000)
+    wealth+=inheritanceNum
+    updateStats()
+    return inheritanceNum
+}
 
-export{age,username,gender,dead,health,athleticism,getOlder,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,child,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
+export{age,username,gender,dead,health,athleticism,getRandomInheritance,getOlder,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,child,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}

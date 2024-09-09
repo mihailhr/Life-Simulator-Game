@@ -1,11 +1,8 @@
-import { adoptChoice, childrenChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
+import { adoptChoice, childrenChoice, geRandomMatureAdultChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
 import setRandomBackground from "./imageRandomiser.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
 
-function printAge(){
-  console.log(stats.age)
-}
 
 const root = document.getElementById("content");
 let choiceRoot
@@ -216,6 +213,7 @@ function renderNextChoice(){
     }else{
       choiceRoot.innerHTML=adoptChoice
     }
+    setRandomBackground(choiceRoot)
   }else if(stats.age===36){
     if(stats.child){
       choiceRoot.innerHTML=`<div id="choice">
@@ -227,17 +225,41 @@ function renderNextChoice(){
       <h1>You decided not to have a baby.</h1>
       </div>`
     }
+    setRandomBackground(choiceRoot)
     setTimeout(()=>{
       const choice=getGrownAdultChoice()
        choiceRoot.innerHTML=choice
        setRandomBackground(choiceRoot)
     },4000)
-  }else if(stats.age<46){
-    const choice=getGrownAdultChoice()
+  }else if(stats.age<47){
+    const choice=geRandomMatureAdultChoice()
        choiceRoot.innerHTML=choice
        setRandomBackground(choiceRoot)
+  }else if(stats.age===47){
+    choiceRoot.innerHTML=pages.inheritancePage
+    const familyMemberSpan=document.getElementById("familyMember")
+        if(stats.familyMembers.includes("orphan")){
+          familyMemberSpan.textContent="old friend from the orphanage"
+        }else{
+          familyMemberSpan.textContent=stats.familyMembers[0]
+        }
+    document.getElementById("inheritanceNum").textContent=stats.getRandomInheritance()
+    choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
+
+  }else if(stats.age<53){
+    const choice=geRandomMatureAdultChoice()
+       choiceRoot.innerHTML=choice
+       setRandomBackground(choiceRoot)
+  }else if(stats.age===53){
+    if(stats.child){
+      choiceRoot.innerHTML=pages.kidBirthday
+    }else{
+      const choice=geRandomMatureAdultChoice()
+       choiceRoot.innerHTML=choice
+       setRandomBackground(choiceRoot)
+    }
   }else{
-    choiceRoot.innerHTML="<h1>Finished</h1>"
+    choiceRoot.innerHTML=`<h1>To be continued</h1>`
   }
 }
 
