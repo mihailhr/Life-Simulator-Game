@@ -1,4 +1,5 @@
-import { adoptChoice, childrenChoice, geRandomMatureAdultChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
+import { adoptChoice, childrenChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
+import setRandomBackground from "./imageRandomiser.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
 
@@ -6,6 +7,7 @@ import * as stats from "./stats.js"
 
 const root = document.getElementById("content");
 root.innerHTML =pages.welcomePage;
+
 // document.getElementById("welcome").style.backgroundImage=`url("/Life-Simulator-Game/Images/owl.gif")`
 const startButton=document.getElementsByTagName("button")[0]
 
@@ -172,11 +174,19 @@ window.handleChoice=function handleChoice(choice){
       }, 4000);
     }
   }else if(stats.age<=70){
-    renderAdultChoices()
     
     if(stats.age===70){
-      choiceRoot.innerHTML="Game ended."
+      choiceRoot.innerHTML=`<div id="choice">
+    <h1>MAx age reached.</h1>
+</div>`
+      
+    }else{
+      renderAdultChoices()
     }
+    
+    
+    
+    
 
   }
   
@@ -279,11 +289,13 @@ function renderAdultChoices(){
     ${statsCheck}
     </div>`
   }else{
+    
     if(stats.age<=33){
     while(stats.age<=33){
       const choice=getRandomYoungAdultChoice()
     choiceRoot.innerHTML=choice
-    choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/owl.gif")`
+    setRandomBackground(choiceRoot)
+    // choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/owl.gif")`
     if(stats.age===33){
       if(stats.sociability>60){
         choiceRoot.innerHTML=marriageChoice
@@ -312,17 +324,22 @@ function renderAdultChoices(){
       if(stats.age===46){
         const inheritance=pages.getRandomInheritance()
         choiceRoot.innerHTML=pages.inheritancePage
-        choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
+        // choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
+        
         const familyMemberSpan=document.getElementById("familyMember")
         if(stats.familyMembers.includes("orphan")){
           familyMemberSpan.textContent="old friend from the orphanage"
         }else{
           familyMemberSpan.textContent=stats.familyMembers[0]
         }
-        const continueButton=document.getElementById("continue")
+        
         const inheritanceSpan=document.getElementById("inheritanceNum")
         inheritanceSpan.textContent=inheritance
-        continueButton.addEventListener("click",handleChoice(`+${inheritance} wealth`))
+        setTimeout(()=>{
+          handleChoice(`+${inheritance} wealth`);
+          choiceRoot.innerHTML=choice
+        },5000)
+          
 
       }
       break
@@ -331,6 +348,7 @@ function renderAdultChoices(){
     while(stats.age<71){
     const choice=geRandomMatureAdultChoice()
     choiceRoot.innerHTML=choice
+  
       if(stats.age===70){
         choiceRoot.innerHTML="Final age reached"
       }
@@ -338,7 +356,7 @@ function renderAdultChoices(){
     }
 
   }
-    
+    setRandomBackground(choiceRoot)
   }
   
 }

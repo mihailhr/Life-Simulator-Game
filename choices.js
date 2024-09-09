@@ -18,21 +18,23 @@ const childhoodChoices = [
     </div>`,
 
   `<div id="choice">
-        <h1>Your school is holding a sports day. Do you join the race or cheer for your friends?</h1>
+        <h1>Your school is holding a sports day. Do you </h1>
         <button onclick="handleChoice('+15 athleticism,-5 happiness')">Join the race</button>
         <button onclick="handleChoice('+10 happiness')">Cheer for your friends</button>
+        <button onclick="handleChoice('-5 sociability')">Stay home</button>
     </div>`,
 
   `<div id="choice">
-        <h1>You’re invited to a birthday party at your friend's house, but you have a big project due. Do you go to the party or finish your project?</h1>
+        <h1>You’re invited to a birthday party at your friend's house, but you have a big project due. Do you </h1>
         <button onclick="handleChoice('-10 intelligence,-10 happiness')">Go to the party</button>
         <button onclick="handleChoice('+20 intelligence,-5 happiness')">Finish your project</button>
     </div>`,
 
   `<div id="choice">
-        <h1>You find a new puzzle game. Do you spend time solving it or play outside with friends?</h1>
+        <h1>You find a new puzzle game. Do you </h1>
         <button onclick="handleChoice('+15 intelligence,-5 happiness')">Solve the puzzle</button>
         <button onclick="handleChoice('+10 happiness,-5 intelligence')">Play outside with friends</button>
+        <button onclick="handleChoice('+10 happiness,+5 sociability')">Invite them to solve it together</button>
     </div>`,
 
   `<div id="choice">
@@ -57,6 +59,8 @@ const childhoodChoices = [
         <h1>You see a friend in need of help with homework. Do you assist them or finish your own homework first?</h1>
         <button onclick="handleChoice('+10 sociability,-5 intelligence')">Assist them</button>
         <button onclick="handleChoice('+10 intelligence,-5 sociability')">Finish your own homework</button>
+        <button onclick="handleChoice('+5 sociability')">Let them copy it</button>
+        
     </div>`,
 
   `<div id="choice">
@@ -67,25 +71,25 @@ const childhoodChoices = [
 
   `<div id="choice">
         <h1>You have the option to help clean the park or stay home and play a video game. What do you choose?</h1>
-        <button onclick="handleChoice('+10 happiness,-5 wealth')">Help clean the park</button>
-        <button onclick="handleChoice('+10 wealth,-5 happiness')">Play a video game</button>
+        <button onclick="handleChoice('+10 happiness')">Help clean the park</button>
+        <button onclick="handleChoice('+5 happiness,-5 athleticism')">Play a video game</button>
     </div>`,
 
   `<div id="choice">
         <h1>You find a new friend at school. Do you invite them to your house or keep it casual at school?</h1>
         <button onclick="handleChoice('+10 sociability,-5 stress')">Invite them to your house</button>
-        <button onclick="handleChoice('+5 happiness')">Keep it casual</button>
+        <button onclick="handleChoice('+5 happiness,-5 sociability')">Keep it casual</button>
     </div>`,
 
   `<div id="choice">
         <h1>You can join a new club at school. Do you join it or stick with your current activities?</h1>
-        <button onclick="handleChoice('+15 sociability,-5 happiness')">Join the new club</button>
+        <button onclick="handleChoice('+10 sociability,+2 stress')">Join the new club</button>
         <button onclick="handleChoice('+10 happiness')">Stick with current activities</button>
     </div>`,
 
   `<div id="choice">
         <h1>Your class is having a talent show. Do you perform or watch your friends perform?</h1>
-        <button onclick="handleChoice('+15 happiness,-10 stress')">Perform</button>
+        <button onclick="handleChoice('+15 happiness,+4 stress')">Perform</button>
         <button onclick="handleChoice('+10 sociability')">Watch your friends</button>
     </div>`,
 

@@ -128,7 +128,7 @@ const cantMarryPage=`
 const inheritancePage=`<div id="choice">
     <h1>Sadly, your beloved <span id='familyMember'></span> has passed away. You attended the funeral and were informed that you have inherited $<span id="inheritanceNum"></span>.</h1>
 
-    <button id="continue">Continue</button>
+   
 </div>
 `
 
