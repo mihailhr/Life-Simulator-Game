@@ -3,3 +3,6 @@ A simple choice based game that emulates the decision making process every perso
 Still in development.
 Creator - Mihail Hristov (mihailhr in Github)
 Technologies used - HTML, CSS, JS
+
+
+...
