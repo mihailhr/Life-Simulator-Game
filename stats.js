@@ -14,7 +14,13 @@ let dead=false
 let graduate=false
 let married=false
 let child=false
+let nationality
 let outstandingQuality
+function getOlder(yearsToAdd){
+    age+=yearsToAdd
+    }
+
+
 
 function changeUsername(newUsername){
     username=newUsername
@@ -126,13 +132,13 @@ function changeStats(changesArray){
     for (let element of changesArray) {
         
         const sign=element[0]
-        console.log(sign)
+        
         element=element.substring(1)
-        console.log(element)
+        
         const value=Number(element.split(" ")[0])
-        console.log(element)
+        
         element=element.split(" ")[1]
-        console.log(element,value)
+        
        
         if(sign==="+"){
           switch (element) {
@@ -141,11 +147,12 @@ function changeStats(changesArray){
             case "athleticism": athleticism+=value ;console.log("here");break;
             case "sociability": sociability+=value;break;
             case "intelligence": intelligence+=value;break;
-            case "graduate": graduate=true; age+=4; intelligence+=20;break;
+            case "graduate": graduate=true;intelligence+=20;break;
             case "happiness": happiness+=value;break;
             case "stress":stress+=value;break;
             case "married":married=true;break;
             case "child":child=true;break;
+            case "nothing": break;
             default:
               break;
           }
@@ -261,10 +268,16 @@ function statsChecker(){
 }
 
 const countriesLength = allCountries.length;
-let nationality;
+
 function getNationality(){
     const randomNum=Math.floor(Math.random()*countriesLength)
     nationality=allCountries[randomNum]
 }
+function getRandomInheritance(){
+    const inheritanceNum=Math.round(Math.random()*1000000)
+    wealth+=inheritanceNum
+    updateStats()
+    return inheritanceNum
+}
 
-export{age,username,gender,dead,health,athleticism,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,child,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}
+export{age,username,gender,dead,health,athleticism,getRandomInheritance,getOlder,outstandingQuality,intelligence,sociability,wealth,familyMembers,nationality,married,child,graduate,countriesLength,changeStats,getFamilyMembers,updateStats,changeUsername,setGender,getNationality,statsChecker}

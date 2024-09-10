@@ -1,84 +1,78 @@
-import { adoptChoice, childrenChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
+import { adoptChoice, childrenChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomGoldenAgeChoice, getRandomMatureAdultChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
 import setRandomBackground from "./imageRandomiser.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
 
 
-
 const root = document.getElementById("content");
-root.innerHTML =pages.welcomePage;
+let choiceRoot
 
-// document.getElementById("welcome").style.backgroundImage=`url("/Life-Simulator-Game/Images/owl.gif")`
-const startButton=document.getElementsByTagName("button")[0]
 
-startButton.addEventListener("click",renderChooseNamePage)
+
+
+function renderWelcomePage(){
+  root.innerHTML=pages.welcomePage
+  const startButton=document.getElementsByTagName("button")[0]
+  startButton.addEventListener("click",renderChooseNamePage)
+}
 
 function renderChooseNamePage(){
   root.innerHTML=pages.chooseNamePage
+  const continueButton=document.getElementById("continue")
+  const nameInputField=document.getElementsByTagName("input")[0]
+  continueButton.addEventListener("click",()=>{
+    if(nameInputField.value.length<3 || nameInputField.value.length>10){
+      nameInputField.value=""
+      nameInputField.placeholder="Your username should be between 3 and 10 characters long."
 
-  const buttonNameChosen=document.getElementsByTagName("button")[0]
-  buttonNameChosen.addEventListener("click",setUsername)
-  if(stats.username){
-    console.log("ok")
-  }
+    }else{
+      stats.changeUsername(nameInputField.value)
+      renderChooseGenderPage()
+    }
+  })
 }
 
-function setUsername(e){
-  e.preventDefault()
-  const usernameInputField=document.getElementsByTagName("input")[0]
-  if(usernameInputField.value.length>3 && usernameInputField.value!=="Your username must be at least 4 characters long"){
-      stats.changeUsername(usernameInputField.value)
-      renderGenderSelectPage()
-  }else{
-      usernameInputField.value="Your username must be at least 4 characters long"
-  }
-  
-  
-  
-}
-
-
-
-function renderGenderSelectPage(){
-  console.log(stats.username)
+function renderChooseGenderPage(){
   root.innerHTML=pages.genderSelectPage
-  const manField=document.getElementById("manOption")
-  const womanField=document.getElementById("womanOption")
- 
-  manField.addEventListener("click",()=>selectGender("man"))
-  womanField.addEventListener("click",()=>selectGender("woman"))
+  const maleAvatar=document.getElementById("manOption")
+  const femaleAvatar=document.getElementById("womanOption")
+  const continueButton=document.getElementsByTagName("button")[0]
+  maleAvatar.addEventListener("click",()=>{
+    stats.setGender("man");
+    maleAvatar.classList.add("selected")
+    femaleAvatar.classList.remove("selected")
+  })
+  femaleAvatar.addEventListener("click",()=>{
+    stats.setGender("woman");
+    femaleAvatar.classList.add("selected")
+    maleAvatar.classList.remove("selected")
+  })
+  continueButton.addEventListener("click",()=>{
+    if(stats.gender){
+      renderNationalityPage()
+    }else{
+      window.alert("Please choose a gender for your character")
+    }
+  })
+
   
-  
+
 }
 
-function selectGender(gender){
-  const manField=document.getElementById("manOption")
-  const womanField=document.getElementById("womanOption")
-  const continueButton=document.getElementsByTagName("button")[0]
-stats.setGender(gender)
-if(gender==="man"){
-  manField.classList.add("selected")
-  womanField.classList.remove("selected")
-}else{
-  manField.classList.remove("selected")
-  womanField.classList.add("selected")
-}
-continueButton.addEventListener("click",renderNationalityPage)
-}
+
 function renderNationalityPage(){
   stats.getNationality()
   root.innerHTML=pages.nationalityPage
-  const nationalitySpan=document.getElementById("nationality")
-  nationalitySpan.textContent=stats.nationality
-  stats.getFamilyMembers()
-  setTimeout(() => {
+  document.getElementById("nationality").textContent=stats.nationality
+  setTimeout(()=>{
     renderFamilyPage()
-  }, 4000);
+  },5000)
+ 
 }
 
+
 function renderFamilyPage(){
-  console.log(stats.familyMembers)
-  
+  stats.getFamilyMembers()
   if (stats.familyMembers.includes("orphan")) {
     root.innerHTML=`<h1 id="familyDiv">Your parents abandoned you when you were a baby. Unfortunately you don't remember them.</h1>`
   }else if(stats.familyMembers.length===1){
@@ -102,37 +96,92 @@ function renderFamilyPage(){
     document.getElementById("member3").textContent=stats.familyMembers[2]
     document.getElementById("member4").textContent=stats.familyMembers[3]
   }
-  setTimeout(()=>{
-    renderFirstChoice()
-  },5000)
+
+  setTimeout(() => {
+    root.innerHTML=pages.choiceTemplate
+    choiceRoot=document.getElementById("currentChoice")
+    stats.updateStats()
+    document.getElementById("refresh").addEventListener("click",()=>window.location.reload())
+    renderNextChoice()
+  }, 5000);
 }
 
-
-
-window.handleChoice=function handleChoice(choice){
-  
-  let changesArray
-  if(choice.includes(",")){
-    
-     changesArray=choice.split(",")
-  }else{
-    changesArray=[choice]
+function renderNextChoice(){
+  if(stats.dead){
+    choiceRoot.innerHTML=pages.deadPage
+    return
   }
-  stats.changeStats(changesArray)
-  stats.updateStats()
-  if(stats.age<13){
-    renderNextChoiceChildhood()
-  }else if(stats.age<20){
-    renderTeenChoices()
-  }else if(stats.age===24 && stats.graduate===true){
-    choiceRoot.innerHTML=pages.finishedUniPage
+
+
+  if(stats.age>=6 && stats.age<13){
+    const choice=getRandomChildhoodChoice()
+    choiceRoot.innerHTML=choice
+    choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/kid room.jpg")`
+  }else if(stats.age===13){
+    choiceRoot.innerHTML=pages.teenPage
+    document.getElementById("name").textContent=stats.username
+    document.getElementById("gender").textContent=stats.gender
+    document.getElementById("quality").textContent=stats.outstandingQuality
     setTimeout(()=>{
-      renderAdultChoices()
+      handleChoice("+nothing")
+    },6000)
+  }else if(stats.age>13 && stats.age<20){
+    const choice=getRandomTeenChoice(stats.gender)
+    let backgroundImage
+    if(stats.gender==="man"){
+      backgroundImage="/Life-Simulator-Game/Images/boysRoom.gif"
+    }else{
+      backgroundImage="/Life-Simulator-Game/Images/girls room.gif"
+    }
+    choiceRoot.innerHTML=choice
+    choiceRoot.style.backgroundImage=`url("${backgroundImage}")`
+    
+  }else if(stats.age===20){
+    choiceRoot.innerHTML=pages.adultPage
+    document.getElementById("name").textContent=stats.username
+    document.getElementById("gender").textContent=stats.gender
+    document.getElementById("quality").textContent=stats.outstandingQuality
+    setTimeout(()=>{
+      choiceRoot.innerHTML=pages.movingOutPage
     },5000)
-  }else if(stats.age>19 && stats.age<34){
-    renderAdultChoices()
-  }else if(stats.age===34){
-    if(stats.married){
+    setTimeout(()=>{
+     if(stats.intelligence<70){
+      choiceRoot.innerHTML=pages.cantApplyToUniversityPage
+     }else{
+      choiceRoot.innerHTML=pages.applyToUniversityPage
+     } 
+    },10000)
+  }else if(stats.age===21){
+    if(stats.graduate===true){
+      stats.getOlder(4)
+      choiceRoot.innerHTML=pages.finishedUniPage
+      stats.updateStats()
+      setTimeout(()=>{
+        const choice=getRandomYoungAdultChoice();
+        
+      choiceRoot.innerHTML=choice
+      },5000)
+    }else{
+      stats.getOlder(1)
+      stats.updateStats()
+      const choice=getRandomYoungAdultChoice()
+      choiceRoot.innerHTML=choice
+    }
+    setRandomBackground(choiceRoot)
+  }else if(stats.age>21 && stats.age<28){
+    setRandomBackground(choiceRoot)
+    const choice=getRandomYoungAdultChoice()
+      choiceRoot.innerHTML=choice
+  }else if(stats.age===28){
+    if(stats.sociability>=70){
+      choiceRoot.innerHTML=pages.marryPage
+      choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/marriageChoice.jpg")`
+    }else{
+      choiceRoot.innerHTML=pages.cantMarryPage
+    }
+    
+  }else if(stats.age===29){
+    if(stats.married===true){
       choiceRoot.innerHTML=pages.marriedPage
       const familyMembersSpan=document.getElementById("familyMembers")
       let message
@@ -146,231 +195,101 @@ window.handleChoice=function handleChoice(choice){
         message="All your family members were happy to be there"
       }
       familyMembersSpan.textContent=message
-
-      setTimeout(()=>{
-        renderAdultChoices()
-      },4000)
+      choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/peakpx (3).jpg")`
     }else{
-      renderAdultChoices()
-    }
-  }else if(stats.age<=37){
-    renderAdultChoices()
-  }else if (stats.age===38){
-    if(stats.child===true){
-      choiceRoot.innerHTML=`<div id="choice">
-    <h1>You now have a baby.</h1>
-</div>
-`
-      setTimeout(() => {
-        renderAdultChoices()
-      }, 4000);
-    }else{
-      choiceRoot.innerHTML=`<div id="choice">
-    <h1>You decided not to have a baby.</h1>
-</div>
-`
-      setTimeout(() => {
-        renderAdultChoices()
-      }, 4000);
-    }
-  }else if(stats.age<=70){
-    
-    if(stats.age===70){
-      choiceRoot.innerHTML=`<div id="choice">
-    <h1>MAx age reached.</h1>
-</div>`
-      
-    }else{
-      renderAdultChoices()
-    }
-    
-    
-    
-    
 
-  }
-  
-  
-  
- 
-  
-}
-
-
-let choiceRoot
-function renderFirstChoice(){
-  
-  root.innerHTML=pages.choiceTemplate
-  stats.updateStats()
-  document.getElementById("refresh").addEventListener("click",()=>window.location.reload())
-  choiceRoot=document.getElementById("currentChoice")
-  choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/town.gif")`
-  choiceRoot.innerHTML=`
-  
-    <div id="choice">
-    <h1>It is your first day in school. Your classmates invited you to play tag in the local park after classes. Do you decide to have some fun with them or go home and read your favorite book instead?</h1>
-    <button onclick="handleChoice('+10 athleticism,+10 sociability')">Play tag together</button>
-    <button onclick="handleChoice('+10 intelligence,-10 sociability,-10 athleticism')">Read</button>
-    </div>
-
-`
-}
-
-
-function renderNextChoiceChildhood(){
-  while(stats.age<=12){
-    const template=getRandomChildhoodChoice()
-    
-    
-    choiceRoot.innerHTML=template
-    choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/town.gif")`
-    if(stats.dead===true){
-      choiceRoot.innerHTML=pages.deadPage
-      break
-    }
-    if(stats.age===12){
-      choiceRoot.innerHTML=pages.teenPage
-      
-      document.getElementById("name").textContent=stats.username
-      document.getElementById("gender").textContent=stats.gender
-      document.getElementById("quality").textContent=stats.outstandingQuality
-      choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Videos/townNamePage.gif")`
-      setTimeout(()=>{
-        renderTeenChoices()
-      },6000)
-    }
-    break
-  }
-}
-
-function renderTeenChoices(){
-
-  while(stats.age<=19){
-    const teenChoice=getRandomTeenChoice(stats.gender)
-    
-    choiceRoot.innerHTML=teenChoice
-    if(stats.gender==="woman"){
-      console.log("yes")
-      choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/girls room.gif")`
-      }else{
-        choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boysRoom.gif")`
-      }
-    if(stats.dead===true){
-      choiceRoot.innerHTML=pages.deadPage
-      break
-    }
-    if(stats.age===19){
-      choiceRoot.innerHTML=pages.adultPage
-      document.getElementById("name").textContent=stats.username
-      document.getElementById("gender").textContent=stats.gender
-      document.getElementById("quality").textContent=stats.outstandingQuality
-      setTimeout(() => {
-        choiceRoot.innerHTML=pages.movingOutPage
-      }, 5000);
-      setTimeout(() => {
-        if(stats.intelligence>70){
-          choiceRoot.innerHTML=pages.applyToUniversityPage
-          console.log(stats.graduate)
-        }else{
-          choiceRoot.innerHTML=pages.cantApplyToUniversityPage
-          
-        }
-      }, 10000);
-    }
-    break
-  }
-}
-
-
-function renderAdultChoices(){
-  const statsCheck=stats.statsChecker()
-  if(statsCheck){
-    choiceRoot.innerHTML=`<div id="gameOver">
-    ${statsCheck}
-    </div>`
-  }else{
-    
-    if(stats.age<=33){
-    while(stats.age<=33){
-      const choice=getRandomYoungAdultChoice()
-    choiceRoot.innerHTML=choice
-    setRandomBackground(choiceRoot)
-    // choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/owl.gif")`
-    if(stats.age===33){
-      if(stats.sociability>60){
-        choiceRoot.innerHTML=marriageChoice
-      }else{
-        choiceRoot.innerHTML=pages.cantMarryPage
-      }
-    }
-    break
-    }}else if(stats.age<37){
-    while(stats.age>33 && stats.age<=36){
       const choice=getGrownAdultChoice()
       choiceRoot.innerHTML=choice
-      
-      break
+      setRandomBackground(choiceRoot)
     }
-  }else if(stats.age===37){
-    if(stats.married){
+  }else if(stats.age<35){
+    const choice=getGrownAdultChoice()
+      choiceRoot.innerHTML=choice
+      setRandomBackground(choiceRoot)
+
+  }else if(stats.age===35) {
+    if(stats.sociability>65){
       choiceRoot.innerHTML=childrenChoice
     }else{
       choiceRoot.innerHTML=adoptChoice
     }
-  }else if(stats.age<47){
-    while(stats.age<47){
+    setRandomBackground(choiceRoot)
+  }else if(stats.age===36){
+    if(stats.child){
+      choiceRoot.innerHTML=`<div id="choice">
+      <h1>You now have a baby.</h1>
+      </div>
+      `
+    }else{
+       choiceRoot.innerHTML=`<div id="choice">
+      <h1>You decided not to have a baby.</h1>
+      </div>`
+    }
+    setRandomBackground(choiceRoot)
+    setTimeout(()=>{
       const choice=getGrownAdultChoice()
-      choiceRoot.innerHTML=choice
-      if(stats.age===46){
-        const inheritance=pages.getRandomInheritance()
-        choiceRoot.innerHTML=pages.inheritancePage
-        // choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
-        
-        const familyMemberSpan=document.getElementById("familyMember")
+       choiceRoot.innerHTML=choice
+       setRandomBackground(choiceRoot)
+    },4000)
+  }else if(stats.age<47){
+    const choice=getRandomMatureAdultChoice()
+       choiceRoot.innerHTML=choice
+       setRandomBackground(choiceRoot)
+  }else if(stats.age===47){
+    choiceRoot.innerHTML=pages.inheritancePage
+    const familyMemberSpan=document.getElementById("familyMember")
         if(stats.familyMembers.includes("orphan")){
           familyMemberSpan.textContent="old friend from the orphanage"
         }else{
           familyMemberSpan.textContent=stats.familyMembers[0]
         }
-        
-        const inheritanceSpan=document.getElementById("inheritanceNum")
-        inheritanceSpan.textContent=inheritance
-        setTimeout(()=>{
-          handleChoice(`+${inheritance} wealth`);
-          choiceRoot.innerHTML=choice
-        },5000)
-          
+    document.getElementById("inheritanceNum").textContent=stats.getRandomInheritance()
+    choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
 
-      }
-      break
+  }else if(stats.age<53){
+    const choice=getRandomMatureAdultChoice()
+       choiceRoot.innerHTML=choice
+       setRandomBackground(choiceRoot)
+  }else if(stats.age===53){
+    if(stats.child){
+      choiceRoot.innerHTML=pages.kidBirthday
+    }else{
+      const choice=getRandomMatureAdultChoice()
+       choiceRoot.innerHTML=choice
+       setRandomBackground(choiceRoot)
     }
-  }else if(stats.age>46){
-    while(stats.age<71){
-    const choice=geRandomMatureAdultChoice()
+  }else if(stats.age<70){
+    const choice=getRandomGoldenAgeChoice()
     choiceRoot.innerHTML=choice
-  
-      if(stats.age===70){
-        choiceRoot.innerHTML="Final age reached"
-      }
-     break
-    }
-
+  }else{
+    choiceRoot.innerHTML=pages.gameEndPage
+    setTimeout(()=>{
+      stats.getOlder(15)
+      stats.updateStats()
+      choiceRoot.innerHTML=pages.rebirthPage
+    },7000)
   }
-    setRandomBackground(choiceRoot)
-  }
-  
 }
 
 
-  
+if(stats.age===6){
+  renderWelcomePage()
+}
 
 
 
-
-
-
-
-
+window.handleChoice=function handleChoice(choice){
+  let changesArray
+  if(choice.includes(",")){
+    
+     changesArray=choice.split(",")
+  }else{
+    changesArray=[choice]
+  }
+  stats.changeStats(changesArray)
+  stats.updateStats()
+  renderNextChoice()
+}
 
 
 

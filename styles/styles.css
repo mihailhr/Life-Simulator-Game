@@ -8,6 +8,10 @@
     
     
 }
+img{
+    width: 100vw;
+    background-repeat: no-repeat;
+}
 button:hover{
     cursor: pointer;
 }

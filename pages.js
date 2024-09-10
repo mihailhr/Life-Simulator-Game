@@ -10,10 +10,8 @@ const welcomePage = `
 const chooseNamePage = `
     <div id="chooseName">
     <h2>Choose your name:</h2>
-    <form id="name-form" >
-        <input type="text" name="username" id="username" minlength="3" required> <br/>
-        <button type="submit" >Continue</button>
-    </form>
+    <input type="text" name="username" id="username" required> <br/>
+    <button id="continue" >Continue</button>
 </div>
 `;
 
@@ -104,7 +102,7 @@ const applyToUniversityPage=`<div id="choice">
 </div>`
 const cantApplyToUniversityPage=`<div id="choice">
     <h1>As your intelligence was not surprisingly high, it was not possible for you to enroll in university</h1>
-    <button onclick="handleChoice('+10 wealth')">Continue</button>
+    <button onclick="handleChoice('+10 nothing')">Continue</button>
     
 </div>`
 
@@ -113,11 +111,17 @@ const finishedUniPage=`
 <div id="choice">
     <h1>A few years later you graduated successfully. As you are now highly educated, your income has tripled.</h1>
 </div>`
-
+const marryPage=`
+<div id="choice">
+    <h1>You and your partner are contemplating marriage. Do you want a spectacular ceremony or prefer not to get involved with formalities?</h1>
+     <button onclick="handleChoice('+1 married')">Start planning your wedding</button>
+    <button onclick="handleChoice('-1 married')">Stay unmarried</button>
+</div>`
 const marriedPage=
 `<div id="choice">
     <h1>Your wedding was great.</h1>
     <h2><span id="familyMembers"></span></h1>
+    <button onclick="handleChoice('+10 happiness')">Continue</button>
 </div>`
 const cantMarryPage=`
 <div id="choice">
@@ -127,14 +131,34 @@ const cantMarryPage=`
 
 const inheritancePage=`<div id="choice">
     <h1>Sadly, your beloved <span id='familyMember'></span> has passed away. You attended the funeral and were informed that you have inherited $<span id="inheritanceNum"></span>.</h1>
-
+    <button onclick="handleChoice('-15 happiness')">Continue</button>
+   
+</div>
+`
+const kidBirthday=`<div id="choice">
+    <h1>It's your kid's 18th birthday today! You wished them all the best</h1>
+    <button onclick="handleChoice('+5 happiness,-5 stress')">Continue</button>
+   
+</div>
+`
+const gameEndPage=`<div id="choice">
+    <h1>You've reached the age of 70 and the hardest times of your life are over.</h1>
+    <h1>You live the rest of your life peacefully, remembering all the things you've went through.</h1>
    
 </div>
 `
 
-function getRandomInheritance(){
-    return Math.round(Math.random()*1000000)
-}
+
+const rebirthPage=`
+
+<div id="choice">
+    <h1>At the age of 85, you passed away.</h1>
+    <h1>You will be long remembered.</h1>
+    <button id="refresh">Start anew</button>
+</div>
+`
 
 
-export{welcomePage,getRandomInheritance,inheritancePage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
+
+
+export{welcomePage,inheritancePage,kidBirthday,marryPage,gameEndPage,rebirthPage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
