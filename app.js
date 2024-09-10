@@ -107,8 +107,12 @@ function renderFamilyPage(){
 }
 
 function renderNextChoice(){
-  if(stats.dead){
+  
+  const message=stats.statsChecker()
+  console.log("Point reached",message)
+  if(message){
     choiceRoot.innerHTML=pages.deadPage
+    document.getElementById("message").textContent=message
     return
   }
 
@@ -267,6 +271,8 @@ function renderNextChoice(){
       stats.getOlder(15)
       stats.updateStats()
       choiceRoot.innerHTML=pages.rebirthPage
+      document.getElementById("refresh").textContent="Start anew"
+      document.getElementById("refresh").style.color="green"
     },7000)
   }
 }

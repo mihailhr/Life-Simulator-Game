@@ -128,7 +128,7 @@ const happinessField=document.getElementById("happiness")
 }
 
 function changeStats(changesArray){
-    console.log(changesArray)
+    
     for (let element of changesArray) {
         
         const sign=element[0]
@@ -144,7 +144,7 @@ function changeStats(changesArray){
           switch (element) {
             case "health": health+=value; break;
             case "wealth": wealth+=value; break;
-            case "athleticism": athleticism+=value ;console.log("here");break;
+            case "athleticism": athleticism+=value ;break;
             case "sociability": sociability+=value;break;
             case "intelligence": intelligence+=value;break;
             case "graduate": graduate=true;intelligence+=20;break;
@@ -249,21 +249,22 @@ const allCountries = [
 function statsChecker(){
     let message
     if(intelligence<1){
-        message=`<h1>Due to your lack of intelligence you took up gambling, alcohol and drugs. In the end you turned homeless and insane. <br/> Game over</h1>`
+        message=`Due to your lack of intelligence you took up gambling, alcohol and drugs. In the end you turned homeless and insane.`
     }else if(athleticism<1){
-        message=`<h1>You were in a hurry and decided to cross a busy street, ignoring your non-existing athleticism. You weren't quick enough and got hit by a oncoming truck. <br/> Game over </h1>`
+        message=`You were in a hurry and decided to cross a busy street, ignoring your non-existing athleticism. You weren't quick enough and got hit by a oncoming truck.`
     }else if(wealth<1){
         
-        message=`<h1>You never learned how to save money and got involved with some shady people and debts that you could never pay. <br/> Game over</h1>`
+        message=`You never learned how to save money and got involved with some shady people and debts that you could never pay.`
     }else if(sociability<1){
-        message=`<h1>Your weak social skills turned you into a bitter and depressed person who decided to escape society by living in the woods. Your current location is unknown. <br/> Game over</h1>`
+        message=`Your weak social skills turned you into a bitter and depressed person who decided to escape society by living in the woods. Your current location is unknown.`
     }else if(stress>99){
-        message=`<h1> High levels of stress took a toll on you. You received an unexpected and fatal heart attack. <br/> Game over</h1>`
+        message=`High levels of stress took a toll on you. You received an unexpected and fatal heart attack.`
     }else if(happiness<1){
-        message=`<h1> Your low satisfaction of life forced you to move to Nepal and live as a monk. Your current location is unknown.<br/> Game over</h1>`
+        message=`Your low satisfaction of life forced you to move to Nepal and live as a monk. Your current location is unknown.`
     }else if(dead===true){
-        message=`<h1> Throughout your life, you acted immortal. Unsurprisingly this wasn't the case.<br/> Game over</h1>`
+        message=`Throughout your life, you acted immortal. Unsurprisingly this wasn't the case.`
     }
+    console.log(stress,wealth)
     return message
 }
 

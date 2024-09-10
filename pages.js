@@ -69,7 +69,7 @@ const choiceTemplate=`
 const deadPage=`
 <div id="choice">
         <h1>Game over</h1>
-        <h1>You are dead.</h1>
+        <h1><span id="message"></span></h1>
 
         
     </div>`
@@ -154,7 +154,7 @@ const rebirthPage=`
 <div id="choice">
     <h1>At the age of 85, you passed away.</h1>
     <h1>You will be long remembered.</h1>
-    <button id="refresh">Start anew</button>
+    
 </div>
 `
 

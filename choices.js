@@ -882,7 +882,7 @@ function getRandomChildhoodChoice() {
   const randomIndex = Math.floor(Math.random() * childhoodChoices.length);
 
   const choice = childhoodChoices[randomIndex];
-  console.log(choice);
+  
   childhoodChoices.splice(randomIndex, 1);
   return choice;
 }
@@ -891,13 +891,13 @@ function getRandomTeenChoice(gender) {
   if (gender === "woman") {
     const randomIndex = Math.floor(Math.random() * teenGirlChoices.length);
     const choice = teenGirlChoices[randomIndex];
-    console.log(choice);
+    
     teenGirlChoices.splice(randomIndex, 1);
     return choice;
   } else {
     const randomIndex = Math.floor(Math.random() * teenBoyChoices.length);
     const choice = teenBoyChoices[randomIndex];
-    console.log(choice);
+   
     teenBoyChoices.splice(randomIndex, 1);
     return choice;
   }

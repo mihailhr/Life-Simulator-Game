@@ -306,6 +306,7 @@ width: 40vw;}
 #nationalityPage{
     background-image: url("/Life-Simulator-Game/Images/town.gif");
     width: 100vw;
+    
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -320,8 +321,10 @@ width: 40vw;}
 #nationalityPage h1{
 text-align: center;
 color: antiquewhite;
+padding: 4vw;
 padding-top: 25vh;
 font-size: 5vw;
+
 
         
     letter-spacing: 0.5vh;
@@ -425,6 +428,11 @@ font-size: 5vw;
     font-size: 4vw;
     color: antiquewhite;
     text-align: center;
+    text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
     
 }
 #statsField:hover #stats{
