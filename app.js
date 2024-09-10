@@ -1,4 +1,4 @@
-import { adoptChoice, childrenChoice, geRandomMatureAdultChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
+import { adoptChoice, childrenChoice, getGrownAdultChoice, getRandomChildhoodChoice, getRandomGoldenAgeChoice, getRandomMatureAdultChoice, getRandomTeenChoice, getRandomYoungAdultChoice, marriageChoice } from "./choices.js";
 import setRandomBackground from "./imageRandomiser.js";
 import * as pages from "./pages.js"
 import * as stats from "./stats.js"
@@ -232,7 +232,7 @@ function renderNextChoice(){
        setRandomBackground(choiceRoot)
     },4000)
   }else if(stats.age<47){
-    const choice=geRandomMatureAdultChoice()
+    const choice=getRandomMatureAdultChoice()
        choiceRoot.innerHTML=choice
        setRandomBackground(choiceRoot)
   }else if(stats.age===47){
@@ -247,19 +247,27 @@ function renderNextChoice(){
     choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/boys room.gif")`
 
   }else if(stats.age<53){
-    const choice=geRandomMatureAdultChoice()
+    const choice=getRandomMatureAdultChoice()
        choiceRoot.innerHTML=choice
        setRandomBackground(choiceRoot)
   }else if(stats.age===53){
     if(stats.child){
       choiceRoot.innerHTML=pages.kidBirthday
     }else{
-      const choice=geRandomMatureAdultChoice()
+      const choice=getRandomMatureAdultChoice()
        choiceRoot.innerHTML=choice
        setRandomBackground(choiceRoot)
     }
+  }else if(stats.age<70){
+    const choice=getRandomGoldenAgeChoice()
+    choiceRoot.innerHTML=choice
   }else{
-    choiceRoot.innerHTML=`<h1>To be continued</h1>`
+    choiceRoot.innerHTML=pages.gameEndPage
+    setTimeout(()=>{
+      stats.getOlder(15)
+      stats.updateStats()
+      choiceRoot.innerHTML=pages.rebirthPage
+    },7000)
   }
 }
 

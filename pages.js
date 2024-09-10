@@ -141,8 +141,24 @@ const kidBirthday=`<div id="choice">
    
 </div>
 `
+const gameEndPage=`<div id="choice">
+    <h1>You've reached the age of 70 and the hardest times of your life are over.</h1>
+    <h1>You live the rest of your life peacefully, remembering all the things you've went through.</h1>
+   
+</div>
+`
+
+
+const rebirthPage=`
+
+<div id="choice">
+    <h1>At the age of 85, you passed away.</h1>
+    <h1>You will be long remembered.</h1>
+    <button id="refresh">Start anew</button>
+</div>
+`
 
 
 
 
-export{welcomePage,inheritancePage,kidBirthday,marryPage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
+export{welcomePage,inheritancePage,kidBirthday,marryPage,gameEndPage,rebirthPage,chooseNamePage,genderSelectPage,nationalityPage,cantMarryPage,finishedUniPage,marriedPage,cantApplyToUniversityPage,choiceTemplate,deadPage,teenPage,adultPage,movingOutPage,applyToUniversityPage}
