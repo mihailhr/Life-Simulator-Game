@@ -160,7 +160,7 @@ const rebirthPage=`
 <div id="choice">
     <h1>At the age of 85, you passed away.</h1>
     <h1>You will be long remembered.</h1>
-    
+    <h1>Thank you for playing my game! <a href="https://github.com/mihailhr">You may follow me for more interesting projects.</a></h1>
 </div>
 `
 
