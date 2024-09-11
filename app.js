@@ -296,6 +296,18 @@ window.handleChoice=function handleChoice(choice){
   stats.updateStats()
   renderNextChoice()
 }
+window.hideButton=function hideButton(buttonClicked){
+  console.log(buttonClicked)
+  const noButton=document.getElementById("no")
+  const yesButton=document.getElementById("yes")
+  if(buttonClicked==="Yes"){
+    yesButton.style.display="none"
+    noButton.style.display="block"
+  }else{
+    noButton.style.display="none"
+    yesButton.style.display="block"
+  }
+}
 
 
 

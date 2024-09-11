@@ -25,6 +25,7 @@ body{
 
 
  /* welcome page */
+ 
 #welcome{
    background-image: url("/Life-Simulator-Game/Images/owl.gif");
    background-repeat: no-repeat;
@@ -785,3 +786,6 @@ font-size: 5vw;
     }
     
 }
+
+
+/* Варианти - height over 100vh; stats stop choice from appearing */
