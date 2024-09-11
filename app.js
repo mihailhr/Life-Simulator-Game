@@ -24,7 +24,7 @@ function renderChooseNamePage(){
     if(nameInputField.value.length<3 || nameInputField.value.length>10){
       nameInputField.value=""
       nameInputField.placeholder="Your username should be between 3 and 10 characters long."
-
+      
     }else{
       stats.changeUsername(nameInputField.value)
       renderChooseGenderPage()
@@ -107,8 +107,14 @@ function renderFamilyPage(){
 }
 
 function renderNextChoice(){
-  if(stats.dead){
+  
+  const message=stats.statsChecker()
+  const hideStatsButton=document.getElementById("hideStats")
+  hideStatsButton.style.display="none"
+  console.log("Point reached",message)
+  if(message){
     choiceRoot.innerHTML=pages.deadPage
+    document.getElementById("message").textContent=message
     return
   }
 
@@ -267,6 +273,8 @@ function renderNextChoice(){
       stats.getOlder(15)
       stats.updateStats()
       choiceRoot.innerHTML=pages.rebirthPage
+      document.getElementById("refresh").textContent="Start anew"
+      document.getElementById("refresh").style.color="green"
     },7000)
   }
 }
@@ -280,6 +288,7 @@ if(stats.age===6){
 
 window.handleChoice=function handleChoice(choice){
   let changesArray
+  
   if(choice.includes(",")){
     
      changesArray=choice.split(",")
@@ -289,6 +298,24 @@ window.handleChoice=function handleChoice(choice){
   stats.changeStats(changesArray)
   stats.updateStats()
   renderNextChoice()
+}
+window.hideButton=function hideButton(buttonClicked){
+  console.log(buttonClicked)
+  const hideStatsButton=document.getElementById("hideStats")
+  const showStatsButton=document.getElementById("showStats")
+   
+  if(buttonClicked==="Yes"){
+    showStatsButton.style.display="none"
+    hideStatsButton.style.display="block"
+    document.getElementById("currentChoice").style.display="none"
+    document.getElementById("stats").style.display="flex"
+    setRandomBackground(document.getElementById("statsField"))
+  }else{
+    hideStatsButton.style.display="none"
+    showStatsButton.style.display="block"
+    document.getElementById("currentChoice").style.display="flex"
+    document.getElementById("stats").style.display="none"
+  }
 }
 
 
