@@ -157,14 +157,14 @@ const childhoodChoices = [
 const teenGirlChoices = [
   `<div id="choice">
         <h1>Your friends are planning a sleepover this weekend. Do you join the fun or stay home to work on a big project?</h1>
-        <button onclick="handleChoice('+10 sociability,+5 happiness,-5 stress')">Join the sleepover</button>
+        <button onclick="handleChoice('+10 sociability,+5 happiness')">Join the sleepover</button>
         <button onclick="handleChoice('+10 intelligence,-10 happiness')">Stay home and work on the project</button>
     </div>`,
 
   `<div id="choice">
         <h1>There’s a new makeup line you’ve been wanting to try, but it’s quite expensive. Do you buy it or save your money for something else?</h1>
-        <button onclick="handleChoice('-20 wealth,+5 happiness')">Buy the makeup</button>
-        <button onclick="handleChoice('+20 wealth,-5 happiness')">Save your money</button>
+        <button onclick="handleChoice('-260 wealth,+10 happiness')">Buy the makeup</button>
+        <button onclick="handleChoice('-10 happiness')">Save your money</button>
     </div>`,
 
   `<div id="choice">
@@ -175,14 +175,14 @@ const teenGirlChoices = [
 
   `<div id="choice">
         <h1>You can either go on a weekend shopping spree with friends or spend the day volunteering at a local animal shelter. What’s your choice?</h1>
-        <button onclick="handleChoice('-10 wealth,+15 happiness,+5 sociability')">Shopping spree with friends</button>
+        <button onclick="handleChoice('-100 wealth,+8 happiness,+5 sociability')">Shopping spree with friends</button>
         <button onclick="handleChoice('+10 sociability,+10 happiness')">Volunteer at the shelter</button>
     </div>`,
 
   `<div id="choice">
         <h1>You’re invited to a weekend party, but you also have a big exam coming up. Do you go to the party or stay in and study?</h1>
-        <button onclick="handleChoice('+10 sociability,-15 stress,-5 intelligence')">Go to the party</button>
-        <button onclick="handleChoice('+20 intelligence,-10 sociability')">Stay in and study</button>
+        <button onclick="handleChoice('+10 sociability,-10 stress,-5 intelligence')">Go to the party</button>
+        <button onclick="handleChoice('+20 intelligence,-15 sociability')">Stay in and study</button>
     </div>`,
 
   `<div id="choice">
@@ -204,19 +204,19 @@ const teenGirlChoices = [
     </div>`,
 
   `<div id="choice">
-        <h1>There's a new workout class you’ve been wanting to try. Do you join the class or stick with your current exercise routine?</h1>
-        <button onclick="handleChoice('+10 athleticism,+5 sociability')">Join the new workout class</button>
-        <button onclick="handleChoice('+5 athleticism')">Stick with your current routine</button>
+        <h1>There's a new workout class you’ve been wanting to try. Do you join the class or spend the time with friends?</h1>
+        <button onclick="handleChoice('+10 athleticism')">Join the new workout class</button>
+        <button onclick="handleChoice('-10 athleticism,+5 sociability')">Spend the time with friends</button>
     </div>`,
 
   `<div id="choice">
         <h1>You’ve been invited to participate in a local art exhibition. Do you showcase your artwork or take some time off for relaxation?</h1>
         <button onclick="handleChoice('+10 happiness,+10 sociability')">Showcase your artwork</button>
-        <button onclick="handleChoice('110 stress')">Take time off for relaxation</button>
+        <button onclick="handleChoice('-10 stress,-5 happiness')">Take time off for relaxation</button>
     </div>`,
   `<div id="choice">
         <h1>You see a dangerous-looking shortcut through a construction site while rushing to meet your friends. Do you take the shortcut or stick to the main road?</h1>
-        <button onclick="handleChoice('-100 health')">Take the shortcut</button>
+        <button onclick="handleChoice('-70 health')">Take the shortcut</button>
         <button onclick="handleChoice('+10 sociability')">Stick to the main road</button>
     </div>`,
 
@@ -228,8 +228,8 @@ const teenGirlChoices = [
 
   `<div id="choice">
         <h1>Your friends are daring you to swim in a river with a strong current. Do you accept the dare or play it safe on the riverbank?</h1>
-        <button onclick="handleChoice('-100 health')">Swim in the river</button>
-        <button onclick="handleChoice('+10 sociability')">Play it safe on the riverbank</button>
+        <button onclick="handleChoice('-60 health,+15 sociability')">Swim in the river</button>
+        <button onclick="handleChoice('-10 sociability,+5 intelligence')">Play it safe on the riverbank</button>
     </div>`,
 
   `<div id="choice">

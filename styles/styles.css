@@ -102,10 +102,18 @@ body{
 }
 @media(max-width:1200px) and (min-width:770px){
     #welcome h1{
+        font-size: 8vw;
+    }
+    #welcome button{
+        font-size: 6vw;
+    }
+}
+@media(max-width:1500px) and (min-width:1200px){
+    #welcome h1{
         font-size: 7vw;
     }
     #welcome button{
-        font-size: 5vw;
+        font-size: 6vw;
     }
 }
 
@@ -173,7 +181,9 @@ body{
     #chooseName input{width: 80vw;
     margin-top: 2vh;
     border-radius: 5vw;
-height: 5vh;}
+height: 5vh;
+padding: 2vw;
+font-size: 3.6vw;}
 }
 @media(max-width:770px) and (min-width:600px){
     #chooseName h2{
@@ -185,7 +195,9 @@ height: 5vh;}
     #chooseName input{width: 70vw;
         margin-top: 2vh;
         border-radius: 4vw;
-    height: 7vh;}
+    height: 7vh;
+font-size: 3.3vw;
+padding: 1.5vw;}
 }
 @media(max-width:1200px) and (min-width:770px){
     #chooseName h2{
@@ -197,8 +209,26 @@ height: 5vh;}
     #chooseName input{width: 50vw;
         margin-top: 2vh;
         border-radius: 5vw;
-    height: 5vh;}
+    height: 5vh;
+padding: 1vw;
+font-size: 2.3vw;}
 }
+@media(max-width:1500px) and (min-width:1200px){
+    #chooseName h2{
+        font-size: 6.5vw;
+    }
+    #chooseName button{
+        font-size: 4.5vw;
+    }
+    #chooseName input{
+        padding: 1vw;
+        font-size: 1.4vw;
+        margin-top: 2vh;
+        border-radius: 5vw;
+    height: 5vh;
+    }
+}
+
 
 /* end of choose name page */
 
@@ -272,6 +302,7 @@ width: 40vw;}
 @media(max-width:770px) and (min-width:600px){
     #chooseGender h1{
         font-size: 8vw;
+        padding-top: 8vh;
     }
     #chooseGender button{
         font-size: 6vw;
@@ -285,6 +316,7 @@ width: 40vw;}
 @media(max-width:1200px) and (min-width:770px){
     #chooseGender h1{
         font-size: 7vw;
+        padding-top: 3vh;
     }
     #chooseGender button{
         font-size: 5vw;
@@ -408,7 +440,10 @@ font-size: 5vw;
 }
 @media(max-width:430px){
     #github i{
-        font-size: 16vw;
+        font-size: 17vw;
+    }
+    #github{
+        left: 1vw;
     }
 }
 @media(max-width:800px) and (min-width:430px){
@@ -524,19 +559,20 @@ font-size: 5vw;
     
 }
 
-@media(max-width:600px){
+
+@media(max-width:400px){
     #choice{
         width: 90vw;
     }
     #currentChoice #choice h1{
-        font-size: 7vw;
+        font-size: 9.5vw;
         font-weight: 600;
-        margin-top: 5vh;
+        margin-top: 1vh;
         
         
     }
     #choice button{
-        font-size: 6vw;
+        font-size: 7vw;
     }
      #refresh{
         position: absolute;
@@ -548,16 +584,57 @@ font-size: 5vw;
     transform: translateX(-50%) translateY(-50%);
     font-size: 8vw;
     }
-   
+    /* #statsField{
+        top: 1vh;
+    } */
      #statsField i{
-        font-size: 6vw;
+        
         display: none;
     }
     #stats{
         display: block;
     }
     #stats li{
-        font-size: 4vw;
+        font-size: 5vw;
+    }
+    
+}
+@media(max-width:600px) and (min-width:400px){
+    #choice{
+        width: 90vw;
+    }
+    #currentChoice #choice h1{
+        font-size: 6.5vw;
+        font-weight: 600;
+        margin-top: 14vh;
+        
+        
+    }
+    #choice button{
+        font-size: 7vw;
+    }
+     #refresh{
+        position: absolute;
+    top: 5vh;
+    color: antiquewhite;
+    background-color: transparent;
+    border:none;
+    left: 15vw;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 8vw;
+    }
+    /* #statsField{
+        top: 1vh;
+    } */
+     #statsField i{
+        font-size: 1.5vw;
+        display: none;
+    }
+    #stats{
+        display: block;
+    }
+    #stats li{
+        font-size: 5.5vw;
     }
     
 }
@@ -594,9 +671,10 @@ font-size: 5vw;
 
    
 }
-@media(max-width:1200px) and (min-width:770px){
+@media(max-width:1240px) and (min-width:770px){
     #currentChoice h1{
-        font-size: 6vw;
+        font-size: 5.5vw;
+        padding-top: 5vh;
         
     }
     #choice{
@@ -624,10 +702,52 @@ font-size: 5vw;
         display: block;
     }
     #stats li{
-        font-size: 2vw;
+        font-size: 2.5vw;
     }
     
 }
+@media(min-width:1240px) and (max-width:1500px){
+    #choice{width: 90vw;}
+    #choice h1{
+        font-size: 6vw;
+        
+    }
+    #choice button{
+        font-size: 4vw;
+    }
+}
+/* @media(max-width:1600px) and (min-width:1200px){
+    #choice{width: 90vw;}
+    #currentChoice h1{
+        font-size: 5.4vw;
+        margin-top: 5vh;
+        
+    }
+    #choice button{
+        font-size: 5vw;
+    }
+     #refresh{
+        position: absolute;
+    top: 5vh;
+    color: antiquewhite;
+    background-color: transparent;
+    border:none;
+    left: 15vw;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 8vw;
+    }
+   
+     #statsField i{
+        font-size: 6vw;
+        display: none;
+    }
+    #stats{
+        display: block;
+    }
+    #stats li{
+        font-size: 3vw;
+    }
+} */
 #gameOver{
     color: antiquewhite;
     text-align: center;
