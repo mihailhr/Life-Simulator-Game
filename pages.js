@@ -47,11 +47,12 @@ const choiceTemplate=`
     </div>
 
     <button id="refresh">Restart</button>
+    
    <article id="statsField">
-    <i class="fa-solid fa-info"></i>
-
-    <button id="yes" onclick="hideButton('Yes')">Yes</button>
-    <button id="no" onclick="hideButton('No')">No</button>
+   
+<button id="showStats" onclick="hideButton('Yes')">Check your stats</button>
+    <button id="hideStats" onclick="hideButton('No')">Resume</button>
+    
 
 
     <section id="stats">

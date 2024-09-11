@@ -24,7 +24,7 @@ function renderChooseNamePage(){
     if(nameInputField.value.length<3 || nameInputField.value.length>10){
       nameInputField.value=""
       nameInputField.placeholder="Your username should be between 3 and 10 characters long."
-
+      
     }else{
       stats.changeUsername(nameInputField.value)
       renderChooseGenderPage()
@@ -109,6 +109,8 @@ function renderFamilyPage(){
 function renderNextChoice(){
   
   const message=stats.statsChecker()
+  const hideStatsButton=document.getElementById("hideStats")
+  hideStatsButton.style.display="none"
   console.log("Point reached",message)
   if(message){
     choiceRoot.innerHTML=pages.deadPage
@@ -286,6 +288,7 @@ if(stats.age===6){
 
 window.handleChoice=function handleChoice(choice){
   let changesArray
+  
   if(choice.includes(",")){
     
      changesArray=choice.split(",")
@@ -298,14 +301,20 @@ window.handleChoice=function handleChoice(choice){
 }
 window.hideButton=function hideButton(buttonClicked){
   console.log(buttonClicked)
-  const noButton=document.getElementById("no")
-  const yesButton=document.getElementById("yes")
+  const hideStatsButton=document.getElementById("hideStats")
+  const showStatsButton=document.getElementById("showStats")
+   
   if(buttonClicked==="Yes"){
-    yesButton.style.display="none"
-    noButton.style.display="block"
+    showStatsButton.style.display="none"
+    hideStatsButton.style.display="block"
+    document.getElementById("currentChoice").style.display="none"
+    document.getElementById("stats").style.display="flex"
+    setRandomBackground(document.getElementById("statsField"))
   }else{
-    noButton.style.display="none"
-    yesButton.style.display="block"
+    hideStatsButton.style.display="none"
+    showStatsButton.style.display="block"
+    document.getElementById("currentChoice").style.display="flex"
+    document.getElementById("stats").style.display="none"
   }
 }
 

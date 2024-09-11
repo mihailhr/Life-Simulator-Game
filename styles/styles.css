@@ -458,9 +458,9 @@ font-size: 5vw;
     }
 }
 #statsField{
-    position: absolute;
+    /* position: absolute;
     top: 3vh;
-    right: 6vw;
+    right: 6vw; */
     font-size: 4vw;
     color: antiquewhite;
     text-align: center;
@@ -471,19 +471,17 @@ font-size: 5vw;
                 2px 2px 0 #000; 
     
 }
-#statsField:hover #stats{
+/* #statsField:hover #stats{
     display: inline-block;
-}
-#statsField:hover i{
-    display: none;
-}
+} */
+
 #stats{
     display: none;
     /* position: absolute;
     bottom: 5vw;
     left: 5vw; */
     text-align: center;
-    font-size: 2vw;
+    font-size: 5vw;
 }
 #stats h1{
     text-align: center;
@@ -498,8 +496,35 @@ font-size: 5vw;
                 2px -2px 0 #000, 
                 -2px 2px 0 #000,
                 2px 2px 0 #000; 
+    
 }
-
+#statsField li{
+    font-size: 4vw;
+}
+#statsField{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 4vw;
+}
+#statsField button{
+    font-size: 4vw;
+    background-color: transparent;
+    border: none;
+    color: antiquewhite;text-shadow: 
+    -2px -2px 0 #000, 
+    2px -2px 0 #000, 
+    -2px 2px 0 #000,
+    2px 2px 0 #000; 
+}
+#showStats{
+    position: absolute;
+    top: 3vh;
+    right: 2vw;
+}
 #currentChoice{
     width: 100vw;
     height: 100vh;
