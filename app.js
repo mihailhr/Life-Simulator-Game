@@ -14,6 +14,7 @@ function renderWelcomePage(){
   root.innerHTML=pages.welcomePage
   const startButton=document.getElementsByTagName("button")[0]
   startButton.addEventListener("click",renderChooseNamePage)
+  
 }
 
 function renderChooseNamePage(){
