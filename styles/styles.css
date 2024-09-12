@@ -27,7 +27,7 @@ body{
  /* welcome page */
  
 #welcome{
-   background-image: url("/Life-Simulator-Game/Images/owl.gif");
+   background-image: url("/Life-Simulator-Game/Images/street.gif");
    background-repeat: no-repeat;
    background-size: cover;
     width: 100vw;
@@ -49,7 +49,7 @@ body{
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 40vh;
+  top: 25vh;
   gap: 5vh;
 }
 #welcomeVideo{
@@ -439,6 +439,10 @@ font-size: 5vw;
     -webkit-text-stroke: 1px aliceblue;
 
 }
+#github i:hover{
+    font-size: 5.5vw;
+    
+}
 @media(max-width:430px){
     #github i{
         font-size: 17vw;
@@ -522,8 +526,8 @@ font-size: 5vw;
 }
 #showStats{
     position: absolute;
-    top: 3vh;
-    right: 2vw;
+    top: 1.5vh;
+    right: 3vw;
 }
 #currentChoice{
     width: 100vw;
@@ -812,5 +816,10 @@ font-size: 5vw;
     
 }
 
+.dangerous{
+    color: red;
+}
 
-/* Варианти - height over 100vh; stats stop choice from appearing */
+a{
+    text-decoration: none;
+}

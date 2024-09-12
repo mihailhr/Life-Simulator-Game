@@ -22,6 +22,7 @@ function getOlder(yearsToAdd){
 
 
 
+
 function changeUsername(newUsername){
     username=newUsername
 }
@@ -121,6 +122,17 @@ const happinessField=document.getElementById("happiness")
     wealthField.textContent=wealth+"$"
     ageField.textContent=age
     happinessField.textContent=happiness
+    if(stress>=70){
+        stressField.classList.add("dangerous")
+    }else{
+        stressField.classList.remove("dangerous")
+    }
+    if(health<=30){
+        healthField.classList.add("dangerous")
+    }else{
+        healthField.classList.remove("dangerous")
+    }
+
 
 
    
@@ -275,7 +287,14 @@ function getNationality(){
     nationality=allCountries[randomNum]
 }
 function getRandomInheritance(){
-    const inheritanceNum=Math.round(Math.random()*1000000)
+    const luckIndex=Math.floor(Math.random()*10)
+    let inheritanceNum
+    
+    if(luckIndex>4){
+     inheritanceNum=Math.round(Math.random()*1000000)
+    }else{
+        inheritanceNum=Math.round(Math.random()*100000)
+     }
     wealth+=inheritanceNum
     updateStats()
     return inheritanceNum

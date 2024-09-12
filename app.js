@@ -14,6 +14,7 @@ function renderWelcomePage(){
   root.innerHTML=pages.welcomePage
   const startButton=document.getElementsByTagName("button")[0]
   startButton.addEventListener("click",renderChooseNamePage)
+  
 }
 
 function renderChooseNamePage(){
@@ -273,6 +274,7 @@ function renderNextChoice(){
       stats.getOlder(15)
       stats.updateStats()
       choiceRoot.innerHTML=pages.rebirthPage
+      document.getElementById("currentChoice").style.backgroundImage=`url("/Life-Simulator-Game/Images/cemetery.gif")`
       document.getElementById("refresh").textContent="Start anew"
       document.getElementById("refresh").style.color="green"
     },7000)
@@ -309,7 +311,7 @@ window.hideButton=function hideButton(buttonClicked){
     hideStatsButton.style.display="block"
     document.getElementById("currentChoice").style.display="none"
     document.getElementById("stats").style.display="flex"
-    setRandomBackground(document.getElementById("statsField"))
+    document.getElementById("statsField").style.backgroundImage=`url("/Life-Simulator-Game/Images/statsBackground.jpg")`
   }else{
     hideStatsButton.style.display="none"
     showStatsButton.style.display="block"
