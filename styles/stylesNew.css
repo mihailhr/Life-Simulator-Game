@@ -194,3 +194,179 @@ font-size: 5vw;
     color: orangered;
    
 }
+
+/* Welcome page, Choose name page, Nationality page, Family page are responsive up to 1000px */
+@media(max-width:400px){
+    h1,#welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 9vw;
+    }
+    button, #currentChoice button{
+        font-size: 8vw;
+    }
+   
+    #github i{
+        font-size: 18vw;
+        left: 5vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    #choice{
+        margin-top: 20vh;
+    }
+    h2{
+        font-size: 8vw;
+    }
+    #stats li{
+        font-size: 10vw;
+    }
+    #statsField{
+        padding-top: 12vh;
+    }
+    #statsField #hideStats{
+        font-size: 12vw;
+    }
+
+    #chooseName input{
+        width: 70vw;
+        margin-top: 1vh;
+        font-size: 6vw;
+        padding: 2vw;
+    }
+    #chooseGender{
+        padding-top: 20vh;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 35vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+
+
+    
+
+}
+@media(max-width:700px) and (min-width:400px){
+    h1{
+        font-size: 7vw;
+    }
+    #welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 9vw;
+    }
+    button, #currentChoice button{
+        font-size: 6vw;
+    }
+    #chooseName input{
+        width: 60vw;
+        margin-top: 1vh;
+        font-size: 5vw;
+        padding: 2vw;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 45vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+    #chooseGender{
+        padding-top: 15vh;
+    }
+    #github i{
+        font-size: 12vw;
+        left: 3vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+
+    #stats li{
+        font-size: 6.7vw;
+    }
+    #statsField{
+        padding-top: 7vh;
+    }
+    #statsField #hideStats{
+        font-size: 12vw;
+    }
+    #choice{
+        margin-top: 13vh;
+    }
+}
+
+
+@media(max-width:1000px) and (min-width:700px){
+    h1{
+        font-size: 6vw;
+    }
+    #welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 7.5vw;
+    }
+    button, #currentChoice button{
+        font-size: 6vw;
+    }
+    #chooseName input{
+        width: 60vw;
+        margin-top: 1vh;
+        font-size: 5vw;
+        padding: 2vw;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 50vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+    #chooseGender{
+        padding-top: 5vh;
+    }
+    #github i{
+        font-size: 10vw;
+        left: 3vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+
+    #stats li{
+        font-size: 5vw;
+    }
+    #statsField{
+        padding-top: 7vh;
+    }
+    #statsField #hideStats{
+        font-size: 12vw;
+    }
+    #choice{
+        margin-top: 17vh;
+    }
+
+
+}

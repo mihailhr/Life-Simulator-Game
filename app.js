@@ -268,7 +268,9 @@ function renderNextChoice(){
     }
   }else if(stats.age<70){
     const choice=getRandomGoldenAgeChoice()
+
     choiceRoot.innerHTML=choice
+    setRandomBackground(choiceRoot)
   }else{
     choiceRoot.innerHTML=pages.gameEndPage
     setTimeout(()=>{

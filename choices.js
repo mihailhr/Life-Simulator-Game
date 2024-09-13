@@ -9,6 +9,12 @@ const childhoodChoices = [
     <button onclick="handleChoice('+5 happiness,-5 health')">Keep having fun</button>
     <button onclick="handleChoice('+5 health,-5 happiness')">Go home to sleep it off</button>
 </div>`,
+`<div id="choice">
+    <h1>For the last few months, you've been lagging behind in school.</h1>
+    <button onclick="handleChoice('+5 happiness,+5 stress,+10 intelligence')">Become a more serious student</button>
+    <button onclick="handleChoice('-10 happiness,-10 intelligence')">Don't worry about it</button>
+</div>`,
+
 
 
   `<div id="choice">
