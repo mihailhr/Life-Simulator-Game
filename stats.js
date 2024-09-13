@@ -129,6 +129,7 @@ const happinessField=document.getElementById("happiness")
     }
     if(health<=30){
         healthField.classList.add("dangerous")
+        
     }else{
         healthField.classList.remove("dangerous")
     }

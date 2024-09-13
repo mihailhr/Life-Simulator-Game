@@ -124,6 +124,7 @@ function renderNextChoice(){
     const choice=getRandomChildhoodChoice()
     choiceRoot.innerHTML=choice
     choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/kid room.jpg")`
+    choiceRoot.style.backgroundPosition = 'center';
   }else if(stats.age===13){
     choiceRoot.innerHTML=pages.teenPage
     document.getElementById("name").textContent=stats.username
@@ -224,7 +225,7 @@ function renderNextChoice(){
   }else if(stats.age===36){
     if(stats.child){
       choiceRoot.innerHTML=`<div id="choice">
-      <h1>You now have a baby.</h1>
+      <h1>You have a baby now.</h1>
       </div>
       `
     }else{
@@ -267,7 +268,9 @@ function renderNextChoice(){
     }
   }else if(stats.age<70){
     const choice=getRandomGoldenAgeChoice()
+
     choiceRoot.innerHTML=choice
+    setRandomBackground(choiceRoot)
   }else{
     choiceRoot.innerHTML=pages.gameEndPage
     setTimeout(()=>{

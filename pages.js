@@ -1,15 +1,15 @@
 const welcomePage = `
     <div id="welcome">
     
-    <section> <h1>Welcome to Life Simulator</h1>
-        <button >Start!</button></section>
+    <section> <h1>Welcome to Life Simulator!</h1>
+        <button >Start</button></section>
    
 </div>
 `;
 
 const chooseNamePage = `
     <div id="chooseName">
-    <h2>Choose your name:</h2>
+    <h1>Choose your name:</h1>
     <input type="text" name="username" id="username" required> <br/>
     <button id="continue" >Continue</button>
 </div>
@@ -82,7 +82,7 @@ const deadPage=`
 
 const teenPage=`
 <div id="choice">
-    <h1>Congrats, <span id="name"></span>, you are not a child anymore. You are slowly turning into a young <span id="gender"></span>. <br/> Be careful! Your next choices are going to have a major influence on your character.</h1>
+    <h1>Congrats, <span id="name"></span>, you are not a child anymore. You are slowly turning into a young <span id="gender"></span>. Be careful! Your next choices are going to have a major influence on your character.</h1>
     <h2>As of now, it is your <span id="quality"></span> that stands out the most to others.</h2>
 
     
@@ -107,7 +107,7 @@ const applyToUniversityPage=`<div id="choice">
     <button onclick="handleChoice('-10 graduate')">No</button>
 </div>`
 const cantApplyToUniversityPage=`<div id="choice">
-    <h1>As your intelligence was not surprisingly high, it was not possible for you to enroll in university</h1>
+    <h1>As your intelligence was not surprisingly high, it was not possible for you to enroll in university.</h1>
     <button onclick="handleChoice('+10 nothing')">Continue</button>
     
 </div>`
@@ -142,7 +142,7 @@ const inheritancePage=`<div id="choice">
 </div>
 `
 const kidBirthday=`<div id="choice">
-    <h1>It's your kid's 18th birthday today! You wished them all the best</h1>
+    <h1>It's your kid's 18th birthday today! You wished them all the best.</h1>
     <button onclick="handleChoice('+5 happiness,-5 stress')">Continue</button>
    
 </div>

@@ -1,6 +1,21 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
+
+/* Most common mobile resolutions
+360 x 800
+390 x 844
+393 x 873
+412 x 915
+414 x 896
+360 x 780 */
+
+/* responsive pages: */
+/* Welcome page */
+
+
+
+
 *{
     padding: 0;
     margin: 0;
@@ -21,6 +36,7 @@ body{
     height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
+    
 }
 
 
@@ -38,6 +54,8 @@ body{
                 2px -2px 0 #000, 
                 -2px 2px 0 #000,
                 2px 2px 0 #000; 
+    
+    background-position: center; 
     /* display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,6 +153,8 @@ body{
     padding-top: 30vh;
     font-family: "Jersey 10";
     text-align: center;
+    background-position: center;
+    background-size: cover;
 }
 #chooseName h2{
     font-size: 5vw;
@@ -595,15 +615,19 @@ font-size: 5vw;
         width: 90vw;
     }
     #currentChoice #choice h1{
-        font-size: 9.5vw;
+        font-size: 8vw;
         font-weight: 600;
         margin-top: 1vh;
         
         
     }
+    #currentChoice{
+        padding-top: 13vh;
+    }
     #choice button{
         font-size: 7vw;
     }
+   
      #refresh{
         position: absolute;
     top: 5vh;
@@ -621,12 +645,17 @@ font-size: 5vw;
         
         display: none;
     }
+    #statsField #showStats{
+        font-size: 8vw;
+        top: 3vh;
+    }
     #stats{
         display: block;
     }
-    #stats li{
-        font-size: 5vw;
+    #stats li, #statsField #hideStats{
+        font-size: 9vw;
     }
+    
     
 }
 @media(max-width:600px) and (min-width:400px){
