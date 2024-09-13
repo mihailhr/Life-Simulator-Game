@@ -225,7 +225,7 @@ function renderNextChoice(){
   }else if(stats.age===36){
     if(stats.child){
       choiceRoot.innerHTML=`<div id="choice">
-      <h1>You now have a baby.</h1>
+      <h1>You have a baby now.</h1>
       </div>
       `
     }else{

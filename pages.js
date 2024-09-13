@@ -107,7 +107,7 @@ const applyToUniversityPage=`<div id="choice">
     <button onclick="handleChoice('-10 graduate')">No</button>
 </div>`
 const cantApplyToUniversityPage=`<div id="choice">
-    <h1>As your intelligence was not surprisingly high, it was not possible for you to enroll in university</h1>
+    <h1>As your intelligence was not surprisingly high, it was not possible for you to enroll in university.</h1>
     <button onclick="handleChoice('+10 nothing')">Continue</button>
     
 </div>`
@@ -142,7 +142,7 @@ const inheritancePage=`<div id="choice">
 </div>
 `
 const kidBirthday=`<div id="choice">
-    <h1>It's your kid's 18th birthday today! You wished them all the best</h1>
+    <h1>It's your kid's 18th birthday today! You wished them all the best.</h1>
     <button onclick="handleChoice('+5 happiness,-5 stress')">Continue</button>
    
 </div>

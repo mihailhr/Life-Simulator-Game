@@ -14,6 +14,12 @@ const childhoodChoices = [
     <button onclick="handleChoice('+5 happiness,+5 stress,+10 intelligence')">Become a more serious student</button>
     <button onclick="handleChoice('-10 happiness,-10 intelligence')">Don't worry about it</button>
 </div>`,
+`<div id="choice">
+    <h1>An older kid wants your lunch money and threatens to beat you up.</h1>
+    <button onclick="handleChoice('+15 happiness,+5 athleticism,-10 intelligence')">Try to defend yourself</button>
+    <button onclick="handleChoice('-15 happiness,+10 intelligence,-30 wealth')">Say bye to your money</button>
+</div>`,
+
 
 
 
@@ -183,6 +189,11 @@ const teenGirlChoices = [
         <button onclick="handleChoice('-260 wealth,+10 happiness')">Buy the makeup</button>
         <button onclick="handleChoice('-10 happiness')">Save your money</button>
     </div>`,
+    `<div id="choice">
+    <h1>The new Iphone is out and you want it, but it's really expensive. You found a second-hand offer, but it still is pricey.</h1>
+    <button onclick="handleChoice('+10 happiness,-800 wealth')">Buy it</button>
+    <button onclick="handleChoice('-10 happiness, +5 intelligence')">Save your money</button>
+</div>`,
 
   `<div id="choice">
         <h1>Your school is organizing a dance competition. Do you enter the competition or watch from the audience?</h1>
@@ -343,6 +354,11 @@ const teenBoyChoices = [
         <button onclick="handleChoice('-100 health')">Swim in the river</button>
         <button onclick="handleChoice('+10 intelligence')">Play it safe on the riverbank</button>
     </div>`,
+    `<div id="choice">
+    <h1>Your peers invited you to go fishing, but you have to study for an important test.</h1>
+    <button onclick="handleChoice('-15 happiness,+10 intelligence')">Study</button>
+    <button onclick="handleChoice('+10 happiness,-10 intelligence')">Go fishing</button>
+</div>`,
 
   `<div id="choice">
         <h1>You come across a bike left unattended on the edge of a cliff. Do you ride it for fun or avoid it entirely?</h1>
@@ -782,7 +798,7 @@ const goldenAgeChoices=[`<div id="choice">
   `<div id="choice">
       <h1>A part-time consulting gig offers flexible hours, but you’ve been enjoying your free time. Do you</h1>
       <button onclick="handleChoice('+20000 wealth,+5 stress')">Take the consulting role</button>
-      <button onclick="handleChoice('+10 happiness,-5 stress')">Continue enjoying your retirement</button>
+      <button onclick="handleChoice('+10 happiness,-5 stress')">Continue enjoying your free time</button>
   </div>`,
 
   `<div id="choice">

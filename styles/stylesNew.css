@@ -195,7 +195,7 @@ font-size: 5vw;
    
 }
 
-/* Welcome page, Choose name page, Nationality page, Family page are responsive up to 1000px */
+/* Responsiveness up to 1000px */
 @media(max-width:400px){
     h1,#welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
         font-size: 9vw;
@@ -363,6 +363,64 @@ font-size: 5vw;
     }
     #statsField #hideStats{
         font-size: 12vw;
+    }
+    #choice{
+        margin-top: 17vh;
+    }
+
+
+}
+@media(max-width:1400px) and (min-width:1000px){
+    h1{
+        font-size: 5.5vw;
+    }
+    #welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 7.5vw;
+    }
+    button, #currentChoice button{
+        font-size: 5vw;
+    }
+    #chooseName input{
+        width: 50vw;
+        margin-top: 1vh;
+        font-size: 5vw;
+        padding: 2vw;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 60vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+    #chooseGender{
+        padding-top: 5vh;
+    }
+    #github i{
+        font-size: 10vw;
+        left: 3vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+
+    #stats li{
+        font-size: 4.5vw;
+    }
+    #statsField{
+        padding-top: 7vh;
+    }
+    #statsField #hideStats{
+        font-size: 10vw;
     }
     #choice{
         margin-top: 17vh;
