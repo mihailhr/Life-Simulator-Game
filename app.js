@@ -124,6 +124,7 @@ function renderNextChoice(){
     const choice=getRandomChildhoodChoice()
     choiceRoot.innerHTML=choice
     choiceRoot.style.backgroundImage=`url("/Life-Simulator-Game/Images/kid room.jpg")`
+    choiceRoot.style.backgroundPosition = 'center';
   }else if(stats.age===13){
     choiceRoot.innerHTML=pages.teenPage
     document.getElementById("name").textContent=stats.username

@@ -1,15 +1,15 @@
 const welcomePage = `
     <div id="welcome">
     
-    <section> <h1>Welcome to Life Simulator</h1>
-        <button >Start!</button></section>
+    <section> <h1>Welcome to Life Simulator!</h1>
+        <button >Start</button></section>
    
 </div>
 `;
 
 const chooseNamePage = `
     <div id="chooseName">
-    <h2>Choose your name:</h2>
+    <h1>Choose your name:</h1>
     <input type="text" name="username" id="username" required> <br/>
     <button id="continue" >Continue</button>
 </div>
