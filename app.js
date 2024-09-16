@@ -106,7 +106,12 @@ function renderFamilyPage(){
     root.innerHTML=pages.choiceTemplate
     choiceRoot=document.getElementById("currentChoice")
     stats.updateStats()
-    document.getElementById("refresh").addEventListener("click",()=>window.location.reload())
+    document.getElementById("refresh").addEventListener("click",()=>{
+      if(window.confirm("Do you really want to to have a new life? All your memories will be erased!")){
+        window.location.reload()
+      }
+      
+      })
     renderNextChoice()
   }, 5000);
 }
@@ -117,7 +122,7 @@ function renderNextChoice(){
   const hideStatsButton=document.getElementById("hideStats")
   hideStatsButton.style.display="none"
  
-  if(message){
+  if(message ){
     choiceRoot.innerHTML=pages.deadPage
     document.getElementById("message").textContent=message
     const deathSound=new Audio("./Audio/273567-Game-Over-Robot-Hit-8.mp3")
