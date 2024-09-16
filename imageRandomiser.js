@@ -13,6 +13,8 @@ let allImages = [
   "Life-Simulator-Game/Images/peakpx.jpg",
   "Life-Simulator-Game/Images/town pink.jpg",
   "Life-Simulator-Game/Images/town.gif",
+  "Life-Simulator-Game/Videos/townNamePage.gif",
+  "Life-Simulator-Game\Videos\aesthetic-landscape-with-train.3840x2160.mp4"
 ];
 
 export default function setRandomBackground(root) {
