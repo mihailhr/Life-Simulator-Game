@@ -133,6 +133,26 @@ const happinessField=document.getElementById("happiness")
     }else{
         healthField.classList.remove("dangerous")
     }
+    if(happiness<=30){
+        happinessField.classList.add("dangerous")
+    }else{
+        happinessField.classList.remove("dangerous")
+    }
+    if(sociability<=30){
+        sociabilityField.classList.add("dangerous")
+    }else{
+       sociabilityField.classList.remove("dangerous")
+    }
+    if(athleticism<=30){
+        athleticismField.classList.add("dangerous")
+    }else{
+        athleticismField.classList.remove("dangerous")
+    }
+     if(happiness<=30){
+        happinessField.classList.add("dangerous")
+    }else{
+        happinessField.classList.remove("dangerous")
+    }
 
 
 
@@ -273,9 +293,9 @@ function statsChecker(){
     }else if(stress>99){
         message=`High levels of stress took a toll on you. You received an unexpected and fatal heart attack.`
     }else if(happiness<1){
-        message=`Your low satisfaction of life forced you to move to Nepal and live as a monk. Your current location is unknown.`
+        message=`Your low satisfaction of life made you end it all.`
     }else if(dead===true){
-        message=`Throughout your life, you acted immortal. Unsurprisingly this wasn't the case.`
+        message=`Throughout your life, you acted immortal. Unsurprisingly, this wasn't the case.`
     }
     
 
