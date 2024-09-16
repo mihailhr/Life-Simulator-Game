@@ -384,7 +384,11 @@ let youngAdultChoices = [
         <button onclick="handleChoice('+10 happiness')">Decline to maintain balance</button>
     </div>`,
 
-
+`<div id="choice">
+    <h1>You want to go hiking but you've promised to help your old neighbor with his PC.</h1>
+    <button onclick="handleChoice('+10 happiness,-10 sociability')">Go hiking</button>
+    <button onclick="handleChoice('-10 happiness,+10 sociability')">Fix the PC</button>
+</div>`,
   `<div id="choice">
         <h1>You have the opportunity to invest in a high-risk stock that could yield great returns or cost you dearly. Do you invest or play it safe?</h1>
         <button onclick="handleChoice('-20 wealth,+12000 wealth')">Invest in the stock</button>
@@ -409,10 +413,16 @@ let youngAdultChoices = [
         <button onclick="handleChoice('-10 health,+100 wealth')">Push through</button>
     </div>`,
 
+    `<div id="choice">
+    <h1>You find an abandoned kitten that looks cold and hungry,but taking care of it might be stressful.</h1>
+    <button onclick="handleChoice('+8 happiness,+7 stress')">Adopt it</button>
+    <button onclick="handleChoice('-10 happiness')">Ignore it</button>
+</div>`,
+
   `<div id="choice">
         <h1>You find a wallet full of cash on the street. Do you keep it or turn it into the authorities?</h1>
         <button onclick="handleChoice('-10 sociability,+1237 wealth')">Keep the wallet</button>
-        <button onclick="handleChoice('+10 sociability,+10 happiness')">Turn it in</button>
+        <button onclick="handleChoice('+10 sociability,+5 happiness')">Turn it in</button>
     </div>`,
 
   `<div id="choice">
@@ -428,9 +438,9 @@ let youngAdultChoices = [
     </div>`,
 
   `<div id="choice">
-        <h1>You’re considering going back to school for a degree that could advance your career. Do you enroll or stick with your current job?</h1>
-        <button onclick="handleChoice('+20 intelligence,+10000 wealth, +8 stress ')">Enroll in school</button>
-        <button onclick="handleChoice('+10 happiness')">Stick with your current job</button>
+        <h1>You’re considering taking a special management course that could advance your career. Do you enroll or stick with your current job?</h1>
+        <button onclick="handleChoice('+10 intelligence,+10000 wealth, +8 stress ')">Take the course</button>
+        <button onclick="handleChoice('+10 happiness,-6 intelligence')">Stick with your current job</button>
     </div>`,
 
   `<div id="choice">
@@ -442,7 +452,7 @@ let youngAdultChoices = [
   `<div id="choice">
         <h1>You’re offered a lucrative and well paid quick task in a morally questionable industry. Do you take the job or stay true to your principles?</h1>
         <button onclick="handleChoice('+1480 wealth,-30 happiness,+12 stress')">Take the job</button>
-        <button onclick="handleChoice('+30 happiness,+10 sociability')">Stay true to your principles</button>
+        <button onclick="handleChoice('+10 happiness,+10 sociability')">Stay true to your principles</button>
     </div>`,
 
   `<div id="choice">
@@ -478,7 +488,7 @@ let youngAdultChoices = [
   `<div id="choice">
         <h1>You’re exploring a remote area and notice storm clouds approaching. Do you continue exploring or seek shelter immediately?</h1>
         <button onclick="handleChoice('-30 health,+10 happiness ')">Continue exploring</button>
-        <button onclick="handleChoice('+10 health, +10 happiness')">Seek shelter immediately</button>
+        <button onclick="handleChoice('+10 health')">Seek shelter immediately</button>
     </div>`,
 ];
 
@@ -518,20 +528,20 @@ const grownAdultChoices=[
 
   `<div id="choice">
       <h1>Your doctor recommends taking up yoga to reduce stress. Do you start practicing or continue with your usual routine?</h1>
-      <button onclick="handleChoice('+10 health,-10 wealth')">Start practicing yoga</button>
-      <button onclick="handleChoice('+10 happiness,+10 wealth')">Stick to your routine</button>
+      <button onclick="handleChoice('+10 health,-500 wealth')">Start practicing yoga</button>
+      <button onclick="handleChoice('+10 happiness')">Stick to your routine</button>
   </div>`,
 
   `<div id="choice">
       <h1>A friend offers to lend you money to start your own business. Do you accept the loan and pursue your dream or keep your current job?</h1>
       <button onclick="handleChoice('+20000 wealth,+12 stress,+10 happiness')">Accept the loan and start the business</button>
-      <button onclick="handleChoice('+10 happiness,-10 stress')">Keep your current job</button>
+      <button onclick="handleChoice('-10 happiness,-10 stress')">Keep your current job</button>
   </div>`,
 
   `<div id="choice">
-      <h1>You have the opportunity to relocate to a new city for a better job. Do you move or stay close to family and friends?</h1>
+      <h1>You have the opportunity to relocate to a new city for a better job. Do you move or stay close to the people you love?</h1>
       <button onclick="handleChoice('+30 wealth,+10 stress')">Move for the new job</button>
-      <button onclick="handleChoice('+10 happiness,+20 sociability,-10 stress')">Stay close to family</button>
+      <button onclick="handleChoice('+10 happiness,+20 sociability,-10 stress')">Stay home</button>
   </div>`,
 
   `<div id="choice">
@@ -547,9 +557,15 @@ const grownAdultChoices=[
   </div>`,
 
   `<div id="choice">
+    <h1>You receive a gift card for a free rafting tour, but you can't really swim and the guide looks like a newbie.</h1>
+    <button onclick="handleChoice('+5 happiness,+10 stress,-10 intelligence,-70 health')">Go rafting</button>
+    <button onclick="handleChoice('-10 happiness,-10 intelligence,+5 sociability')">Gift the card to someone else</button>
+</div>`,
+
+  `<div id="choice">
       <h1>You’ve been working out for months and are offered the chance to run a marathon. Do you accept the challenge or focus on maintaining your current fitness level?</h1>
-      <button onclick="handleChoice('+30 athleticism,-10 stress,+10 happiness')">Run the marathon</button>
-      <button onclick="handleChoice('+10 happiness,-10 stress')">Maintain current fitness</button>
+      <button onclick="handleChoice('+10 athleticism,-10 stress,+10 happiness')">Run the marathon</button>
+      <button onclick="handleChoice('+10 happiness,-10 stress,-5 athleticism')">Maintain current fitness</button>
   </div>`,
 
   `<div id="choice">

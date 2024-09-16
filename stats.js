@@ -277,7 +277,8 @@ function statsChecker(){
     }else if(dead===true){
         message=`Throughout your life, you acted immortal. Unsurprisingly this wasn't the case.`
     }
-    console.log(stress,wealth)
+    
+
     return message
 }
 
