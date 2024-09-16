@@ -12,13 +12,17 @@ let choiceRoot
 
 function renderWelcomePage(){
   root.innerHTML=pages.welcomePage
+  
   const startButton=document.getElementsByTagName("button")[0]
   startButton.addEventListener("click",renderChooseNamePage)
+  
   
 }
 
 function renderChooseNamePage(){
   root.innerHTML=pages.chooseNamePage
+  const heavenSound=new Audio("./Audio/angelical-pad-143276.mp3")
+  heavenSound.play()
   const continueButton=document.getElementById("continue")
   const nameInputField=document.getElementsByTagName("input")[0]
   continueButton.addEventListener("click",()=>{
@@ -112,10 +116,12 @@ function renderNextChoice(){
   const message=stats.statsChecker()
   const hideStatsButton=document.getElementById("hideStats")
   hideStatsButton.style.display="none"
-  console.log("Point reached",message)
+ 
   if(message){
     choiceRoot.innerHTML=pages.deadPage
     document.getElementById("message").textContent=message
+    const deathSound=new Audio("./Audio/273567-Game-Over-Robot-Hit-8.mp3")
+    deathSound.play()
     return
   }
 
@@ -277,6 +283,8 @@ function renderNextChoice(){
       stats.getOlder(15)
       stats.updateStats()
       choiceRoot.innerHTML=pages.rebirthPage
+      const heavenSound=new Audio("./Audio/angelical-pad-143276.mp3")
+      heavenSound.play()
       document.getElementById("currentChoice").style.backgroundImage=`url("/Life-Simulator-Game/Images/cemetery.gif")`
       document.getElementById("refresh").textContent="Start anew"
       document.getElementById("refresh").style.color="green"
@@ -293,7 +301,8 @@ if(stats.age===6){
 
 window.handleChoice=function handleChoice(choice){
   let changesArray
-  
+  const clickAudio=new Audio("/Life-Simulator-Game/Audio/mouse-click-153941.mp3")
+  clickAudio.play()
   if(choice.includes(",")){
     
      changesArray=choice.split(",")
@@ -303,6 +312,7 @@ window.handleChoice=function handleChoice(choice){
   stats.changeStats(changesArray)
   stats.updateStats()
   renderNextChoice()
+  
 }
 window.hideButton=function hideButton(buttonClicked){
   console.log(buttonClicked)
