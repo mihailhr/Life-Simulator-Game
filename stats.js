@@ -247,6 +247,7 @@ const allCountries = [
   "Egypt",
   "Kenya",
   "Ghana",
+  "Namibia",
 
   // Asia
   "China",
@@ -254,6 +255,7 @@ const allCountries = [
   "Japan",
   "South Korea",
   "Thailand",
+  "Uzbekistan",
 
   // Europe
   "the United Kingdom",
@@ -261,17 +263,21 @@ const allCountries = [
   "France",
   "Italy",
   "Spain",
+  "Greece",
+  "Bulgaria",
 
   // North America
   "the United States",
   "Canada",
   "Mexico",
+  "Honduras",
 
   // South America
   "Brazil",
   "Argentina",
   "Colombia",
   "Chile",
+  "Paraguay",
 
   // Oceania
   "Australia",
@@ -297,7 +303,9 @@ function statsChecker(){
     }else if(dead===true){
         message=`Throughout your life, you acted immortal. Unsurprisingly, this wasn't the case.`
     }
-    
+    if(age===85){
+        dead=true
+    }
 
     return message
 }
