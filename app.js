@@ -5,6 +5,7 @@ import * as stats from "./stats.js"
 
 
 const root = document.getElementById("content");
+
 let choiceRoot
 
 
@@ -28,7 +29,7 @@ function renderChooseNamePage(){
   continueButton.addEventListener("click",()=>{
     if(nameInputField.value.length<3 || nameInputField.value.length>10){
       nameInputField.value=""
-      nameInputField.placeholder="Your username should be between 3 and 10 characters long."
+      nameInputField.placeholder="Name between 3 and 10 characters long."
       
     }else{
       stats.changeUsername(nameInputField.value)
@@ -141,8 +142,15 @@ function renderNextChoice(){
     document.getElementById("name").textContent=stats.username
     document.getElementById("gender").textContent=stats.gender
     document.getElementById("quality").textContent=stats.outstandingQuality
+    const hideStatsButton=document.getElementById("hideStats")
+const showStatsButton=document.getElementById("showStats")
     setTimeout(()=>{
+
       stats.getOlder(1)
+      
+    showStatsButton.style.display="block"
+    document.getElementById("currentChoice").style.display="flex"
+    document.getElementById("stats").style.display="none"
       renderNextChoice()
     },6000)
   }else if(stats.age>13 && stats.age<20){
@@ -323,7 +331,7 @@ window.handleChoice=function handleChoice(choice){
 window.hideButton=function hideButton(buttonClicked){
   console.log(buttonClicked)
   const hideStatsButton=document.getElementById("hideStats")
-  const showStatsButton=document.getElementById("showStats")
+const showStatsButton=document.getElementById("showStats")
    
   if(buttonClicked==="Yes"){
     showStatsButton.style.display="none"
