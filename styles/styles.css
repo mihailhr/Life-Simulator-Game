@@ -67,7 +67,7 @@ body{
     background-color: transparent;
     border-radius: 12px;
     font-size: 2.2vw;
-    padding: 1vw;
+    padding: 1vw 0.5vw;
     border: 5px solid antiquewhite;
 }
 
@@ -447,7 +447,7 @@ font-size: 5vw;
         width: 50vw;
         margin-top: 1vh;
         font-size: 5vw;
-        padding: 2vw;
+        padding: 2vw 1vw;
     }
     #chooseGender img{
         width: 35vw;

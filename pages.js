@@ -10,7 +10,7 @@ const welcomePage = `
 const chooseNamePage = `
     <div id="chooseName">
     <h1>Choose your name:</h1>
-    <input type="text" name="username" id="username" required> <br/>
+    <input type="text" name="username" id="username" autocomplete="off" required> <br/>
     <button id="continue" >Continue</button>
 </div>
 `;
