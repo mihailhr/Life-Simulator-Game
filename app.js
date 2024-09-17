@@ -108,11 +108,14 @@ function renderFamilyPage(){
     choiceRoot=document.getElementById("currentChoice")
     stats.updateStats()
     document.getElementById("refresh").addEventListener("click",()=>{
+      if(stats.statsChecker()){
+        window.location.reload()
+      }else{
       if(window.confirm("Do you really want to to have a new life? All your memories will be erased!")){
         window.location.reload()
       }
       
-      })
+      }})
     renderNextChoice()
   }, 5000);
 }
@@ -299,6 +302,7 @@ const showStatsButton=document.getElementById("showStats")
       choiceRoot.innerHTML=pages.rebirthPage
       const heavenSound=new Audio("./Audio/angelical-pad-143276.mp3")
       heavenSound.play()
+      stats.statsChecker()
       document.getElementById("currentChoice").style.backgroundImage=`url("/Life-Simulator-Game/Images/cemetery.gif")`
       document.getElementById("refresh").textContent="Start anew"
       document.getElementById("refresh").style.color="green"
