@@ -2,363 +2,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
 
-/* Most common mobile resolutions
-360 x 800
-390 x 844
-393 x 873
-412 x 915
-414 x 896
-360 x 780 */
-
-/* responsive pages: */
-/* Welcome page */
-
-
-
-
-*{
-    padding: 0;
-    margin: 0;
-    font-family: "Jersey 10";
-    
-    
+*{padding: 0;
+margin: 0;
+box-sizing: border-box;
+color: antiquewhite;
+font-family: "Jersey 10";
+text-shadow: 
+                -2px -2px 0 #000, 
+                2px -2px 0 #000, 
+                -2px 2px 0 #000,
+                2px 2px 0 #000; 
 }
-img{
-    width: 100vw;
-    background-repeat: no-repeat;
-}
-button:hover{
+
+button{
+    background-color: transparent;
+    border: none;
+    font-size: 5vw;
     cursor: pointer;
 }
 
+h1{
+    font-size: 4vw;
+}
+h2{
+    font-size: 3vw;
+    text-align: center;
+}
 body{
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
-    
-}
-
-
- /* welcome page */
- 
-#welcome{
-   background-image: url("/Life-Simulator-Game/Images/street.gif");
-   background-repeat: no-repeat;
-   background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-    
-    background-position: center; 
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-}
-#welcome section{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 25vh;
-  gap: 5vh;
-}
-#welcomeVideo{
-   position: fixed;
-   top: 0;
-   left: 0;
-   z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    min-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-}
-#welcome h1{
-    
-    font-family: "Jersey 10";
-    font-size: 5vw;
-    color: antiquewhite;
-}
-#welcome button{
-    
-    font-family: "Jersey 10";
-    background-color: transparent;
-    font-size: 3vw;
-    border: none;
-    color: antiquewhite;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-}
-
-@media(max-width:600px){
-    #welcome h1{
-        font-size: 10vw;
-        font-weight: 600;
-        
-    }
-    #welcome button{
-        font-size: 8vw;
-    }
-}
-@media(max-width:770px) and (min-width:600px){
-    #welcome h1{
-        font-size: 8vw;
-    }
-    #welcome button{
-        font-size: 6vw;
-    }
-}
-@media(max-width:1200px) and (min-width:770px){
-    #welcome h1{
-        font-size: 8vw;
-    }
-    #welcome button{
-        font-size: 6vw;
-    }
-}
-@media(max-width:1500px) and (min-width:1200px){
-    #welcome h1{
-        font-size: 7vw;
-    }
-    #welcome button{
-        font-size: 6vw;
-    }
-}
-
-
-
-/* end of welcome page */
-
-/* choose name page */
-#chooseName{
-    width: 100vw;
-    height: 100vh;
-    background-image: url("/Life-Simulator-Game/Videos/townNamePage.gif");
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+
+#welcome{
+    height: 100vh;
+    background-image: url("/Life-Simulator-Game/Images/street.gif");
     padding-top: 30vh;
-    font-family: "Jersey 10";
     text-align: center;
-    background-position: center;
     background-size: cover;
 }
-#chooseName h2{
-    font-size: 5vw;
-    color: antiquewhite;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-        
-    letter-spacing: 0.5vh;
+#welcome h1{
+    font-size: 6vw;
+}
+#chooseName{
+    height: 100vh;
+    background-image: url("/Life-Simulator-Game/Videos/townNamePage.gif");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
 }
 #chooseName input{
-    border-radius: 1vw;
-    padding: 1vw;
-    width: 30vw;
-}
-#chooseName button{
-   margin-top: 2vh;
-   text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-        
-    letter-spacing: 0.5vh;
-   font-size: 3vw;
-   font-family: "Jersey 10";
-   padding: 2vw;
-   border: none;
-   background-color: transparent;
-   color: antiquewhite;
-   
-}
-
-@media(max-width:600px){
-    #chooseName h2{
-        font-size: 10vw;
-        font-weight: 600;
-        
-    }
-    #chooseName button{
-        font-size: 8vw;
-    }
-    #chooseName input{width: 80vw;
-    margin-top: 2vh;
-    border-radius: 5vw;
-height: 5vh;
-padding: 2vw;
-font-size: 3.6vw;}
-}
-@media(max-width:770px) and (min-width:600px){
-    #chooseName h2{
-        font-size: 8vw;
-    }
-    #chooseName button{
-        font-size: 6vw;
-    }
-    #chooseName input{width: 70vw;
-        margin-top: 2vh;
-        border-radius: 4vw;
-    height: 7vh;
-font-size: 3.3vw;
-padding: 1.5vw;}
-}
-@media(max-width:1200px) and (min-width:770px){
-    #chooseName h2{
-        font-size: 7vw;
-    }
-    #chooseName button{
-        font-size: 5vw;
-    }
-    #chooseName input{width: 50vw;
-        margin-top: 2vh;
-        border-radius: 5vw;
     height: 5vh;
-padding: 1vw;
-font-size: 2.3vw;}
-}
-@media(max-width:1500px) and (min-width:1200px){
-    #chooseName h2{
-        font-size: 6.5vw;
-    }
-    #chooseName button{
-        font-size: 4.5vw;
-    }
-    #chooseName input{
-        padding: 1vw;
-        font-size: 1.4vw;
-        margin-top: 2vh;
-        border-radius: 5vw;
-    height: 5vh;
-    }
+    width: 50vw;
+    background-color: transparent;
+    border-radius: 12px;
+    font-size: 2.2vw;
+    padding: 1vw 0.5vw;
+    border: 5px solid antiquewhite;
 }
 
 
-/* end of choose name page */
 
-/* choose gender page */
 #chooseGender{
     background-image: url("/Life-Simulator-Game/Images/town.gif");
     height: 100vh;
     background-size: cover;
-    background-repeat: no-repeat;text-shadow: 
-    -2px -2px 0 #000, 
-    2px -2px 0 #000, 
-    -2px 2px 0 #000,
-    2px 2px 0 #000; 
+    text-align: center;
+    padding-top: 5vh;
 
-letter-spacing: 0.5vh;
+}
+#chooseGender section{
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    margin: 2vh auto;    
 }
 #chooseGender img{
     width: 30vw;
     border-radius: 10vw;
     
 }
-#chooseGender h1{
-    text-align: center;
-    font-family: "Jersey 10";
-    font-size: 5vw;
-    color: antiquewhite;
-}
-#chooseGender section{
-    display: flex;
-    width: 80vw;
-    justify-content: space-between;
-    margin: 5vh auto;    
-}
-#chooseGender button{
-    
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    padding: 1vw;
-    font-size: 4vw;
-    background-color: transparent;
-    color: antiquewhite;
-    font-family: "Jersey 10";
-    border: none;text-shadow: 
-    -2px -2px 0 #000, 
-    2px -2px 0 #000, 
-    -2px 2px 0 #000,
-    2px 2px 0 #000; 
-
-letter-spacing: 0.5vh;
-    
-}
-@media(max-width:600px){
-    #chooseGender h1{
-        font-size: 10vw;
-        font-weight: 600;
-        padding-top: 20vh;
-        
-    }
-    #chooseGender button{
-        font-size: 8vw;
-        text-align: center;
-    }
-    #chooseGender section{width: 90vw;}
-    #chooseGender img{
-    
-height: 35vh;
-width: 40vw;}
-}
-@media(max-width:770px) and (min-width:600px){
-    #chooseGender h1{
-        font-size: 8vw;
-        padding-top: 8vh;
-    }
-    #chooseGender button{
-        font-size: 6vw;
-    }
-    #chooseGender section{width: 90vw;}
-    #chooseGender img{
-    
-height: 40vh;
-width: 40vw;}
-}
-@media(max-width:1200px) and (min-width:770px){
-    #chooseGender h1{
-        font-size: 7vw;
-        padding-top: 3vh;
-    }
-    #chooseGender button{
-        font-size: 5vw;
-    }
-    #chooseName input{width: 50vw;
-        margin-top: 2vh;
-        border-radius: 5vw;
-    height: 5vh;}
-}
-
 .selected{
     border: 8px solid green;
     border-radius: 10vw;
     background-color: green;
 }
-/* end of choose gender page */
 
-/* nationality page */
-#nationalityPage{
+
+
+
+#nationalityPage,#familyDiv{
     background-image: url("/Life-Simulator-Game/Images/town.gif");
-    width: 100vw;
+    
     
     height: 100vh;
     background-repeat: no-repeat;
@@ -371,484 +116,444 @@ width: 40vw;}
         
     letter-spacing: 0.5vh;
 }
-#nationalityPage h1{
+#nationalityPage h1,#familyDiv {
 text-align: center;
 color: antiquewhite;
 padding: 4vw;
-padding-top: 25vh;
+padding-top: 18vh;
 font-size: 5vw;
 
 
         
     letter-spacing: 0.5vh;
 }
-@media(max-width:600px){
-    #nationalityPage h1,#familyDiv{
-        font-size: 10vw;
-        font-weight: 600;
-        
-    }
-    
-}
-@media(max-width:770px) and (min-width:600px){
-    #nationalityPage h1,#familyDiv{
-        font-size: 8vw;
-    }
-   
-}
-@media(max-width:1200px) and (min-width:770px){
-    #nationalityPage h1,#familyDiv{
-        font-size: 7vw;
-    }
-    
-}
 
-/* family page */
-#familyDiv{
-    background-image: url("/Life-Simulator-Game/Images/town.gif");
-    width: 90vw;
-    padding: 5vw;
+
+#currentChoice{
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    
+}
+#choice{
+    margin-top: 15vh;
     text-align: center;
-    color: antiquewhite;
-    padding-top: 25vh;
-    font-size: 5vw;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-        
-    letter-spacing: 0.5vh;
+    width: 90vw;
+    height: 70vh;
+    /* display: flex;
+    flex-direction: column; */
 }
-@media(max-width:600px){
-    #familyDiv{
-        font-size: 10vw;
-        font-weight: 600;
-        
-        
-    }
-    
+#choice button{
+    padding: 1vw;
+    margin: 1vw;
+    font-size: 3vw;
 }
-@media(max-width:770px) and (min-width:600px){
-    #familyDiv{
-        font-size: 8vw;
-        
-    }
-   
-}
-@media(max-width:1200px) and (min-width:770px){
-    #familyDiv{
-        font-size: 7vw;
-        
-    }
-    
-}
-#github{
-    position: absolute;
-    bottom: 3vh;
-    left: 2vw;
-    transform: translateX(50%);
-    
-}
-#github i{
-    font-size: 5vw;
-    color: orangered;
-    -webkit-text-stroke: 1px aliceblue;
 
-}
-#github i:hover{
-    font-size: 5.5vw;
-    
-}
-@media(max-width:430px){
-    #github i{
-        font-size: 17vw;
-    }
-    #github{
-        left: 1vw;
-    }
-}
-@media(max-width:800px) and (min-width:430px){
-    #github i{
-        font-size: 12vw;
-    }
-}
-@media(max-width:1300px) and (min-width:800px){
-    #github i{
-        font-size: 9vw;
-    }
-}
+
+
+
+
+
 #statsField{
-    /* position: absolute;
-    top: 3vh;
-    right: 6vw; */
-    font-size: 4vw;
-    color: antiquewhite;
-    text-align: center;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-    
+    height: 100vh;
+   
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
 }
-/* #statsField:hover #stats{
-    display: inline-block;
-} */
-
 #stats{
-    display: none;
-    /* position: absolute;
-    bottom: 5vw;
-    left: 5vw; */
     text-align: center;
-    font-size: 5vw;
+    
+    font-size: 3vw;
 }
-#stats h1{
-    text-align: center;
-}
-
 #stats ul{
     list-style: none;
 }
-#stats li{
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-    
-}
-#statsField li{
-    font-size: 4vw;
-}
-#statsField{
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 4vw;
-}
-#statsField button{
-    font-size: 4vw;
-    background-color: transparent;
-    border: none;
-    color: antiquewhite;text-shadow: 
-    -2px -2px 0 #000, 
-    2px -2px 0 #000, 
-    -2px 2px 0 #000,
-    2px 2px 0 #000; 
-}
-#showStats{
-    position: absolute;
-    top: 1.5vh;
-    right: 3vw;
-}
-#currentChoice{
-    width: 100vw;
-    height: 100vh;
-    /* background-image: url("/Life-Simulator-Game/Images/town.gif"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    padding-top: 30vh;
-    
-}
-
-#choice{
-    width: 67vw;
-    text-align: center;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-        
-    letter-spacing: 0.5vh;
-    font-size: 1.5vw;
-}
-#choice h1,#choice h2{
-    text-indent: 3vw;
-    color: antiquewhite;
-}
-#choice button{
-    font-size: 2vw;
-    padding: 1vw;
-    margin: 2vh;
-    background-color: transparent;
-    color: antiquewhite;
-    border: none;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-}
-
-
- #refresh{
-    position: absolute;
-    top: 6vh;
-    left: 10vw;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 5vw;
-    background-color: transparent;
-    border: none;
-    color: antiquewhite;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-    
-}
-
-
-@media(max-width:400px){
-    #choice{
-        width: 90vw;
-    }
-    #currentChoice #choice h1{
-        font-size: 8vw;
-        font-weight: 600;
-        margin-top: 1vh;
-        
-        
-    }
-    #currentChoice{
-        padding-top: 13vh;
-    }
-    #choice button{
-        font-size: 7vw;
-    }
-   
-     #refresh{
-        position: absolute;
-    top: 5vh;
-    color: antiquewhite;
-    background-color: transparent;
-    border:none;
-    left: 15vw;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 8vw;
-    }
-    /* #statsField{
-        top: 1vh;
-    } */
-     #statsField i{
-        
-        display: none;
-    }
-    #statsField #showStats{
-        font-size: 8vw;
-        top: 3vh;
-    }
-    #stats{
-        display: block;
-    }
-    #stats li, #statsField #hideStats{
-        font-size: 9vw;
-    }
-    
-    
-}
-@media(max-width:600px) and (min-width:400px){
-    #choice{
-        width: 90vw;
-    }
-    #currentChoice #choice h1{
-        font-size: 6.5vw;
-        font-weight: 600;
-        margin-top: 14vh;
-        
-        
-    }
-    #choice button{
-        font-size: 7vw;
-    }
-     #refresh{
-        position: absolute;
-    top: 5vh;
-    color: antiquewhite;
-    background-color: transparent;
-    border:none;
-    left: 15vw;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 8vw;
-    }
-    /* #statsField{
-        top: 1vh;
-    } */
-     #statsField i{
-        font-size: 1.5vw;
-        display: none;
-    }
-    #stats{
-        display: block;
-    }
-    #stats li{
-        font-size: 5.5vw;
-    }
-    
-}
-@media(max-width:770px) and (min-width:600px){
-    #choice{width: 90vw;}
-    #currentChoice h1{
-        font-size: 7vw;
-        
-    }
-    #choice button{
-        font-size: 6vw;
-    }
-     #refresh{
-        position: absolute;
-    top: 5vh;
-    color: antiquewhite;
-    background-color: transparent;
-    border:none;
-    left: 15vw;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 8vw;
-    }
-   
-     #statsField i{
-        font-size: 6vw;
-        display: none;
-    }
-    #stats{
-        display: block;
-    }
-    #stats li{
-        font-size: 3vw;
-    }
-
-   
-}
-@media(max-width:1240px) and (min-width:770px){
-    #currentChoice h1{
-        font-size: 5.5vw;
-        padding-top: 5vh;
-        
-    }
-    #choice{
-        width: 90vw;
-    }
-    #choice button{
-        font-size: 6vw;
-    }
-     #refresh{
-        position: absolute;
-    top: 5vh;
-    color: antiquewhite;
-    background-color: transparent;
-    border:none;
-    left: 15vw;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 8vw;
-    }
-   
-     #statsField i{
-        font-size: 6vw;
-        display: none;
-    }
-    #stats{
-        display: block;
-    }
-    #stats li{
-        font-size: 2.5vw;
-    }
-    
-}
-@media(min-width:1240px) and (max-width:1500px){
-    #choice{width: 90vw;}
-    #choice h1{
-        font-size: 6vw;
-        
-    }
-    #choice button{
-        font-size: 4vw;
-    }
-}
-/* @media(max-width:1600px) and (min-width:1200px){
-    #choice{width: 90vw;}
-    #currentChoice h1{
-        font-size: 5.4vw;
-        margin-top: 5vh;
-        
-    }
-    #choice button{
-        font-size: 5vw;
-    }
-     #refresh{
-        position: absolute;
-    top: 5vh;
-    color: antiquewhite;
-    background-color: transparent;
-    border:none;
-    left: 15vw;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 8vw;
-    }
-   
-     #statsField i{
-        font-size: 6vw;
-        display: none;
-    }
-    #stats{
-        display: block;
-    }
-    #stats li{
-        font-size: 3vw;
-    }
-} */
-#gameOver{
-    color: antiquewhite;
-    text-align: center;
-    font-size: 2vw;
-    margin-top: 8vh;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    text-shadow: 
-                -2px -2px 0 #000, 
-                2px -2px 0 #000, 
-                -2px 2px 0 #000,
-                2px 2px 0 #000; 
-}
-
-@media(max-width:600px){
-    #gameOver{
-        font-size: 5vw;
-        font-weight: 600;
-        margin: 4vw;
-        
-    }
-    
-}
-@media(max-width:770px) and (min-width:600px){
-    #gameOver{
-        font-size: 8vw;
-        margin: 4vw;
-    }
-   
-}
-@media(max-width:1050px) and (min-width:770px){
-    #gameOver{
-        font-size: 7vw;
-        
-    }
-    
-}
-
 .dangerous{
     color: red;
 }
 
-a{
-    text-decoration: none;
+
+#refresh{
+    position: absolute;
+    top: 0vh;
+    left: 3vw;
 }
+#showStats{
+    position: absolute;
+    top: 0vh;
+    right: 3vw;
+}
+
+
+#github i{
+    position: absolute;
+    bottom: 3vh;
+    left:3vw;
+    font-size: 5vw;
+    color: orangered;
+   
+}
+
+/* Responsiveness up to 1000px */
+@media(max-width:400px){
+    h1,#welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 9vw;
+    }
+    button, #currentChoice button{
+        font-size: 8vw;
+    }
+   
+    #github i{
+        font-size: 18vw;
+        left: 5vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    #choice{
+        margin-top: 20vh;
+    }
+    h2{
+        font-size: 8vw;
+    }
+    #stats li{
+        font-size: 10vw;
+    }
+    #statsField{
+        padding-top: 12vh;
+    }
+    #statsField #hideStats{
+        font-size: 12vw;
+    }
+
+    #chooseName input{
+        width: 70vw;
+        margin-top: 1vh;
+        font-size: 6vw;
+        padding: 2vw;
+    }
+    #chooseGender{
+        padding-top: 20vh;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 35vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+
+
+    
+
+}
+@media(max-width:700px) and (min-width:400px){
+    h1{
+        font-size: 7vw;
+    }
+    #welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 9vw;
+    }
+    button, #currentChoice button{
+        font-size: 6vw;
+    }
+    #chooseName input{
+        width: 60vw;
+        margin-top: 1vh;
+        font-size: 5vw;
+        padding: 2vw;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 45vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+    #chooseGender{
+        padding-top: 15vh;
+    }
+    #github i{
+        font-size: 12vw;
+        left: 3vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+
+    #stats li{
+        font-size: 6.7vw;
+    }
+    #statsField{
+        padding-top: 7vh;
+    }
+    #statsField #hideStats{
+        font-size: 12vw;
+    }
+    #choice{
+        margin-top: 13vh;
+    }
+}
+
+
+@media(max-width:1000px) and (min-width:700px){
+    h1{
+        font-size: 6vw;
+    }
+    #welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 7.5vw;
+    }
+    button, #currentChoice button{
+        font-size: 6vw;
+    }
+    #chooseName input{
+        width: 60vw;
+        margin-top: 1vh;
+        font-size: 5vw;
+        padding: 2vw;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 50vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+    #chooseGender{
+        padding-top: 5vh;
+    }
+    #github i{
+        font-size: 10vw;
+        left: 3vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+
+    #stats li{
+        font-size: 5vw;
+    }
+    #statsField{
+        padding-top: 7vh;
+    }
+    #statsField #hideStats{
+        font-size: 12vw;
+    }
+    #choice{
+        margin-top: 17vh;
+    }
+
+
+}
+@media(max-width:1400px) and (min-width:1000px){
+    h1{
+        font-size: 5.5vw;
+    }
+    #welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 7.5vw;
+    }
+    button, #currentChoice button{
+        font-size: 5vw;
+    }
+    #chooseName input{
+        width: 50vw;
+        margin-top: 1vh;
+        font-size: 5vw;
+        padding: 2vw;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 60vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+    #chooseGender{
+        padding-top: 5vh;
+    }
+    #github i{
+        font-size: 10vw;
+        left: 3vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+
+    #stats li{
+        font-size: 4.5vw;
+    }
+    #statsField{
+        padding-top: 7vh;
+    }
+    #statsField #hideStats{
+        font-size: 10vw;
+    }
+    #choice{
+        margin-top: 17vh;
+    }
+
+
+}
+
+@media(max-width:1800px) and (min-width:1400px){
+    h1{
+        font-size: 4.8vw;
+    }
+    #welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 7.5vw;
+    }
+    button, #currentChoice button{
+        font-size: 4.5vw;
+    }
+    #chooseName input{
+        width: 50vw;
+        margin-top: 1vh;
+        font-size: 5vw;
+        padding: 2vw 1vw;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 60vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+    #chooseGender{
+        padding-top: 5vh;
+    }
+    #github i{
+        font-size: 8vw;
+        left: 3vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+
+    #stats li{
+        font-size: 3.4vw;
+    }
+    #statsField{
+        padding-top: 6vh;
+    }
+    #statsField #hideStats{
+        font-size: 10vw;
+    }
+    #choice{
+        padding-top: 3vh;
+    }
+
+
+}
+@media(min-width:1800px) and (max-width:2000px){
+    #choice h1{
+        color: red;
+    }
+}
+
+/* @media (min-width:2000px){
+    h1{
+        font-size: 5vw;
+        font-weight: 600;
+    }
+    #welcome h1,#chooseName h1,#familyDiv,#nationalityPage h1{
+        font-size: 8.5vw;
+    }
+    button, #currentChoice button{
+        font-size: 6vw;
+    }
+    #chooseName input{
+        width: 50vw;
+        margin-top: 1vh;
+        font-size: 5vw;
+        padding: 2vw;
+    }
+    #chooseGender img{
+        width: 35vw;
+        height: 60vh;
+        
+    }
+    #chooseGender button{
+        margin-top: 5vh;
+    }
+    #chooseGender{
+        padding-top: 5vh;
+    }
+    #github i{
+        font-size: 10vw;
+        left: 3vw;
+    }
+    #refresh{
+        top: 1vh;
+        left: 5vw;
+    }
+    #showStats{
+        top: 1vh;
+        right: 5vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+
+    #stats li{
+        font-size: 4.5vw;
+    }
+    #statsField{
+        padding-top: 7vh;
+    }
+    #statsField #hideStats{
+        font-size: 10vw;
+    }
+    #choice{
+        margin-top: 17vh;
+    }
+
+
+}
+ */

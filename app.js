@@ -142,7 +142,8 @@ function renderNextChoice(){
     document.getElementById("gender").textContent=stats.gender
     document.getElementById("quality").textContent=stats.outstandingQuality
     setTimeout(()=>{
-      handleChoice("+nothing")
+      stats.getOlder(1)
+      renderNextChoice()
     },6000)
   }else if(stats.age>13 && stats.age<20){
     const choice=getRandomTeenChoice(stats.gender)

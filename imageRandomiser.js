@@ -13,6 +13,7 @@ let allImages = [
   "Life-Simulator-Game/Images/peakpx.jpg",
   "Life-Simulator-Game/Images/town pink.jpg",
   "Life-Simulator-Game/Images/town.gif",
+  
 ];
 
 export default function setRandomBackground(root) {
