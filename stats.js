@@ -153,6 +153,11 @@ const happinessField=document.getElementById("happiness")
     }else{
         happinessField.classList.remove("dangerous")
     }
+    if(wealth<=0){
+        wealthField.classList.add("dangerous")
+    }else{
+        wealthField.classList.remove("dangerous")
+    }
 
 
 

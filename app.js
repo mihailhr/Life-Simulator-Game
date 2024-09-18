@@ -72,7 +72,7 @@ function renderNationalityPage(){
   document.getElementById("nationality").textContent=stats.nationality
   setTimeout(()=>{
     renderFamilyPage()
-  },5000)
+  },7000)
  
 }
 
@@ -117,7 +117,7 @@ function renderFamilyPage(){
       
       }})
     renderNextChoice()
-  }, 5000);
+  }, 6000);
 }
 
 function renderNextChoice(){
@@ -155,7 +155,7 @@ const showStatsButton=document.getElementById("showStats")
     document.getElementById("currentChoice").style.display="flex"
     document.getElementById("stats").style.display="none"
       renderNextChoice()
-    },6000)
+    },10000)
   }else if(stats.age>13 && stats.age<20){
     const choice=getRandomTeenChoice(stats.gender)
     let backgroundImage
@@ -174,14 +174,14 @@ const showStatsButton=document.getElementById("showStats")
     document.getElementById("quality").textContent=stats.outstandingQuality
     setTimeout(()=>{
       choiceRoot.innerHTML=pages.movingOutPage
-    },5000)
+    },8000)
     setTimeout(()=>{
      if(stats.intelligence<70){
       choiceRoot.innerHTML=pages.cantApplyToUniversityPage
      }else{
       choiceRoot.innerHTML=pages.applyToUniversityPage
      } 
-    },10000)
+    },13000)
   }else if(stats.age===21){
     if(stats.graduate===true){
       stats.getOlder(4)
@@ -191,7 +191,7 @@ const showStatsButton=document.getElementById("showStats")
         const choice=getRandomYoungAdultChoice();
         
       choiceRoot.innerHTML=choice
-      },5000)
+      },7000)
     }else{
       stats.getOlder(1)
       stats.updateStats()
@@ -261,7 +261,7 @@ const showStatsButton=document.getElementById("showStats")
       const choice=getGrownAdultChoice()
        choiceRoot.innerHTML=choice
        setRandomBackground(choiceRoot)
-    },4000)
+    },7000)
   }else if(stats.age<47){
     const choice=getRandomMatureAdultChoice()
        choiceRoot.innerHTML=choice
@@ -306,7 +306,7 @@ const showStatsButton=document.getElementById("showStats")
       document.getElementById("currentChoice").style.backgroundImage=`url("/Life-Simulator-Game/Images/cemetery.gif")`
       document.getElementById("refresh").textContent="Start anew"
       document.getElementById("refresh").style.color="green"
-    },7000)
+    },9000)
   }
 }
 
