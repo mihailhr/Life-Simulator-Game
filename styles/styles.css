@@ -51,7 +51,7 @@ body{
 }
 #chooseName{
     height: 100vh;
-    background-image: url("/Life-Simulator-Game/Videos/townNamePage.gif");
+    background-image: url("/Life-Simulator-Game/Images/townNamePage.gif");
     display: flex;
     flex-direction: column;
     justify-content: center;
