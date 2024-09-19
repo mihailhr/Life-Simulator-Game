@@ -9,6 +9,7 @@ import {
   getRandomYoungAdultChoice,
   marriageChoice,
 } from "./choices.js";
+import preloadImages from "./imagePreloader.js";
 
 import setRandomBackground from "./imageRandomiser.js";
 import * as pages from "./pages.js";
@@ -19,7 +20,7 @@ let choiceRoot;
 
 function renderWelcomePage() {
   root.innerHTML = pages.welcomePage;
-
+  preloadImages()
   const startButton = document.getElementsByTagName("button")[0];
   startButton.addEventListener("click", renderChooseNamePage);
 }
