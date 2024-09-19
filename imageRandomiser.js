@@ -16,9 +16,10 @@ let allImages = [
   "Life-Simulator-Game/Images/townNamePage.gif"
 ];
 
+
 export default function setRandomBackground(root) {
   allImages = allImages.reverse();
-
+  
   const randomIndex = Math.floor(Math.random() * allImages.length);
   root.style.backgroundImage = `url(/${allImages[randomIndex]})`;
 
