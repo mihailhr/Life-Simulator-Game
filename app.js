@@ -126,7 +126,7 @@ function renderNextChoice() {
   hideStatsButton.style.display = "none";
 
   if (message) {
-    displayGameOverPage(message);
+    renderGameOverPage(message);
     return;
   }
 
@@ -157,41 +157,13 @@ function renderNextChoice() {
   } else if (stats.age === 47) {
     renderInheritancePage();
   } else if (stats.age < 53) {
-    // const choice = getRandomMatureAdultChoice();
-    // choiceRoot.innerHTML = choice;
-    // setRandomBackground(choiceRoot);
-    renderMoreMatureAdultChoices()
+    renderMoreMatureAdultChoices();
   } else if (stats.age === 53) {
-    // if (stats.child) {
-    //   choiceRoot.innerHTML = pages.kidBirthday;
-    // } else {
-    //   const choice = getRandomMatureAdultChoice();
-    //   choiceRoot.innerHTML = choice;
-    //   setRandomBackground(choiceRoot);
-    // }
-    renderKidBirthdayPage()
+    renderKidBirthdayPage();
   } else if (stats.age < 70) {
-    // const choice = getRandomGoldenAgeChoice();
-
-    // choiceRoot.innerHTML = choice;
-    // setRandomBackground(choiceRoot);
-    renderGoldenAgeChoice()
+    renderGoldenAgeChoice();
   } else {
-    // choiceRoot.innerHTML = pages.gameEndPage;
-    // setTimeout(() => {
-    //   stats.getOlder(15);
-    //   stats.updateStats();
-    //   choiceRoot.innerHTML = pages.rebirthPage;
-    //   const heavenSound = new Audio("./Audio/angelical-pad-143276.mp3");
-    //   heavenSound.play();
-    //   stats.statsChecker();
-    //   document.getElementById(
-    //     "currentChoice"
-    //   ).style.backgroundImage = `url("/Life-Simulator-Game/Images/cemetery.gif")`;
-    //   document.getElementById("refresh").textContent = "Start anew";
-    //   document.getElementById("refresh").style.color = "green";
-    // }, 9000);
-    renderGameEnd()
+    renderGameEnd();
   }
 }
 
@@ -215,7 +187,6 @@ window.handleChoice = function handleChoice(choice) {
   renderNextChoice();
 };
 window.hideButton = function hideButton(buttonClicked) {
-  
   const hideStatsButton = document.getElementById("hideStats");
   const showStatsButton = document.getElementById("showStats");
 
@@ -235,13 +206,7 @@ window.hideButton = function hideButton(buttonClicked) {
   }
 };
 
-
-
-
-
-
-
-function displayGameOverPage(message) {
+function renderGameOverPage(message) {
   choiceRoot.innerHTML = pages.deadPage;
   document.getElementById("message").textContent = message;
   const deathSound = new Audio("./Audio/273567-Game-Over-Robot-Hit-8.mp3");
