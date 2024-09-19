@@ -13,7 +13,6 @@ let allImages = [
   "Life-Simulator-Game/Images/peakpx.jpg",
   "Life-Simulator-Game/Images/town pink.jpg",
   "Life-Simulator-Game/Images/town.gif",
-  
 ];
 
 export default function setRandomBackground(root) {
@@ -22,6 +21,6 @@ export default function setRandomBackground(root) {
   const randomIndex = Math.floor(Math.random() * allImages.length);
   root.style.backgroundImage = `url(/${allImages[randomIndex]})`;
 
-  document.body.style.backgroundSize = 'cover';
-  document.body.style.backgroundPosition = 'center';
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
 }

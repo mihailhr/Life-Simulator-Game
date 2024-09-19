@@ -82,7 +82,7 @@ const childhoodChoices = [
         <button onclick="handleChoice('+5 sociability')">Let them copy it</button>
         
     </div>`,
-    `<div id="choice">
+  `<div id="choice">
     <h1>You show some interest in chess and want to attend some classes to practice, but your friends are making fun of you.</h1>
     <button onclick="handleChoice('+10 happiness,+7 intelligence')">Pursue your interests</button>
     <button onclick="handleChoice('-15 happiness')">Don't be the butt of the joke </button>
@@ -99,8 +99,6 @@ const childhoodChoices = [
         <button onclick="handleChoice('+10 intelligence,-5 athleticism')">Join the art class</button>
         <button onclick="handleChoice('+10 athleticism,-5 intelligence')">Continue with regular activities</button>
     </div>`,
-
-
 
   `<div id="choice">
         <h1>You have the option to help clean the park or stay home and play a video game. What do you choose?</h1>
@@ -228,7 +226,7 @@ const teenGirlChoices = [
         <button onclick="handleChoice('+15 happiness,+5 sociability')">Attend the book signing</button>
         <button onclick="handleChoice('+10 intelligence')">Work on your personal blog</button>
     </div>`,
-    `<div id="choice">
+  `<div id="choice">
     <h1>Your classmates invite you to the local pool, but you've got some chores to do.</h1>
     <button onclick="handleChoice('+15 happiness,+3 athleticism,+5 stress')">Go to the pool</button>
     <button onclick="handleChoice('-15 happiness,-10 stress,-5 athleticism')">Finish your chores</button>
@@ -275,7 +273,7 @@ const teenGirlChoices = [
         <button onclick="handleChoice('-10 sociability,+5 intelligence')">Play it safe on the riverbank</button>
     </div>`,
 
-    `<div id="choice">
+  `<div id="choice">
     <h1>You feel passionate about dancing and want to attend some classes, but because of puberty you've gained a few kilograms and are afraid of being humiliated.</h1>
     <button onclick="handleChoice('+15 happiness,+7 athleticism,+5 stress,+6 sociability')">Join the dancing classes</button>
     <button onclick="handleChoice('-15 happiness,-8 athleticism')">Don't risk it</button>
@@ -286,7 +284,7 @@ const teenGirlChoices = [
         <button onclick="handleChoice('-40 health')">Ride the bike</button>
         <button onclick="handleChoice('+10 intelligence')">Avoid the bike</button>
     </div>`,
-`<div id="choice">
+  `<div id="choice">
     <h1>You were gifted a cooking book which looks interesting, but your last attempt at making a meal almost led to a fire.</h1>
     <button onclick="handleChoice('-8 happiness')">Play it safe</button>
     <button onclick="handleChoice('+8 happiness,+3 stress')">Make another attempt</button>
@@ -327,17 +325,17 @@ const teenBoyChoices = [
         <button onclick="handleChoice('+15 intelligence,+5 stress')">Work on the personal project</button>
     </div>`,
 
-    `<div id="choice">
+  `<div id="choice">
     <h1>You want to go camping with friends, but you find bugs really scary.</h1>
     <button onclick="handleChoice('+7 happiness,+3 athleticism,+5 stress,+4 sociability')">Face your fear</button>
     <button onclick="handleChoice('-12 happiness,-7 sociability,-3 stress,-9 sociability')">Maybe another time</button>
 </div>`,
-`<div id="choice">
+  `<div id="choice">
     <h1>A local amateur boxing competition for teens is announced and you want to give it a try, but you aren't particularly skilled.</h1>
     <button onclick="handleChoice('-8 happiness,-7 athleticism,-5 stress')">Avoid it</button>
     <button onclick="handleChoice('+9 happiness,+8 stress,+11 athleticism')">Join it and do your best</button>
 </div>`,
-`<div id="choice">
+  `<div id="choice">
     <h1>A girl you really like might either be giving you some hints or trying to make a fool of you.</h1>
     <button onclick="handleChoice('+12 happiness,+8 sociability,+7 stress')">Invite her on a date</button>
     <button onclick="handleChoice('-14 happiness,-10 stress,-8 sociability')">Don't be stupid, you've got no chance</button>
@@ -395,7 +393,7 @@ const teenBoyChoices = [
         <button onclick="handleChoice('-100 health')">Swim in the river</button>
         <button onclick="handleChoice('+10 intelligence')">Play it safe on the riverbank</button>
     </div>`,
-    `<div id="choice">
+  `<div id="choice">
     <h1>Your classmates invite you to the local pool, but you've got some chores to do.</h1>
     <button onclick="handleChoice('+15 happiness,+3 athleticism,+5 stress')">Go to the pool</button>
     <button onclick="handleChoice('-15 happiness,-10 stress,-5 athleticism')">Finish your chores</button>
@@ -476,7 +474,6 @@ let youngAdultChoices = [
         <button onclick="handleChoice('+20 sociability,+10 wealth,-10 happiness,+3 stress')">Attend the event</button>
         <button onclick="handleChoice('+10 happiness,-10 stress')">Skip it</button>
     </div>`,
-    
 
   `<div id="choice">
         <h1>Your car breaks down, and you can either pay for expensive repairs or buy a new one on credit. What do you do?</h1>
@@ -513,7 +510,7 @@ let youngAdultChoices = [
         <button onclick="handleChoice('+30 happiness,-1000 wealth,+5 stress')">Take the vacation</button>
         <button onclick="handleChoice('+1000 wealth,-10 happiness,-5 stress')">Stay and work</button>
     </div>`,
-    `<div id="choice">
+  `<div id="choice">
     <h1>Your neighbor invited you on a date, but you are not really interested.</h1>
     <button onclick="handleChoice('+8 happiness,-7 sociability')">Reject them and don't raise false expectations</button>
     <button onclick="handleChoice('-9 happiness,+7 sociability')">Give them a chance</button>
