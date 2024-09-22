@@ -20,6 +20,7 @@ let choiceRoot;
 
 function renderWelcomePage() {
   root.innerHTML = pages.welcomePage;
+  blurPage()
   preloadImages()
   const startButton = document.getElementsByTagName("button")[0];
   startButton.addEventListener("click", renderChooseNamePage);
@@ -27,6 +28,7 @@ function renderWelcomePage() {
 
 function renderChooseNamePage() {
   root.innerHTML = pages.chooseNamePage;
+  
   const heavenSound = new Audio("./Audio/angelical-pad-143276.mp3");
   heavenSound.play();
   const continueButton = document.getElementById("continue");
@@ -43,7 +45,9 @@ function renderChooseNamePage() {
 }
 
 function renderChooseGenderPage() {
+  blurPage()
   root.innerHTML = pages.genderSelectPage;
+  
   const maleAvatar = document.getElementById("manOption");
   const femaleAvatar = document.getElementById("womanOption");
   const continueButton = document.getElementsByTagName("button")[0];
@@ -69,6 +73,7 @@ function renderChooseGenderPage() {
 function renderNationalityPage() {
   stats.getNationality();
   root.innerHTML = pages.nationalityPage;
+  
   document.getElementById("nationality").textContent = stats.nationality;
   setTimeout(() => {
     renderFamilyPage();
@@ -102,6 +107,7 @@ function renderFamilyPage() {
 
   setTimeout(() => {
     root.innerHTML = pages.choiceTemplate;
+    blurPage()
     choiceRoot = document.getElementById("currentChoice");
     stats.updateStats();
     document.getElementById("refresh").addEventListener("click", () => {
@@ -127,10 +133,11 @@ function renderNextChoice() {
   hideStatsButton.style.display = "none";
 
   if (message) {
+    blurPage()
     renderGameOverPage(message);
     return;
   }
-
+  
   if (stats.age >= 6 && stats.age < 13) {
     renderChildhoodChoice();
   } else if (stats.age === 13) {
@@ -208,6 +215,7 @@ window.hideButton = function hideButton(buttonClicked) {
 };
 
 function renderGameOverPage(message) {
+  
   choiceRoot.innerHTML = pages.deadPage;
   document.getElementById("message").textContent = message;
   const deathSound = new Audio("./Audio/273567-Game-Over-Robot-Hit-8.mp3");
@@ -292,7 +300,9 @@ function renderYoungAdultChoice() {
 }
 
 function renderMarriageChoice() {
+
   if (stats.sociability >= 70) {
+    blurPage()
     choiceRoot.innerHTML = pages.marryPage;
     choiceRoot.style.backgroundImage = `url("/Life-Simulator-Game/Images/marriageChoice.jpg")`;
   } else {
@@ -301,6 +311,7 @@ function renderMarriageChoice() {
 }
 function renderMarriageContinuation() {
   if (stats.married === true) {
+    blurPage()
     choiceRoot.innerHTML = pages.marriedPage;
     const familyMembersSpan = document.getElementById("familyMembers");
     let message;
@@ -400,6 +411,7 @@ function renderGoldenAgeChoice() {
 }
 
 function renderGameEnd() {
+  blurPage()
   choiceRoot.innerHTML = pages.gameEndPage;
   setTimeout(() => {
     stats.getOlder(15);
@@ -414,4 +426,12 @@ function renderGameEnd() {
     document.getElementById("refresh").textContent = "Start anew";
     document.getElementById("refresh").style.color = "green";
   }, 9000);
+}
+
+
+function blurPage(){
+  root.classList.add("blur")
+  setTimeout(()=>{
+    root.classList.remove("blur")
+  },600)
 }

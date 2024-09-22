@@ -6,7 +6,6 @@ const allImages = [
     "Life-Simulator-Game/Images/background def.gif",
     "Life-Simulator-Game/Images/beachTown.jpg",
     "Life-Simulator-Game/Images/city.jpg",
-    "Life-Simulator-Game/Images/Office room.gif",
     "Life-Simulator-Game/Images/owl.gif",
     "Life-Simulator-Game/Images/store.jpg",
     "Life-Simulator-Game/Images/peakpx (3).jpg",

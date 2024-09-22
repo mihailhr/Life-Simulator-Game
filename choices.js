@@ -912,6 +912,7 @@ const goldenAgeChoices = [
       <button onclick="handleChoice('+10 happiness,+10 sociability,-10 health')">Host Thanksgiving</button>
       <button onclick="handleChoice('+5 health')">Suggest someone else host</button>
   </div>`,
+  
 
   `<div id="choice">
       <h1>A friend invites you to a weekend getaway, but you’ve been saving for a larger vacation. Do you go on the weekend trip or stick with your original plans?</h1>
