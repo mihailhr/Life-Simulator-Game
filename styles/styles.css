@@ -89,6 +89,7 @@ body{
 }
 #chooseGender img{
     width: 30vw;
+    max-height: 60vh;
     border-radius: 10vw;
     
 }
@@ -491,11 +492,7 @@ font-size: 5vw;
 
 
 }
-@media(min-width:1800px) and (max-width:2000px){
-    #choice h1{
-        color: red;
-    }
-}
+
 
 /* @media (min-width:2000px){
     h1{
@@ -561,4 +558,35 @@ font-size: 5vw;
  .blur {
     filter: blur(10px); 
     transition: filter 0.5s ease;
+}
+@media (min-width:2000px){
+    *{
+        text-shadow: 
+                -5px -5px 0 #000, 
+                5px -5px 0 #000, 
+                -5px 5px 0 #000,
+                5px 5px 0 #000; 
+}
+    
+    #github i{
+        font-size: 10vw;
+    }
+    #chooseName input{
+        border-width: 10px;
+        font-size: 3.4vw;
+    }
+    h1{
+        font-size: 6vw;
+    }
+    button{
+        font-size: 6vw;
+    }
+    #stats{
+        
+        
+        font-size: 5vw;
+    }
+    #choice button{
+        font-size: 6vw;
+    }
 }
