@@ -1,6 +1,6 @@
 
 # Life Simulator Game
-## Disclaimer - resposiveness above standard resolution (1920X1080) is still not fully implemented
+
 ## Overview
 
 Life Simulator is a choice-based game that simulates the decision-making process throughout different stages of life. The game offers random family structures, nationalities and choices ensuring a unique experience with each playthrough. The goal is to either reach the age of 70 or live life to the fullest, no matter the consequences. Let your decisions shape your journey through life.
