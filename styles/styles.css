@@ -584,9 +584,18 @@ font-size: 5vw;
     #stats{
         
         
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
     #choice button{
-        font-size: 6vw;
+        font-size: 5vw;
+    }
+    #chooseGender img{
+        width: 30vw;
+        max-height: 50vh;
+        border-radius: 10vw;
+        
+    }
+    #currentChoice h1{
+        font-size: 5vw;
     }
 }
