@@ -20,7 +20,7 @@ export default function setRandomBackground(root) {
   allImages = allImages.reverse();
   
   const randomIndex = Math.floor(Math.random() * allImages.length);
-  root.style.backgroundImage = `url(/${allImages[randomIndex]})`;
+  root.style.backgroundImage = `url(${allImages[randomIndex]})`;
 
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center";
